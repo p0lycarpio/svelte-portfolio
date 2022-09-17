@@ -1,0 +1,41 @@
+<script>
+  import "../public/css/bootstrap.scss";
+  import Header from "./content/header.svelte";
+  import Bio from "./content/biographie.svelte";
+  import Projects from "./content/projects.svelte";
+  import Parcours from "./content/parcours.svelte";
+  import Skills from "./content/competences.svelte";
+  import Footer from "./content/footer.svelte";
+</script>
+
+<svelte:head>
+  <!-- <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" /> -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css" />
+
+  <link rel="stylesheet" href="./css/common.css" />
+  <link rel="stylesheet" href="./css/general.css" />
+  <link rel="stylesheet" href="./css/sections.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
+  <link rel="stylesheet" href="./css/projects.css" />
+</svelte:head>
+
+<div class="home" id="#">
+  <Header />
+  <main role="main" id="fh5co-main">
+    <Bio />
+    <Projects />
+    <Parcours />
+    <Skills />
+  </main>
+</div>
+<Footer />
+
+<style lang="scss">
+  .home {
+    background: var(--hero-sect);
+  }
+</style>
