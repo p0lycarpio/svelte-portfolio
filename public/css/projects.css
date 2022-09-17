@@ -1,0 +1,272 @@
+/* =============================
+    
+    * projects.css
+    * Copyright 2021 Arsène Reymond
+    * http://arsene.reymond.free.fr
+    
+    ================================ */
+
+/* Reset des éléments texte projet */
+project h1,
+project h2,
+project h3,
+project p {
+  color: unset;
+  font-family: unset;
+  white-space: unset;
+  font-size: unset;
+  padding-top: unset;
+
+  font-size: unset;
+  color: unset;
+  line-height: unset;
+  margin-bottom: unset;
+}
+
+project a:hover {
+  background-color: unset;
+  text-decoration: underline;
+}
+
+project ::selection {
+  background-color: #fff;
+}
+
+slider {
+  max-width: 100%;
+}
+
+#wrapper {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+project slider {
+  border-radius: 4px;
+  position: absolute;
+  top: 35px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  object-position: 50% 0;
+}
+
+slider shot {
+  transition: 0.5s;
+  position: absolute;
+  width: 100%;
+}
+
+project slider * {
+  border-radius: 4px;
+}
+
+.cpqb project slider {
+  object-position: 50% 30%;
+}
+
+project h3 {
+  letter-spacing: 0.05em;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 45px;
+  margin-bottom: 0;
+}
+
+project h2 {
+  opacity: 0.7;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+project p {
+  margin-top: 30px;
+  opacity: 0.85;
+  padding-bottom: 25px;
+  margin-right: 25px;
+  font-size: 14px;
+  line-height: 1.8em;
+}
+
+.lien {
+  margin-top: -20px;
+}
+
+#see-more {
+  color: var(--black-white);
+}
+
+/* Display large (slider on side) on SM > & <LG */
+
+@media only screen and (min-width: 576px), (max-width: 600px) {
+  project.project_left slider,
+  project.project_right slider {
+    width: 40%;
+  }
+
+  project .project_info {
+    width: 284px;
+  }
+
+  project.project_right .project_info {
+    margin-left: 36px;
+  }
+
+  #wrapper slider {
+    display: block;
+    overflow: none;
+  }
+
+  project.project_left slider {
+    left: 35px;
+  }
+
+  project.project_right slider {
+    right: 35px;
+  }
+
+  project .project_info {
+    width: 270px;
+  }
+
+  project.project_left .project_info {
+    float: right;
+  }
+
+  project.project_right .project_info {
+    float: left;
+    width: 48%;
+    margin-left: 45px;
+  }
+
+  project.project_top slider {
+    width: calc(84% - 180px);
+    left: 145px;
+    top: 170px;
+  }
+
+  project.project_top .project_info {
+    width: calc(100% - 70px);
+    margin-left: 35px;
+    overflow: hidden;
+  }
+
+  project.project_top h1,
+  project.project_top h2,
+  project.project_top h3,
+  project.project_top p {
+    width: 100%;
+    text-align: center;
+  }
+
+  project.project_top h1 {
+    margin-top: 25px;
+  }
+
+  project.project_top {
+    min-height: 400px;
+  }
+
+  project.project_top p {
+    margin-top: 0;
+  }
+}
+
+/* Display in card format (slider on top) on < SM & >LG */
+
+@media only screen and (min-width: 992px), (max-width: 576px) {
+  .col-md-6:not(:last-of-type) project {
+    min-height: 500px;
+  }
+
+  project slider {
+    top: 35px !important;
+    position: relative !important;
+    width: 80% !important;
+    left: 10% !important;
+    max-height: 200px;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: 50% 0;
+  }
+
+  project slider * {
+    object-fit: cover;
+    object-position: 50% 0;
+    min-height: 200px;
+  }
+
+  project.project_left slider,
+  project.project_right slider {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+  }
+
+  project.project_left slider slider,
+  project.project_right slider slider {
+    width: 100%;
+    height: 180px;
+  }
+
+  project .project_info {
+    width: 90% !important;
+    margin-left: 5% !important;
+    text-align: center;
+    float: none !important;
+  }
+
+  project h3 {
+    margin-top: 60px;
+  }
+
+  project h1 {
+    margin-top: 6px;
+    font-size: 1.5em;
+  }
+
+  project h2 {
+    padding-bottom: 2px;
+    font-size: 0.7em;
+    line-height: 1em;
+    display: none;
+  }
+
+  project p {
+    margin-right: 0;
+  }
+
+  .title {
+    font-size: 10vw;
+  }
+
+  .subtitle {
+    font-size: 4vw;
+    display: none;
+  }
+
+  .description {
+    font-size: 3.5vw;
+  }
+}
+
+/* Dark theme support */
+
+body.dark-mode project {
+  filter: brightness(0.85);
+}
+
+body.dark-mode project img {
+  filter: brightness(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  project {
+    filter: brightness(0.85);
+  }
+  body.light-mode project {
+    filter: brightness(1) contrast(1);
+  }
+  project img {
+    filter: brightness(1);
+  }
+}
