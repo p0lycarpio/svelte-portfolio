@@ -91,7 +91,7 @@
   }
 
   .card-title {
-    font-weight: 700 !important;
+    font-weight: 600 !important;
   }
 
   .card-text {
@@ -100,6 +100,6 @@
 
   strong {
     font-size: small;
-    font-weight: lighter;
+    font-weight: normal;
   }
 </style>

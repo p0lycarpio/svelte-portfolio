@@ -64,13 +64,16 @@
 <style lang="scss">
   #compétences span {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
   }
 
   #compétences svg {
     width: 50px;
   }
-
+  
+  .soft :first-child {
+    margin-left: 0;
+  }
   .soft svg {
     height: 50px;
     width: 50px;

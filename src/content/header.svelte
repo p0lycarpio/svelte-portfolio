@@ -5,6 +5,8 @@
   import { onMount } from "svelte";
   import Logo from "../assets/logo.svelte";
   import wavify from "../components/wavify";
+  import Tooltip from "../components/Tooltip.svelte";
+
 
   const dispatch = createEventDispatcher();
   let wave;
@@ -21,6 +23,7 @@
       speed: 0.2,
     });
   });
+
 </script>
 
 <header>
@@ -40,15 +43,11 @@
         <img src="site/img/avatar.jpg" alt="Portrait" width="100" class="avatar" />
         <h1>Développement et informatique</h1>
       </div>
-
       <p>
         Étudiant en licence professionnelle <a
           href="https://www.iut-larochelle.fr/formations/departement-informatique/licence-professionnelle-developpeur-cloud/"
           target="_blank"
-          data-toggle="tooltip"
-          title=""
-          data-original-title="Conception, Développement et Tests de Logiciels"
-          >CDTL option développeur cloud</a>
+          ><Tooltip text="Conception, Développement et Tests de Logiciels">CDTL option développeur cloud</Tooltip></a>
         et en alternance chez
         <a href="https://cgi.com/fr" target="_blank">CGI</a> à Niort.
       </p>
