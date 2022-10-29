@@ -3,7 +3,7 @@
   import Banner from "../components/BannerTop.svelte";
   import { createEventDispatcher } from "svelte";
   import { onMount } from "svelte";
-  import Logo from "../assets/logo.svg";
+  import Logo from "../assets/logo.svelte";
   import wavify from "../components/wavify";
 
   const dispatch = createEventDispatcher();
@@ -34,7 +34,9 @@
   <section class="hero-section">
     <div class="container-fluid text-center anmCSS backInDown">
       <div class="hero-text">
-        <div class="logo">{@html Logo}</div>
+        <div class="logo">
+          <Logo />
+        </div>
         <img src="site/img/avatar.jpg" alt="Portrait" width="100" class="avatar" />
         <h1>Développement et informatique</h1>
       </div>
