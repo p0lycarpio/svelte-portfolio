@@ -98,11 +98,11 @@
         <div class="row justify-content-center" id="see-more-block">
           <div class="col-6 col-md-5">
             <div class="card">
-              <div class="text-center">
+              <div class="d-grid text-center">
                 <button
                   type="button"
                   on:click={showmore}
-                  class="btn btn-block text-nowrap py-2"
+                  class="btn text-nowrap py-2"
                   id="see-more">Voir plus</button>
               </div>
             </div>
@@ -112,3 +112,4 @@
     </div>
   </div>
 </section>
+

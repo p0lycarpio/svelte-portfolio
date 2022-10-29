@@ -41,6 +41,9 @@ main {
   margin-bottom: 1em;
   color: var(--fh5co-section-heading);
   margin-right: 50px;
+  @media (max-width: 767px) {
+    margin-right: 0;
+  }
 }
 
 .fh5co-section-heading .fh5co-border {

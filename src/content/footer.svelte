@@ -160,4 +160,61 @@
     z-index: 15;
     border: 0;
   }
+
+  @media only screen and (max-height: 722px) {
+  footer {
+    height: 90vh;
+  }
+  .contact-form {
+    top: 18%;
+  }
+}
+
+@media only screen and (max-height: 560px), (max-width: 575px) {
+  .contact-form,
+  footer {
+    position: relative;
+  }
+
+  footer {
+    padding-bottom: 0;
+    top: 0;
+  }
+
+  .email {
+    margin-top: 20px;
+  }
+
+  .contact-form {
+    width: 80%;
+  }
+
+  .h-contact {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  input,
+  textarea {
+    font-size: 14px;
+  }
+  .status-form {
+    margin-top: 2em;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .contact-form {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-height: 1000px) {
+  footer {
+    height: 50vh;
+  }
+  .contact-form {
+    top: 52%;
+  }
+}
 </style>
