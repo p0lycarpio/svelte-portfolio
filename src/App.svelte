@@ -7,6 +7,7 @@
   import Footer from "./content/footer.svelte";
   import "@ibm/plex/scss/ibm-plex.scss"
   import "./css/bootstrap.scss";
+  import "./css/common.scss"
 
 </script>
 
@@ -15,9 +16,9 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css" />
 
-    <link rel="stylesheet" href="css/common.css" />
+    <!-- <link rel="stylesheet" href="css/common.css" /> -->
     <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- <link rel="stylesheet" href="css/responsive.css" /> -->
   <link rel="stylesheet" href="css/projects.css" />
 </svelte:head>
 
@@ -34,6 +35,7 @@
 
 <style lang="scss">
   :global {
+    @import "css/common.scss";
     @import "css/sections.scss";
   }
   .home {

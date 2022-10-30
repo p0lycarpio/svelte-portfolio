@@ -7,7 +7,6 @@
   import wavify from "../components/wavify";
   import Tooltip from "../components/Tooltip.svelte";
 
-
   const dispatch = createEventDispatcher();
   let wave;
 
@@ -23,7 +22,6 @@
       speed: 0.2,
     });
   });
-
 </script>
 
 <header>
@@ -47,9 +45,12 @@
         Étudiant en licence professionnelle <a
           href="https://www.iut-larochelle.fr/formations/departement-informatique/licence-professionnelle-developpeur-cloud/"
           target="_blank"
-          ><Tooltip text="Conception, Développement et Tests de Logiciels">CDTL option développeur cloud</Tooltip></a>
+          rel="noreferrer"
+          ><Tooltip text="Conception, Développement et Tests de Logiciels"
+            >CDTL option développeur cloud</Tooltip
+          ></a>
         et en alternance chez
-        <a href="https://cgi.com/fr" target="_blank">CGI</a> à Niort.
+        <a href="https://cgi.com/fr" target="_blank" rel="noreferrer">CGI</a> à Niort.
       </p>
 
       <div class="multi-container">
@@ -61,13 +62,13 @@
       </div>
     </div>
     <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave">
-      <path bind:this={wave} />
+      <path bind:this={wave} style="transition: fill 0.3s!important;" />
     </svg>
   </section>
   <!-- Presentation section END -->
 </header>
 
-<style>
+<style lang="scss">
   .logo {
     max-width: 600px;
     display: block;
@@ -152,9 +153,9 @@
 
   .multi-button {
     display: flex;
-    width: 24%;
     margin: 0 auto;
     margin-bottom: 60px;
+    max-width: 450px;
   }
 
   .multi-button a {

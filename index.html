@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <title>Arsène Reymond</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Arsène Reymond" />
-    <meta
-      name="description"
-      content="Portfolio et CV d'Arsène Reymond : développement web, infographie, montage vidéo et mise en page."
-    />
-    <meta name="robots" content="index, nofollow, noarchive, noimageindex" />
-    <meta name="theme-color">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="site/img/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate icon" href="site/img/favicon.ico" type="image/x-icon" />
+<head>
+  <title>Arsène Reymond</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Arsène Reymond" />
+  <meta name="description"
+    content="Portfolio et CV d'Arsène Reymond : développement web, infographie, montage vidéo et mise en page." />
+  <meta name="robots" content="index, nofollow, noarchive, noimageindex" />
+  <meta name="theme-color">
 
-  </head>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="site/img/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="site/img/favicon.ico" type="image/x-icon" />
 
-  <body>
-    <div id="app"></div>
-    <noscript class="container text-center alert alert-danger">
-      <h4 class="alert-heading">Petit problème...</h4>
-      <p>
-        Ce site nécessite l'activation de JavaScript. Voici
-        <a href="https://www.enable-javascript.com/fr/" target="_blank" class="alert-link">les instructions</a>
-        pour activer JavaScript dans votre navigateur Web.
-      </p>
-    </noscript>
-  </body>
+  <style>
+    noscript {
+      max-width: 1000px;
+      display: block;
+      margin: 2em auto;
+      padding: 1em;
+      font-family: system-ui
+    }
 
-  <script type="module" src="/src/main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/yall-js@3.2.0/dist/yall.min.js"></script>
+    noscript a,
+    noscript h2 {
+      color: #ca0000 !important
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <noscript class="container">
+    <h2 class="alert-heading">Houston, we have a problem</h2>
+    <p>
+      Ce site nécessite l'activation de JavaScript. Voici
+      <a href="https://www.enable-javascript.com/fr/" target="_blank"><strong>les instructions</strong></a>
+      pour activer JavaScript dans votre navigateur.
+    </p>
+  </noscript>
+</body>
+
+<script type="module" src="/src/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/yall-js@3.2.0/dist/yall.min.js"></script>
+
 </html>
