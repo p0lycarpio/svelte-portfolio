@@ -1,4 +1,4 @@
-<section class="container-xl anmCSS fadeInUp" id="compétences">
+<section class="container-xl animate fadeIn" id="compétences">
   <div class="row row-padded">
     <div class="col-md-3">
       <h2 class="fh5co-section-heading ">
@@ -8,7 +8,7 @@
     </div>
     <div class="col-md-9 col-md-push-1 mt-md-4">
       <h5>Développement web & programmation</h5>
-      <div class="align-items-center mt-3 mb-4 soft anmCSS bounceInLeft">
+      <div class="align-items-center mt-3 mb-4 soft animate bounceInLeft">
         <span style="color:#E54C21" title="HTML5">&lt;/html&gt;</span>
         <span style="color:#0070BA" title="CSS3 & Sass">.css</span>
         <span style="color:#F7E018" title="JavaScript">js</span>
@@ -18,14 +18,14 @@
       </div>
       <h5>Frameworks & librairies</h5>
 
-      <div class="align-items-center mt-3 mb-4 soft anmCSS bounceInLeft">
+      <div class="align-items-center mt-3 mb-4 soft animate bounceInLeft">
         <svg>
           <title>CMS WordPress</title>
           <use href="/icons.svg#wordpress" /></svg>
       </div>
 
       <h5>Outils et environnements</h5>
-      <div class="align-items-center mt-3 mb-4 soft anmCSS bounceInLeft">
+      <div class="align-items-center mt-3 mb-4 soft animate bounceInLeft">
         <svg>
           <title>Node.js</title>
           <use href="/icons.svg#nodejs" /></svg>
@@ -40,7 +40,7 @@
           <use href="/icons.svg#linux" /></svg>
       </div>
       <h5>Création multimédia</h5>
-      <div class="align-items-center mt-3 mb-4 soft anmCSS bounceInLeft">
+      <div class="align-items-center mt-3 mb-4 soft animate bounceInLeft">
         <svg>
           <title>Adobe Photoshop</title>
           <use href="/icons.svg#ps" /></svg>

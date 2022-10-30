@@ -20,7 +20,7 @@
 
 <!-- Footer section START -->
 <footer id="contact">
-  <div class="container d-flex justify-content-center footer">
+  <div class="container d-flex justify-content-center footer animate fadeIn">
     <div class="contact-form">
       <div class="h-contact d-flex flex-column flex-sm-row">
         <h1>Me contacter</h1>
@@ -64,7 +64,7 @@
     class="btn btn-outline-light btn-lg back-to-top d-none d-md-block"
     title="Retour en haut"><i class="fa-chevron-up" /></a>
 </footer>
-<div class="copyright">
+<div class="copyright animate fadeInUp">
   <span title="Arsène Reymond"
     >
     {#if commitDate}

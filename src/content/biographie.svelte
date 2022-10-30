@@ -9,7 +9,7 @@
   age = Math.abs(date.getUTCFullYear() - 1970);
 </script>
 
-<section class="container-xl anmCSS fadeInUp" id="bio" data-wow-delay=".75s" bind:this={biographie}>
+<section class="container-xl animate fadeInUp" id="bio" data-wow-delay=".75s" bind:this={biographie}>
   <div class="row row-padded">
     <div class="col-md-3">
       <h2 class="fh5co-section-heading ">

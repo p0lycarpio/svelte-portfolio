@@ -41,15 +41,6 @@ p {
   line-height: 1.8;
 }
 
-section,
-#fh5co-main{
-  transition: 0.3s;
-}
-
-.wave path {
-  transition: width 0s;
-}
-
 strong {
   color: var(--text-color);
 }
@@ -62,7 +53,7 @@ project:hover,
 
 project,
 .card {
-  transition: all 0.5s;
+  transition: all .25s;
   box-shadow: 0 4px 4px var(--cardShadow);
 }
 
@@ -90,7 +81,6 @@ project > .subtitle {
 
 project,
 .card {
-  transition: 0.24s;
   overflow: hidden;
   position: relative;
   display: block;
