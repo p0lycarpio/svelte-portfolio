@@ -12,18 +12,6 @@
 
   let open = true;
   const toggle = () => (open = !open);
-
-  // var biographie = document.querySelector('.row-padded');
-
-  // biographie.addEventListener('animationend', () => {
-  //     if(jQuery(window).width() >= 0) {
-  //     jQuery('#message-top').delay(5000).slideToggle('slow');
-  //     }
-  // });
-
-  function close() {
-    jQuery("#message-top").slideToggle("slow");
-  }
 </script>
 
 {#if open}

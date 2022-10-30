@@ -1,18 +1,12 @@
 <script>
-  import Navbar from "../components/Navbar.svelte";
-  import Banner from "../components/BannerTop.svelte";
-  import { createEventDispatcher } from "svelte";
   import { onMount } from "svelte";
+  import Navbar from "../components/Navbar.svelte";
   import Logo from "../assets/logo.svelte";
   import wavify from "../components/wavify";
   import Tooltip from "../components/Tooltip.svelte";
 
-  const dispatch = createEventDispatcher();
   let wave;
 
-  function forward(event) {
-    dispatch("message", event.detail);
-  }
   onMount(() => {
     wavify(wave, {
       height: 10,
@@ -25,13 +19,8 @@
 </script>
 
 <header>
-  {#if 1 === 2}
-    <Banner on:message={forward} />
-  {/if}
-
   <Navbar />
 
-  <!-- Presentation section START -->
   <section class="hero-section">
     <div class="container-fluid text-center anmCSS backInDown">
       <div class="hero-text">
@@ -56,7 +45,6 @@
       <div class="multi-container">
         <div class="multi-button btn-group">
           <a class="btn cv" href="content/res/doc/CV.pdf">CV</a>
-          <!-- <a class="btn portfolio" href="content/res/doc/Portfolio.pdf">Portfolio</a> -->
           <a class="btn portfolio" href="#projects">Portfolio</a>
         </div>
       </div>
@@ -65,7 +53,6 @@
       <path bind:this={wave} style="transition: fill 0.3s!important;" />
     </svg>
   </section>
-  <!-- Presentation section END -->
 </header>
 
 <style lang="scss">
@@ -190,12 +177,12 @@
 
   .multi-button a:hover:before,
   .multi-button a:focus:before {
-    font-family: "fa-pro-used";
+    font-family: "icomoon";
     margin-right: 8px;
   }
 
   .multi-button a.cv:hover:before {
-    content: "\e904";
+    content: "\f15b";
   }
 
   /* .multi-button a.portfolio:hover:before {
@@ -203,7 +190,7 @@
 } */
 
   .multi-button a.portfolio:hover:before {
-    content: "\e908";
+    content: "\f063";
   }
 
   .multi-button:hover a:focus:not(:hover) {
