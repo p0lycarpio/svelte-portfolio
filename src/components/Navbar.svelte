@@ -216,8 +216,9 @@
     nav {
       background-color: var(--hero-sect);
       color: #666;
-      border-bottom: 1px solid #afafaf;
+      // border-bottom: 1px solid #afafaf;
       width: 100%;
+      box-shadow: 0 4px 4px var(--cardShadow);
     }
     nav {
       height: 61px;

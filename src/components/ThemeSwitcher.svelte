@@ -21,7 +21,7 @@
       setTheme("dark-mode", "#0D1728");
     }
   }
-  
+
   // Immediately invoked function to set the theme on initial load
   onMount(() => {
     if (
@@ -29,10 +29,8 @@
       localStorage.getItem("theme") === "dark-mode"
     ) {
       setTheme("dark-mode", "#0D1728");
-      console.log("dark init");
     } else {
       setTheme("light-mode", "#4978c8");
-      console.log("light init");
     }
   });
 </script>
