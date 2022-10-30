@@ -1,5 +1,21 @@
 <script>
+  import { onMount } from "svelte";
+
   let getYear = new Date().getFullYear();
+  let url = "https://api.github.com/repos/p0lycarpio/portfolio/commits?&page=1&per_page=1"; //TODO: public repo
+  let commitDate;
+
+  onMount(async () => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        commitDate = new Date(data[0].commit.author.date);
+      })
+      .catch((error) => {
+        console.log(error);
+        return [];
+      });
+  });
 </script>
 
 <!-- Footer section START -->
@@ -50,7 +66,11 @@
 </footer>
 <div class="copyright">
   <span title="Arsène Reymond"
-    >Copyright &copy; {getYear} Tous droits réservés | Arsène Reymond</span>
+    >
+    {#if commitDate}
+    Mis à jour le {commitDate.toLocaleDateString("fr")}<br />
+    {/if}
+    {getYear}, Tous droits réservés | Arsène Reymond</span>
 </div>
 
 <!-- Footer section END -->
@@ -144,7 +164,7 @@
     padding: 15px;
     font-size: 12px;
     color: #fff;
-    background-color: #000000;
+    background-color: #000;
     line-height: normal;
     position: fixed;
     text-align: center;
@@ -162,59 +182,59 @@
   }
 
   @media only screen and (max-height: 722px) {
-  footer {
-    height: 90vh;
-  }
-  .contact-form {
-    top: 18%;
-  }
-}
-
-@media only screen and (max-height: 560px), (max-width: 575px) {
-  .contact-form,
-  footer {
-    position: relative;
+    footer {
+      height: 90vh;
+    }
+    .contact-form {
+      top: 18%;
+    }
   }
 
-  footer {
-    padding-bottom: 0;
-    top: 0;
+  @media only screen and (max-height: 560px), (max-width: 575px) {
+    .contact-form,
+    footer {
+      position: relative;
+    }
+
+    footer {
+      padding-bottom: 0;
+      top: 0;
+    }
+
+    .email {
+      margin-top: 20px;
+    }
+
+    .contact-form {
+      width: 80%;
+    }
+
+    .h-contact {
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 0;
+    }
+    input,
+    textarea {
+      font-size: 14px;
+    }
+    .status-form {
+      margin-top: 2em;
+    }
   }
 
-  .email {
-    margin-top: 20px;
+  @media only screen and (max-width: 767px) {
+    .contact-form {
+      width: 80%;
+    }
   }
 
-  .contact-form {
-    width: 80%;
+  @media only screen and (min-height: 1000px) {
+    footer {
+      height: 50vh;
+    }
+    .contact-form {
+      top: 52%;
+    }
   }
-
-  .h-contact {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 0;
-  }
-  input,
-  textarea {
-    font-size: 14px;
-  }
-  .status-form {
-    margin-top: 2em;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .contact-form {
-    width: 80%;
-  }
-}
-
-@media only screen and (min-height: 1000px) {
-  footer {
-    height: 50vh;
-  }
-  .contact-form {
-    top: 52%;
-  }
-}
 </style>
