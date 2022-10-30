@@ -45,7 +45,7 @@
   }
 </script>
 
-<section class="container-xl anmCSS fadeInUp" id="projects" bind:this={root}>
+<section class="container-xl animate fadeInUp" id="projects" bind:this={root}>
   <div class="row row-padded">
     <div class="col-md-3">
       <h2 class="fh5co-section-heading">

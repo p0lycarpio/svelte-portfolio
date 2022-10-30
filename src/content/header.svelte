@@ -22,7 +22,7 @@
   <Navbar />
 
   <section class="hero-section">
-    <div class="container-fluid text-center anmCSS backInDown">
+    <div class="container-fluid text-center animate backInDown">
       <div class="hero-text">
         <div class="logo">
           <Logo />
@@ -49,8 +49,8 @@
         </div>
       </div>
     </div>
-    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave">
-      <path bind:this={wave} style="transition: fill 0.3s!important;" />
+    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave animate slideInUp">
+      <path bind:this={wave}/>
     </svg>
   </section>
 </header>

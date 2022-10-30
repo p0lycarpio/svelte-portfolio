@@ -175,7 +175,7 @@
     height: 120vh;
     background-color: #00000080;
     z-index: 3;
-    transition: all 1s ease-out;
+    transition: all .5s ease-out;
   }
 
   .close-x {

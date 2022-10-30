@@ -12,10 +12,6 @@
 </script>
 
 <svelte:head>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css" />
-
     <!-- <link rel="stylesheet" href="css/common.css" /> -->
     <link rel="stylesheet" href="css/general.css" />
     <!-- <link rel="stylesheet" href="css/responsive.css" /> -->
