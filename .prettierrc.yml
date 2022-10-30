@@ -1,5 +1,5 @@
 printWidth: 100
-bracketSameLine: false
+bracketSameLine: true
 svelteBracketNewLine: false
 useTabs: false
 tabWidth: 2
