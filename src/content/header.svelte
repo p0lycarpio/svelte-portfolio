@@ -1,21 +1,17 @@
 <script>
-  import { onMount } from "svelte";
   import Navbar from "../components/Navbar.svelte";
   import Logo from "../assets/logo.svelte";
-  import wavify from "../components/wavify";
   import Tooltip from "../components/Tooltip.svelte";
-
-  let wave;
-
-  onMount(() => {
-    wavify(wave, {
-      height: 10,
-      bones: 4,
-      amplitude: 20,
-      color: "var(--bkg-color)",
-      speed: 0.2,
-    });
-  });
+  import Wavify from "../components/wavify.svelte";
+  
+  let w, h;
+  let wave = {
+    height: 10,
+    amplitude: 20,
+    speed: 0.2,
+    bones: 4,
+    color: "var(--bkg-color)"
+  }
 </script>
 
 <header>
@@ -49,9 +45,9 @@
         </div>
       </div>
     </div>
-    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave animate slideInUp">
-      <path bind:this={wave}/>
-    </svg>
+    <div bind:offsetWidth={w} bind:offsetHeight={h} class="animate slideInUp" style="height: 50px;">
+      <Wavify options={wave} parentWidth={w} parentHeight={h}/>
+    </div>
   </section>
 </header>
 
