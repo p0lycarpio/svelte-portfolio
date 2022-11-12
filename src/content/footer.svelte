@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
 
   let getYear = new Date().getFullYear();
-  let url = "https://api.github.com/repos/p0lycarpio/portfolio/commits?&page=1&per_page=1"; //TODO: public repo
+  let url = "https://api.github.com/repos/p0lycarpio/portfolio/commits?&page=1&per_page=1";
   let commitDate;
 
   onMount(async () => {
@@ -16,6 +16,10 @@
         return [];
       });
   });
+
+  function goTop() {
+    document.body.scrollIntoView();
+  }
 </script>
 
 <!-- Footer section START -->
@@ -25,13 +29,13 @@
       <div class="h-contact d-flex flex-column flex-sm-row">
         <h1>Me contacter</h1>
         <div class="d-block social">
-          <a href="mailto:***REMOVED***" class="social-icon mr-3" title="e-mail"
+          <a href="mailto:***REMOVED***" class="social-icon me-3" title="e-mail"
             ><i class="fas fa-envelope" /></a>
-          <a href="linkedin.com" class="social-icon ml-3" title="LinkedIn"
+          <a href="linkedin.com" class="social-icon ms-3" title="LinkedIn"
             ><i class="fab fa-linkedin" /></a>
         </div>
       </div>
-      <form id="contact" name="contact" netlify>
+      <form id="contact" name="contact" method="POST" netlify>
         <p class="status-form">
           <a href="mailto:***REMOVED***" style="color:#fff; background:transparent"
             >***REMOVED***</a>
@@ -43,14 +47,16 @@
           name="email"
           placeholder="Votre e-mail"
           id="email"
-          value="" />
+          value=""
+          required />
         <label for="message">Message</label>
         <textarea
           name="message"
           placeholder="Saisissez votre message"
           id="message"
           cols="55"
-          rows="4" />
+          rows="4"
+          required />
         <div class="d-flex justify-content-center">
           <button type="submit" class="btn btn-outline-light" name="submit" id="submit"
             >Envoyer</button>
@@ -58,17 +64,17 @@
       </form>
     </div>
   </div>
-  <a
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <button
     id="back-to-top"
-    href="#top"
+    on:click={goTop}
     class="btn btn-outline-light btn-lg back-to-top d-none d-md-block"
-    title="Retour en haut"><i class="fa-chevron-up" /></a>
+    title="Retour en haut"><i class="fa-chevron-up" /></button>
 </footer>
 <div class="copyright animate fadeInUp">
-  <span title="Arsène Reymond"
-    >
+  <span title="Arsène Reymond">
     {#if commitDate}
-    Mis à jour le {commitDate.toLocaleDateString("fr")}<br />
+      Mis à jour le {commitDate.toLocaleDateString("fr")}<br />
     {/if}
     {getYear}, Tous droits réservés | Arsène Reymond</span>
 </div>
@@ -107,12 +113,13 @@
   .social-icon {
     font-size: 2.2rem;
     height: 32px;
+    text-decoration: none;
   }
 
   .social-icon:hover,
-  .social-icon,
+  .social-icon:focus,
   .social-icon:active {
-    color: #4978c8;
+    color: var(--blue) !important;
     background-color: transparent !important;
   }
 
@@ -157,7 +164,7 @@
 
   input:focus,
   textarea:focus {
-    box-shadow: 0 0 0 0.2rem #0056b3;
+    box-shadow: 0 0 0 0.2rem var(--blue);
   }
 
   .copyright {
@@ -201,10 +208,6 @@
       top: 0;
     }
 
-    .email {
-      margin-top: 20px;
-    }
-
     .contact-form {
       width: 80%;
     }
@@ -220,6 +223,7 @@
     }
     .status-form {
       margin-top: 2em;
+      text-align: center;
     }
   }
 

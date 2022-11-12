@@ -1,10 +1,10 @@
 <section class="container-xl animate fadeIn" id="compétences">
   <div class="row row-padded">
     <div class="col-md-3">
-      <h2 class="fh5co-section-heading ">
-        Compétences<span class="fh5co-border" />
+      <h2 class="section-heading">
+        Compétences<span class="section-border" />
       </h2>
-      <p class="info">Logiciels et langages maitrisés</p>
+      <p class="section-subtitle">Logiciels et langages maitrisés</p>
     </div>
     <div class="col-md-9 col-md-push-1 mt-md-4">
       <h5>Développement web & programmation</h5>
@@ -70,19 +70,16 @@
   #compétences svg {
     width: 50px;
   }
-  
+
   .soft :first-child {
     margin-left: 0;
   }
   .soft svg {
     height: 50px;
     width: 50px;
-    margin: 1em;
+    margin-right: 2em;
+    margin-bottom: 2em;
     transition: all 0.5s;
-  }
-
-  .soft span svg:first-child {
-    margin-left: 0 !important;
   }
 
   .soft span {

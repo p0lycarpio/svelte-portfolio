@@ -1,5 +1,5 @@
 $icomoon-font-family: "icomoon" !default;
-$icomoon-font-path: "fonts" !default;
+$icomoon-font-path: "/fonts" !default;
 
 $fa-linkedin: "\f08c";
 $fa-arrow-down: "\f063";
@@ -9,3 +9,35 @@ $fa-chevron-up: "\f077";
 $fa-briefcase: "\f0b1";
 $fa-envelope: "\f0e0";
 $fa-graduation-cap: "\f19d";
+
+@mixin light-colors {
+    --text-color: #575757;
+    --bkg-color: #fff;
+    --h-color: #40424a;
+    --section-heading: #000;
+    --hero-sect: #e5f0fb;
+    --black-white: #000;
+    --white-black: #fff;
+    --card-color: #fff;
+    --cardIcon: #a0a0a0;
+    --cardShadow: rgba(0, 0, 0, 0.1);
+    --cardHover: rgba(0, 0, 0, 0.3);
+    --blue: #4978c8;
+}
+
+@mixin dark-colors {
+    --text-color: #eee;
+    --bkg-color: #121212;
+    --h-color: #eee;
+    --section-heading: #eee;
+    --hero-sect: #202945;
+    --black-white: #fff;
+    --white-black: #000;
+    --card-color: #2b2b2b;
+    --cardIcon: #fff;
+    --cardShadow: rgba(255, 255, 255, 0.1);
+    --cardHover: rgba(255, 255, 255, 0.3);
+    --blue: #4978c8;
+}
+
+$enable-negative-margins: true;

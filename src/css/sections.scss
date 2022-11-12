@@ -1,28 +1,13 @@
-a:active,
-a:focus,
-a:hover {
-  outline: 0;
-  background-color: var(--hero-sect);
-}
-
-#fh5co-main {
-  clear: both;
-  background: var(--bkg-color);
-  padding-bottom: 4em;
-}
-
-@media only screen and (max-width: 767px) {
-  .info {
-    display: none;
-  }
-  #bio p {
-    text-align: justify;
-  }
+.home {
+  background: var(--hero-sect);
+  position: relative;
+  z-index: 5;
 }
 
 main {
-  -webkit-box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.2);
+  clear: both;
+  background: var(--bkg-color);
+  padding-bottom: 4em;
   box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -30,36 +15,31 @@ main {
   padding: 3em 0;
 }
 
-.mt-cpN {
-  margin-top: -34px;
-}
-
-.fh5co-section-heading {
+.section-heading {
   font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
   margin: 0;
   font-size: 24px;
   position: relative;
-  font-weight: normal;
   padding-bottom: 10px;
   margin-bottom: 1em;
-  color: var(--fh5co-section-heading);
+  color: var(--section-heading);
   margin-right: 50px;
   @media (max-width: 768px) {
     margin-right: 0;
   }
 }
 
-.fh5co-section-heading .fh5co-border {
+.section-border {
   display: block;
   width: 100%;
   bottom: 0;
   height: 4px;
   position: absolute;
-  background: #4978c8;
+  background: var(--blue);
   border-radius: 4px;
 }
 
-.info {
+.section-subtitle {
   margin-right: 50px;
   font-size: 14px;
 }
@@ -71,15 +51,20 @@ main {
   cursor: pointer;
   outline: none;
   color: var(--text-color);
+  &:hover {
+    color: var(--blue);
+  }
+  &:focus {
+    @include focused;
+  }
+  &.selected {
+    color: var(--blue);
+    font-weight: bold;
+  }
 }
 
 .filters button input[type="radio"] {
   display: none;
-}
-
-.filters button.selected {
-  color: #4978c8;
-  font-weight: bold;
 }
 
 .card {
@@ -91,31 +76,16 @@ main {
   font-size: 2em;
 }
 
-#compétences span {
-  font-size: 24px;
-  font-weight: bold;
-}
+@media only screen and (max-width: 767px) {
+  .section-subtitle {
+    display: none;
+  }
 
-#compétences img {
-  width: 50px;
-}
+  #bio p {
+    text-align: justify;
+  }
 
-.soft img {
-  margin: 1em;
-  transition: all 0.5s;
-}
-
-.soft span {
-  margin: 0.25em 1em;
-  cursor: default;
-  transition: all 0.5s;
-}
-
-.soft img:hover,
-.soft span:hover {
-  transform: scale(1.1);
-}
-
-.sql {
-  color: var(--black-white);
+  .mt-n2 {
+    margin-top: -1.85rem !important;
+  }
 }
