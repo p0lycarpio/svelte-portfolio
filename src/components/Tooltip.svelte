@@ -38,11 +38,11 @@
   }
   [data-tooltip]:after {
     position: absolute;
-    bottom: 98%;
+    bottom: 100%;
     left: 50%;
-    border-top: 6px solid var(--black-white);
-    border-right: 6px solid transparent;
-    border-left: 6px solid transparent;
+    border-top: 5px solid var(--black-white);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
     content: " ";
     font-size: 0;
     line-height: 0;

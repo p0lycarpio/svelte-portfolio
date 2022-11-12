@@ -48,10 +48,10 @@
 <section class="container-xl animate fadeInUp" id="projects" bind:this={root}>
   <div class="row row-padded">
     <div class="col-md-3">
-      <h2 class="fh5co-section-heading">
-        Portfolio<span class="fh5co-border" />
+      <h2 class="section-heading">
+        Portfolio<span class="section-border" />
       </h2>
-      <p class="info">Mes projets</p>
+      <p class=section-subtitle>Mes projets</p>
       <div id="filtres" class="d-none d-md-block">
         <div class="filters button-group">
           <button class:selected={current === "all"} on:click={showall}>Tout</button><br />
@@ -70,7 +70,7 @@
 
     <div class="col-md-9 col-md-push-1">
       <div id="wrapper" style="width: 100%;">
-        <div class="row elements mt-cpN mt-md-0">
+        <div class="row elements mt-md-0 mt-n2">
           <!-- elements -->
 
           {#each filterItems(projectsData, more) as project}
@@ -112,4 +112,3 @@
     </div>
   </div>
 </section>
-

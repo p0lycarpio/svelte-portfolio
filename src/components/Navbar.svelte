@@ -106,7 +106,7 @@
     padding: 8px 8px 8px 52px;
     text-decoration: none;
     font-size: 25px;
-    font-weight: 450;
+    font-weight: 500;
     font-family: "IBM Plex Sans";
     color: var(--black-white);
     display: block;

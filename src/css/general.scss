@@ -1,0 +1,108 @@
+// Global styles
+//
+// Provide general styles on typography, colors and links.
+ 
+* {
+  scroll-behavior: smooth;
+}
+
+/* Images */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+/* Typography */
+h1,
+p {
+  color: var(--text-color);
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Muli", system-ui, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--h-color);
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+h1 {
+  font-size: 38px;
+  padding-top: 24px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 16px;
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+strong {
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* A11y */
+@mixin focused {
+  // background-color: var(--h-color)!important;
+  // color: var(--white-black) !important;
+  outline: var(--black-white) auto 1px;
+  outline-offset: 2px;
+}
+
+a:focus {
+  @include focused;
+}
+
+/* Colors themes */
+@mixin filter-reset {
+  & img {
+    filter: brightness(1) contrast(1);
+  }
+}
+@mixin filter-dark {
+  & img {
+    filter: brightness(0.8) contrast(1.1);
+  }
+}
+
+body {
+  @include light-colors();
+  @include filter-reset();
+  &.dark-mode {
+    @include dark-colors();
+    @include filter-dark()
+  }
+}
+// If the default theme is dark
+@media (prefers-color-scheme: dark) {
+  body {
+    @include dark-colors();
+    @include filter-dark();
+    &.light-mode {
+      @include light-colors();
+      @include filter-reset()
+    }
+  }
+}

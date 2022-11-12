@@ -5,22 +5,13 @@
   import Parcours from "./content/parcours.svelte";
   import Skills from "./content/competences.svelte";
   import Footer from "./content/footer.svelte";
-  import "@ibm/plex/scss/ibm-plex.scss"
-  import "./css/bootstrap.scss";
-  import "./css/common.scss"
-
+  import "@fontsource/ibm-plex-sans/latin.css";
+  import "./css/bootstrap.scss"
 </script>
 
-<svelte:head>
-    <!-- <link rel="stylesheet" href="css/common.css" /> -->
-    <link rel="stylesheet" href="css/general.css" />
-    <!-- <link rel="stylesheet" href="css/responsive.css" /> -->
-  <link rel="stylesheet" href="css/projects.css" />
-</svelte:head>
-
-<div class="home" id="#">
+<div class="home">
   <Header />
-  <main id="fh5co-main">
+  <main>
     <Bio />
     <Projects />
     <Parcours />
@@ -31,10 +22,6 @@
 
 <style lang="scss">
   :global {
-    @import "css/common.scss";
-    @import "css/sections.scss";
-  }
-  .home {
-    background: var(--hero-sect);
+    @import "css/styles.scss";
   }
 </style>
