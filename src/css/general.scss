@@ -1,7 +1,7 @@
 // Global styles
 //
 // Provide general styles on typography, colors and links.
- 
+
 * {
   scroll-behavior: smooth;
 }
@@ -63,6 +63,10 @@ a {
   }
 }
 
+.btn:hover {
+  text-decoration: none !important;
+}
+
 /* A11y */
 @mixin focused {
   // background-color: var(--h-color)!important;
@@ -75,34 +79,40 @@ a:focus {
   @include focused;
 }
 
-/* Colors themes */
+/* Colors themes mixins */
 @mixin filter-reset {
-  & img {
-    filter: brightness(1) contrast(1);
-  }
-}
-@mixin filter-dark {
-  & img {
-    filter: brightness(0.8) contrast(1.1);
-  }
+  filter: brightness(1) contrast(1);
 }
 
+@mixin filter-dark {
+  filter: brightness(0.85) contrast(1.1);
+}
+
+// Apply
 body {
   @include light-colors();
-  @include filter-reset();
+  & img {
+    @include filter-reset();
+  }
   &.dark-mode {
     @include dark-colors();
-    @include filter-dark()
+    & img {
+      @include filter-dark();
+    }
   }
 }
 // If the default theme is dark
 @media (prefers-color-scheme: dark) {
   body {
     @include dark-colors();
-    @include filter-dark();
+    & img {
+      @include filter-dark();
+    }
     &.light-mode {
       @include light-colors();
-      @include filter-reset()
+      & img {
+        @include filter-reset();
+      }
     }
   }
 }

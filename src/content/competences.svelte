@@ -1,3 +1,7 @@
+<script>
+  import Soft from "../components/SoftwareIcon.svelte";
+</script>
+
 <section class="container-xl animate fadeIn" id="compétences">
   <div class="row row-padded">
     <div class="col-md-3">
@@ -8,88 +12,46 @@
     </div>
     <div class="col-md-9 col-md-push-1 mt-md-4">
       <h5>Développement web & programmation</h5>
-      <div class="align-items-center mt-3 mb-4 soft animate bounceInLeft">
-        <span style="color:#E54C21" title="HTML5">&lt;/html&gt;</span>
-        <span style="color:#0070BA" title="CSS3 & Sass">.css</span>
-        <span style="color:#F7E018" title="JavaScript">js</span>
-        <span style="color:#777BB3" title="PHP">&lt;?&thinsp;php</span>
-        <span style="color: var(--black-white)" title="Bases de données MySQL et requêtes SQL"
-          >SQL</span>
+      <div class="d-flex flex-wrap align-items-center mb-4 soft animate bounceInLeft">
+        <Soft color="#E54C21" title="HTML5">&lt;/html&gt;</Soft>
+        <Soft color="#0070BA" title="CSS3 & Sass">.css</Soft>
+        <Soft color="#F7E018" title="JavaScript">js</Soft>
+        <Soft color="#777BB3" title="PHP">&lt;?&thinsp;php</Soft>
+        <Soft color="var(--black-white)" title="Bases de données MySQL et requêtes SQL"
+          >SQL</Soft>
       </div>
-      <h5>Frameworks & librairies</h5>
 
-      <div class="align-items-center mt-3 mb-4 soft animate bounceInLeft">
-        <svg>
-          <title>CMS WordPress</title>
-          <use href="/icons.svg#wordpress" /></svg>
+      <h5>Frameworks & librairies</h5>
+      <div class="d-flex flex-wrap align-items-center soft animate bounceInLeft">
+        <Soft color="#77838f" title="WordPress" svgid="#wordpress" />
       </div>
 
       <h5>Outils et environnements</h5>
-      <div class="align-items-center mt-3 mb-4 soft animate bounceInLeft">
-        <svg>
-          <title>Node.js</title>
-          <use href="/icons.svg#nodejs" /></svg>
-        <svg>
-          <title>Git</title>
-          <use href="/icons.svg#git" /></svg>
-        <svg>
-          <title>Référencement & SEO</title>
-          <use href="/icons.svg#googleanalytics" /></svg>
-        <svg>
-          <title>Systèmes Linux</title>
-          <use href="/icons.svg#linux" /></svg>
+      <div class="d-flex flex-wrap align-items-center soft animate bounceInLeft">
+        <Soft color="#70db4f" title="Node.js" svgid="#nodejs" />
+        <Soft color="#e6592e" title="Git" svgid="#git" />
+        <Soft color="#F5C021" title="Référencement & SEO" svgid="#googleanalytics" />
+        <Soft color="#F5C021" title="Systèmes Linux" svgid="#linux" />
       </div>
+
       <h5>Création multimédia</h5>
-      <div class="align-items-center mt-3 mb-4 soft animate bounceInLeft">
-        <svg>
-          <title>Adobe Photoshop</title>
-          <use href="/icons.svg#ps" /></svg>
-        <svg>
-          <title>Adobe Illustrator</title>
-          <use href="/icons.svg#ai" /></svg>
-        <svg>
-          <title>Adobe InDesign</title>
-          <use href="/icons.svg#id" /></svg>
-        <svg>
-          <title>Adobe Premiere Pro</title>
-          <use href="/icons.svg#pr" /></svg>
-        <svg>
-          <title>Adobe After Effects</title>
-          <use href="/icons.svg#ae" /></svg>
+      <div class="d-flex flex-wrap align-items-center soft animate bounceInLeft">
+        <Soft color="#31A8FF" title="Adobe Photoshop" svgid="#ps" />
+        <Soft color="#FF9A00" title="Adobe Illustrator" svgid="#ai" />
+        <Soft color="#FF3366" title="Adobe InDesign" svgid="#id" />
+        <Soft color="#9999FF" title="Adobe Premiere Pro" svgid="#pr" />
+        <Soft color="#9999FF" title="Adobe After Effects" svgid="#ae" />
       </div>
     </div>
   </div>
 </section>
 
-<style lang="scss">
-  #compétences span {
-    font-size: 24px;
-    font-weight: 600;
+<style>
+  h5 {
+    margin-bottom: 1.4em;
   }
 
-  #compétences svg {
-    width: 50px;
-  }
-
-  .soft :first-child {
+  .soft:first-child {
     margin-left: 0;
-  }
-  .soft svg {
-    height: 50px;
-    width: 50px;
-    margin-right: 2em;
-    margin-bottom: 2em;
-    transition: all 0.5s;
-  }
-
-  .soft span {
-    margin: 0.25em 1em;
-    cursor: default;
-    transition: all 0.5s;
-  }
-
-  .soft svg:hover,
-  .soft span:hover {
-    transform: scale(1.1);
   }
 </style>

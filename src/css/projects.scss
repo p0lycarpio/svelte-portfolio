@@ -1,15 +1,8 @@
-/* Reset des éléments texte projet */
 project h1,
 project h2,
 project h3,
 project p {
-  color: unset;
-  font-family: unset;
-  white-space: unset;
-  font-size: unset;
   padding-top: unset;
-
-  font-size: unset;
   color: unset;
   line-height: unset;
   margin-bottom: unset;
@@ -24,36 +17,27 @@ project ::selection {
   background-color: #fff;
 }
 
-slider {
+project .project-media {
   max-width: 100%;
-}
-
-#wrapper {
-  width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-project slider {
   border-radius: 4px;
   position: absolute;
-  top: 35px;
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  top: 45px;
   object-position: 50% 0;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 
-slider shot {
-  transition: 0.5s;
-  position: absolute;
+.project-media * {
   width: 100%;
-}
-
-project slider * {
   border-radius: 4px;
 }
 
-.cpqb project slider {
+.cpqb project .project-media {
   object-position: 50% 30%;
+}
+
+project h1 {
+  font-size: 1.5em;
+  margin: 4px 0;
 }
 
 project h3 {
@@ -62,12 +46,14 @@ project h3 {
   font-weight: 500;
   margin-top: 45px;
   margin-bottom: 0;
+  font-family: unset;
 }
 
 project h2 {
   opacity: 0.7;
   font-size: 14px;
   font-weight: 500;
+  font-family: unset;
 }
 
 project p {
@@ -79,17 +65,8 @@ project p {
   line-height: 1.8em;
 }
 
-.lien {
-  margin-top: -20px;
-}
-
-#see-more {
-  color: var(--black-white);
-}
-
-#see-more:focus {
-  background-color: var(--h-color) !important;
-  color: var(--white-black) !important;
+project .lien {
+  margin-top: -14px;
 }
 
 project:hover,
@@ -98,68 +75,23 @@ project:hover,
   transform: translate(0, -3px);
 }
 
-project,
-.card {
-  transition: all 0.25s;
-  box-shadow: 0 4px 4px var(--cardShadow);
-}
-
-.card-title {
-  margin: 0.75em 0;
-}
-
-.title {
-  font-size: 64px;
-  font-weight: 900;
-  margin-bottom: 2px;
-}
-
-project > .subtitle {
-  font-weight: 600;
-  font-size: 25px;
-}
-
-.description {
-  color: #666;
-  font-weight: 800;
-  margin-top: 30px;
-  line-height: 2em;
-}
-
-project,
-.card {
-  overflow: hidden;
-  position: relative;
-  display: block;
-  border-radius: 10px;
-  margin-top: 40px;
-}
-/* Display large (slider on side) on SM > & <LG */
-
+/* Display large (.project-media on side) on SM > & <LG */
 @media only screen and (min-width: 576px), (max-width: 600px) {
-  project.project_left slider,
-  project.project_right slider {
+  .project-media {
     width: 40%;
-  }
-
-  project .project_info {
-    width: 284px;
+    display: block;
+    overflow: none;
   }
 
   project.project_right .project_info {
     margin-left: 36px;
   }
 
-  #wrapper slider {
-    display: block;
-    overflow: none;
-  }
-
-  project.project_left slider {
+  project.project_left .project-media {
     left: 35px;
   }
 
-  project.project_right slider {
+  project.project_right .project-media {
     right: 35px;
   }
 
@@ -176,48 +108,16 @@ project,
     width: 48%;
     margin-left: 45px;
   }
-
-  project.project_top slider {
-    width: calc(84% - 180px);
-    left: 145px;
-    top: 170px;
-  }
-
-  project.project_top .project_info {
-    width: calc(100% - 70px);
-    margin-left: 35px;
-    overflow: hidden;
-  }
-
-  project.project_top h1,
-  project.project_top h2,
-  project.project_top h3,
-  project.project_top p {
-    width: 100%;
-    text-align: center;
-  }
-
-  project.project_top h1 {
-    margin-top: 25px;
-  }
-
-  project.project_top {
-    min-height: 400px;
-  }
-
-  project.project_top p {
-    margin-top: 0;
-  }
 }
 
-/* Display in card format (slider on top) on < SM & >LG */
+/* Display in card format (.project-media on top) on < SM & >LG */
 
 @media only screen and (min-width: 992px), (max-width: 576px) {
   .col-md-6:not(:last-of-type) project {
     min-height: 500px;
   }
 
-  project slider {
+  project .project-media {
     top: 35px !important;
     position: relative !important;
     width: 80% !important;
@@ -226,25 +126,14 @@ project,
     object-fit: cover;
     overflow: hidden;
     object-position: 50% 0;
-  }
-
-  project slider * {
-    object-fit: cover;
-    object-position: 50% 0;
-    min-height: 200px;
-  }
-
-  project.project_left slider,
-  project.project_right slider {
-    width: 100%;
     height: 180px;
     overflow: hidden;
   }
 
-  project.project_left slider slider,
-  project.project_right slider slider {
-    width: 100%;
-    height: 180px;
+  project .project-media * {
+    object-fit: cover;
+    object-position: 50% 0;
+    min-height: 200px;
   }
 
   project .project_info {
@@ -260,7 +149,6 @@ project,
 
   project h1 {
     margin-top: 6px;
-    font-size: 1.5em;
   }
 
   project h2 {
@@ -273,39 +161,26 @@ project,
   project p {
     margin-right: 0;
   }
-
-  .title {
-    font-size: 10vw;
-  }
-
-  .subtitle {
-    font-size: 4vw;
-    display: none;
-  }
-
-  .description {
-    font-size: 3.5vw;
-  }
 }
 
 /* Dark theme support */
 
 body.dark-mode project {
-  filter: brightness(0.85);
+  @include filter-dark();
 }
 
 body.dark-mode project img {
-  filter: brightness(1);
+  @include filter-reset();
 }
 
 @media (prefers-color-scheme: dark) {
   project {
-    filter: brightness(0.85);
+    @include filter-dark();
   }
   body.light-mode project {
-    filter: brightness(1) contrast(1);
+    @include filter-reset();
   }
   project img {
-    filter: brightness(1);
+    @include filter-reset();
   }
 }

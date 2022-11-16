@@ -22,7 +22,6 @@
   }
 </script>
 
-<!-- Footer section START -->
 <footer id="contact">
   <div class="container d-flex justify-content-center footer animate fadeIn">
     <div class="contact-form">
@@ -69,17 +68,18 @@
     id="back-to-top"
     on:click={goTop}
     class="btn btn-outline-light btn-lg back-to-top d-none d-md-block"
-    title="Retour en haut"><i class="fa-chevron-up" /></button>
+    title="Retour en haut"
+    ><i class="fa-chevron-up" />
+  </button>
+  <div class="copyright animate fadeInUp">
+    <span title="Arsène Reymond">
+      {#if commitDate}
+        Mis à jour le {commitDate.toLocaleDateString("fr")}<br />
+      {/if}
+      {getYear}, Tous droits réservés | Arsène Reymond</span>
+  </div>
 </footer>
-<div class="copyright animate fadeInUp">
-  <span title="Arsène Reymond">
-    {#if commitDate}
-      Mis à jour le {commitDate.toLocaleDateString("fr")}<br />
-    {/if}
-    {getYear}, Tous droits réservés | Arsène Reymond</span>
-</div>
 
-<!-- Footer section END -->
 <style>
   footer,
   .footer {
