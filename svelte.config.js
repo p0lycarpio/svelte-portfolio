@@ -1,7 +1,13 @@
-// svelte.config.js
-const preprocess = require("svelte-preprocess");
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
-module.exports = {
-  preprocess: preprocess({ scss: true }),
-  // ...other svelte options could go here
-};
+export default {
+  // Consult https://svelte.dev/docs#compile-time-svelte-preprocess
+  // for more information about preprocessors
+  preprocess: vitePreprocess({ scss: true}),
+  onwarn: (warning, handler) => {
+    if (warning.code.startsWith('a11y-')) {
+      return;
+    }
+    handler(warning);
+  },
+}

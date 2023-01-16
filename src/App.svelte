@@ -7,6 +7,7 @@
   import Footer from "./content/footer.svelte";
   import "@fontsource/ibm-plex-sans/latin.css";
   import "./css/bootstrap.scss"
+  import "./css/styles.scss"
 </script>
 
 <div class="home">
@@ -19,9 +20,3 @@
   </main>
 </div>
 <Footer />
-
-<style lang="scss">
-  :global {
-    @import "css/styles.scss";
-  }
-</style>
