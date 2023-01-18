@@ -27,15 +27,13 @@
         <h1>Développement et informatique</h1>
       </div>
       <p>
-        Étudiant en licence professionnelle <a
-          href="https://www.iut-larochelle.fr/formations/departement-informatique/licence-professionnelle-developpeur-cloud/"
+        Étudiant en <a
+          href="https://formations.univ-larochelle.fr/master-informatique-architecte-logiciel-niort"
           target="_blank"
           rel="noreferrer"
-          ><Tooltip text="Conception, Développement et Tests de Logiciels"
-            >CDTL option développeur cloud</Tooltip
-          ></a>
-        et en alternance chez
-        <a href="https://cgi.com/fr" target="_blank" rel="noreferrer">CGI</a> à Niort.
+          ><Tooltip text="Parcours Architecte logiciel">master informatique</Tooltip></a>
+          et DataOps en alternance à
+        <a href="https://www.covea.eu/fr" target="_blank" rel="noreferrer">Covéa</a>.
       </p>
       <MultiButton />
     </div>

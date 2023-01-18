@@ -11,28 +11,35 @@
       <p class="section-subtitle">Logiciels et langages maitrisés</p>
     </div>
     <div class="col-md-9 col-md-push-1 mt-md-4">
-      <h5>Développement web & programmation</h5>
+      <h5>Développement & programmation</h5>
       <div class="d-flex flex-wrap align-items-center mb-4 soft animate bounceInLeft">
-        <Soft color="#E54C21" title="HTML5">&lt;/html&gt;</Soft>
-        <Soft color="#0070BA" title="CSS3 & Sass">.css</Soft>
         <Soft color="#F7E018" title="JavaScript">js</Soft>
+        <Soft color="#4584b6" title="Python">.py</Soft>
+        <Soft color="#00add8" title="Golang">go()</Soft>
+        <Soft color="#ea2d2e" title="Java">.java</Soft>
         <Soft color="#777BB3" title="PHP">&lt;?&thinsp;php</Soft>
-        <Soft color="var(--black-white)" title="Bases de données MySQL et requêtes SQL"
+        <Soft color="var(--black-white)" title="Bases de données et systèmes SQL"
           >SQL</Soft>
-      </div>
-
-      <h5>Frameworks & librairies</h5>
-      <div class="d-flex flex-wrap align-items-center soft animate bounceInLeft">
-        <Soft color="#77838f" title="WordPress" svgid="#wordpress" />
       </div>
 
       <h5>Outils et environnements</h5>
       <div class="d-flex flex-wrap align-items-center soft animate bounceInLeft">
-        <Soft color="#70db4f" title="Node.js" svgid="#nodejs" />
+        <Soft color="#0078D4" title="Microsoft Azure" svgid="#azure" />
+        <Soft color="#1488c6" title="Docker" svgid="#docker" />
         <Soft color="#e6592e" title="Git" svgid="#git" />
-        <Soft color="#F5C021" title="Référencement & SEO" svgid="#googleanalytics" />
         <Soft color="#F5C021" title="Systèmes Linux" svgid="#linux" />
+        <Soft color="#70db4f" title="Node.js" svgid="#nodejs" />
       </div>
+
+      <h5>Frameworks web & librairies</h5>
+      <div class="d-flex flex-wrap align-items-center soft animate bounceInLeft">
+        <Soft color="#61dafb" title="React" svgid="#react" />
+        <Soft color="#764abc" title="Redux" svgid="#redux" />
+        <Soft color="#4fc08d" title="Vue" svgid="#vuejs" />
+        <Soft color="#21759b" title="WordPress" svgid="#wordpress" />
+      </div>
+
+
 
       <h5>Création multimédia</h5>
       <div class="d-flex flex-wrap align-items-center soft animate bounceInLeft">
