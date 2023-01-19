@@ -23,7 +23,7 @@
         <div class="logo">
           <Logo />
         </div>
-        <img src="site/img/avatar.jpg" alt="Portrait" width="100" class="avatar" />
+        <img src="/img/avatar.jpg" alt="Portrait" width="100" class="avatar" />
         <h1>Développement et informatique</h1>
       </div>
       <p>
