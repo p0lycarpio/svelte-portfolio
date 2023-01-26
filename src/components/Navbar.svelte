@@ -2,7 +2,7 @@
   import { slide } from 'svelte/transition';
   
   import Theme from "./ThemeSwitcher.svelte";
-  import Terms from "../content/misc/terms.svelte";
+  import About from "../content/about.svelte";
   import Logo from "../assets/logo.svelte";
 
   let y, wx;
@@ -26,10 +26,11 @@
 
   function openNav(x) {
     if (x == "menu") {
-      sidebar.style.width = "250px";
+      sidebar.style.width = "270px";
     }
-    if (x == "terms") {
-      terms.style.width = "332px";
+    if (x == "about") {
+      about.style.width = "352px";
+      about.style.paddingRight = "32px"
     }
     overlaySwitch(1);
   }
@@ -39,8 +40,9 @@
       sidebar.style.width = "0";
       overlaySwitch(0);
     }
-    if (y || z == "terms") {
-      terms.style.width = "0";
+    if (y || z == "about") {
+      about.style.width = "0";
+      about.style.paddingRight = "0"
     }
   }
 
@@ -66,11 +68,11 @@
         {#each sidebarLinks as { href, text }}
           <li on:click={closeDelay}><a {href}>{text}</a></li>
         {/each}
-        <li class="about-link" on:click={() => openNav("terms")}>Mentions légales</li>
+        <li class="about-link" on:click={() => openNav("about")}><a>À propos</a></li>
       </ul>
     </div>
 
-    <Terms ref="termsBtn" closeParent={() => closeNav("terms")} />
+    <About ref="aboutBtn" closeParent={() => closeNav("about")} />
 
     <!-- End sidebars -->
     <!-- Navbar elements -->
@@ -98,7 +100,7 @@
 <div
   id="overlay"
   class="menu-overlay"
-  on:click={() => closeNav("menu", "terms")}
+  on:click={() => closeNav("menu", "about")}
   bind:this={overlay} />
 
 <style lang="scss">
@@ -144,7 +146,7 @@
     position: absolute;
     bottom: 0;
     cursor: pointer;
-    margin-left: 60px;
+    width: 100%;
     color: var(--text-color);
   }
 
@@ -184,13 +186,13 @@
   }
 
   .close-x svg,
-  :global([ref="termsBtn"]) {
+  :global([ref="aboutBtn"]) {
     max-width: 34px;
     z-index: 10;
   }
 
   .close-x path,
-  :global([ref="termsBtn"]) {
+  :global([ref="aboutBtn"]) {
     stroke: var(--black-white);
     fill: var(--black-white);
     stroke-linecap: round;

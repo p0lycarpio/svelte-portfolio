@@ -1,6 +1,6 @@
 <div class="multi-container">
   <div class="multi-button btn-group">
-    <a class="btn cv" href="content/res/doc/CV.pdf">CV</a>
+    <a class="btn cv" href="https://drive.google.com/file/d/1Z6GXtVXBCFkmz_KlSO15WfnnPrvhV7GK/view?usp=sharing" rel="preload">CV</a>
     <a class="btn portfolio" href="#projects">Portfolio</a>
   </div>
 </div>
@@ -19,7 +19,7 @@
     display: flex;
     margin: 0 auto;
     margin-bottom: 60px;
-    max-width: 450px;
+    max-width: 500px;
   }
 
   .multi-button a {
