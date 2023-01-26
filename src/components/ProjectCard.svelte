@@ -7,9 +7,9 @@
     style="background-color:{project.background}; color:{project.text}"
     class={project.layout}>
     <div class="project-media">
-      {#if project.domain == "video"}
+      {#if project.shot.endsWith("mp4")}
         <video loop autoplay muted poster={project.shot.slice(0, -3) + "png"}>
-          <source data-src={project.shot} type="video/mp4" />
+          <source src={project.shot} type="video/mp4" />
         </video>
       {:else}
         <img src={project.shot} alt={project.subtitle} loading="lazy" />
