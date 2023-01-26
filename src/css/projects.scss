@@ -25,6 +25,8 @@ project .project-media {
 .project-media * {
   width: 100%;
   border-radius: 4px;
+  display: block;
+  object-fit: cover;
 }
 
 .cpqb project .project-media {
@@ -119,15 +121,12 @@ project:hover,
     width: 80% !important;
     left: 10% !important;
     max-height: 200px;
-    object-fit: cover;
     overflow: hidden;
     object-position: 50% 0;
-    height: 180px;
     overflow: hidden;
   }
 
   project .project-media * {
-    object-fit: cover;
     object-position: 50% 0;
     min-height: 200px;
   }
