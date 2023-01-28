@@ -22,6 +22,23 @@
   function goTop() {
     document.body.scrollIntoView();
   }
+
+  // FORM
+  const handleSubmit = (event) => {
+  event.preventDefault();
+
+  const myForm = event.target;
+  const formData = new FormData(myForm);
+  
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
+};
+
 </script>
 
 <footer id="contact">
@@ -36,7 +53,8 @@
             ><i class="fab fa-linkedin" /></a>
         </div>
       </div>
-      <form name="contact" id="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+      <form name="contact" id="contact" netlify-honeypot="bot-field" data-netlify="true"
+      onSubmit={handleSubmit}>
         <p class="status-form">
           <a href="mailto:***REMOVED***" style="color:#fff; background:transparent"
             >***REMOVED***</a>
