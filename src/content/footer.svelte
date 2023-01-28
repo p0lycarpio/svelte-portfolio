@@ -1,5 +1,7 @@
 <script>
   import { onMount } from "svelte";
+  
+  export const prerender = true;
 
   let getYear = new Date().getFullYear();
   let url = "https://api.github.com/repos/p0lycarpio/portfolio/commits?&page=1&per_page=1";
