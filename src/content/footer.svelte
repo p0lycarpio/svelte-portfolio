@@ -36,7 +36,7 @@
             ><i class="fab fa-linkedin" /></a>
         </div>
       </div>
-      <form name="contact" id="contact" netlify-honeypot="bot-field" data-netlify="true">
+      <form name="contact" id="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
         <p class="status-form">
           <a href="mailto:arsene.reymond@free.fr" style="color:#fff; background:transparent"
             >arsene.reymond@free.fr</a>
