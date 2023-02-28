@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  
+
   export const prerender = true;
 
   let getYear = new Date().getFullYear();
@@ -36,10 +36,20 @@
             ><i class="fab fa-linkedin" /></a>
         </div>
       </div>
-      <form name="contact" id="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+      <form
+        name="contact"
+        id="contact"
+        method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify="true">
         <p class="status-form">
           <a href="mailto:arsene.reymond@free.fr" style="color:#fff; background:transparent"
             >arsene.reymond@free.fr</a>
+        </p>
+        <p class="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
         </p>
         <label for="email">E-mail</label>
         <input
