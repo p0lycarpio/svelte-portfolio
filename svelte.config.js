@@ -5,7 +5,6 @@ export default {
   // Consult https://svelte.dev/docs#compile-time-svelte-preprocess
   // for more information about preprocessors
   preprocess: preprocess({ scss: true}),
-  adapter: adapter(),
   onwarn: (warning, handler) => {
     if (warning.code.startsWith('a11y-')) {
       return;
@@ -13,6 +12,7 @@ export default {
     handler(warning);
   },
   kit: {
+    adapter: adapter(),
     alias: {
       'assets': 'src/lib/assets',
       'components': 'src/lib/components',
