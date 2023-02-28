@@ -12,4 +12,13 @@ export default {
     }
     handler(warning);
   },
+  kit: {
+    alias: {
+      'assets': 'src/lib/assets',
+      'components': 'src/lib/components',
+      'content': 'src/lib/content',
+      'css': 'src/lib/css',
+      'data': 'src/data'
+    }
+  }
 }

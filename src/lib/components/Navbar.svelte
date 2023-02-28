@@ -2,8 +2,8 @@
   import { slide } from 'svelte/transition';
   
   import Theme from "./ThemeSwitcher.svelte";
-  import About from "../content/about.svelte";
-  import Logo from "../assets/logo.svelte";
+  import About from "content/about.svelte";
+  import Logo from "assets/logo.svelte";
 
   let y, wx;
   let overlay, sidebar;
