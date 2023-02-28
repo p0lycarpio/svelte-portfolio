@@ -5,14 +5,11 @@
   <title>Arsène Reymond</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Arsène Reymond" />
-  <meta name="description"
-    content="Portfolio et CV d'Arsène Reymond : développement web, infographie, montage vidéo et mise en page." />
-  <meta name="robots" content="index, nofollow, noarchive, noimageindex" />
-  <meta name="theme-color">
 
-  <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="/favicon.png" type="image/png" />
+  %sveltekit.head%
+
+  <link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="%sveltekit.assets%/favicon.png" type="image/png" />
 
   <style>
     noscript {
@@ -30,8 +27,12 @@
   </style>
 </head>
 
-<body>
-  <div id="app"></div>
+<body data-sveltekit-preload-data="hover">
+  
+  <div id="app" style="display: contents">
+    %sveltekit.body%
+  </div>
+
   <noscript class="container">
     <h2 class="alert-heading">👨‍🚀 Houston, we have a problem</h2>
     <p>
@@ -42,5 +43,4 @@
   </noscript>
 </body>
 
-<script type="module" src="/src/main.js"></script>
 </html>

@@ -1,9 +1,9 @@
 <script>
-  import Navbar from "../components/Navbar.svelte";
-  import Logo from "../assets/logo.svelte";
-  import Tooltip from "../components/Tooltip.svelte";
-  import Wavify from "../components/Wavify.svelte";
-  import MultiButton from "../components/MultiButton.svelte";
+  import Navbar from "components/Navbar.svelte";
+  import Logo from "assets/logo.svelte";
+  import Tooltip from "components/Tooltip.svelte";
+  import Wavify from "components/Wavify.svelte";
+  import MultiButton from "components/MultiButton.svelte";
 
   let w, h;
   let wave = {

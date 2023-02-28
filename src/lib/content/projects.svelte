@@ -1,6 +1,6 @@
 <script>
-  import ProjectCard from "../components/ProjectCard.svelte";
-  import allprojects from "../data/projects.json";
+  import ProjectCard from "components/ProjectCard.svelte";
+  import allprojects from "data/projects.json";
 
   let filtered = false;
   let current = "all";

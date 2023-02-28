@@ -1,5 +1,5 @@
 <script>
-  import Soft from "../components/SoftwareIcon.svelte";
+  import Soft from "components/SoftwareIcon.svelte";
 </script>
 
 <section class="container-xl animate fadeIn" id="compétences">

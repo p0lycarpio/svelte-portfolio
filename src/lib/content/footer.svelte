@@ -32,7 +32,7 @@
         <div class="d-block social">
           <a href="mailto:***REMOVED***" class="social-icon me-3" title="e-mail"
             ><i class="fas fa-envelope" /></a>
-          <a href="linkedin.com" class="social-icon ms-3" title="LinkedIn"
+          <a href="https://linkedin.com/in/arsene-reymond" class="social-icon ms-3" title="LinkedIn"
             ><i class="fab fa-linkedin" /></a>
         </div>
       </div>

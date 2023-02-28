@@ -1,5 +1,5 @@
 <script>
-  import ExperienceCard from "../components/ExperienceCard.svelte";
+  import ExperienceCard from "components/ExperienceCard.svelte";
 </script>
 
 <section class="container-xl animate fadeIn" id="parcours">
