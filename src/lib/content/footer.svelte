@@ -42,14 +42,11 @@
         method="POST"
         netlify-honeypot="bot-field"
         data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" />
         <p class="status-form">
           <a href="mailto:arsene.reymond@free.fr" style="color:#fff; background:transparent"
             >arsene.reymond@free.fr</a>
-        </p>
-        <p class="hidden">
-          <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
-          </label>
         </p>
         <label for="email">E-mail</label>
         <input
