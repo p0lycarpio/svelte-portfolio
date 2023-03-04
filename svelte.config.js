@@ -17,8 +17,7 @@ export default {
       'assets': 'src/lib/assets',
       'components': 'src/lib/components',
       'content': 'src/lib/content',
-      'css': 'src/lib/css',
-      'data': 'src/data'
+      'css': 'src/lib/css'
     }
   }
 }

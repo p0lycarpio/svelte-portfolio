@@ -1,12 +1,14 @@
 :root {
     --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
 }
 
 .animate {
     animation-duration: var(--animate-duration);
     animation-fill-mode: both;
+}
+
+.slideInUp, .fadeInUp {
+    animation-delay: .8s;
 }
 
 @import 'animate.css/source/back_entrances/backInDown';

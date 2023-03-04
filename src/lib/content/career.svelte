@@ -2,7 +2,7 @@
   import ExperienceCard from "components/ExperienceCard.svelte";
 </script>
 
-<section class="container-xl animate fadeIn" id="parcours">
+<section class="container-xl animate fadeInUp" id="parcours">
   <div class="row row-padded">
     <div class="col-md-3">
       <h2 class="section-heading">
