@@ -25,7 +25,7 @@
 </script>
 
 <footer id="contact">
-  <div class="container d-flex justify-content-center footer animate fadeIn">
+  <div class="container d-flex justify-content-center footer">
     <div class="contact-form">
       <div class="h-contact d-flex flex-column flex-sm-row">
         <h1>Me contacter</h1>
@@ -80,7 +80,7 @@
     title="Retour en haut"
     ><i class="fa-chevron-up" />
   </button>
-  <div class="copyright animate fadeInUp">
+  <div class="copyright">
     <span title="Arsène Reymond">
       {#if commitDate}
         Mis à jour le {commitDate.toLocaleDateString("fr")}<br />
@@ -186,7 +186,7 @@
     text-align: center;
     bottom: 0;
     width: 100%;
-    z-index: 0;
+    z-index: 1;
   }
 
   .back-to-top {

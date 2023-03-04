@@ -1,8 +1,9 @@
 <script>
+  import { scale } from "svelte/transition";
   export let project;
 </script>
 
-<div class="col-lg-6 {project.domain}">
+<div class="col-lg-6 {project.domain}" transition:scale>
   <project
     style="background-color:{project.background}; color:{project.text}"
     class={project.layout}>
@@ -22,7 +23,7 @@
       <h1>{project.title}</h1>
       <h2>{project.subtitle}</h2>
       <p>{@html project.para}</p>
-      {@html project.links}
+      <p class='lien'>{@html project.links}</p>
     </div>
   </project>
 </div>

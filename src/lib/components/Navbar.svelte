@@ -1,11 +1,12 @@
 <script>
-  import { slide } from 'svelte/transition';
-  
+  import { onMount } from "svelte";
+  import { slide, fade } from "svelte/transition";
+
   import Theme from "./ThemeSwitcher.svelte";
   import About from "content/about.svelte";
   import Logo from "assets/logo.svelte";
 
-  let y, wx;
+  let y, wx, transition;
   let overlay, sidebar;
   let sidebarLinks = [
     { href: "#", text: "Home" },
@@ -15,6 +16,14 @@
     { href: "#compétences", text: "Compétences" },
     { href: "#contact", text: "Contact" },
   ];
+
+  onMount(() => {
+    setTransition();
+  });
+
+  function setTransition() {
+    transition = wx > 768 ? fade : slide;
+  }
 
   function overlaySwitch(e) {
     if (e == 1) {
@@ -30,7 +39,7 @@
     }
     if (x == "about") {
       about.style.width = "352px";
-      about.style.paddingRight = "32px"
+      about.style.paddingRight = "32px";
     }
     overlaySwitch(1);
   }
@@ -42,7 +51,7 @@
     }
     if (y || z == "about") {
       about.style.width = "0";
-      about.style.paddingRight = "0"
+      about.style.paddingRight = "0";
     }
   }
 
@@ -54,10 +63,21 @@
   }
 </script>
 
-<svelte:window bind:scrollY={y} bind:innerWidth={wx} on:resize={() => {if (wx <768 && overlay.style.display) closeNav("menu")}}  />
+<svelte:window
+  bind:scrollY={y}
+  bind:innerWidth={wx}
+  on:resize={() => {
+    if (wx < 768 && overlay.style.display) {
+      closeNav("menu");
+    }
+    setTransition();
+  }} />
 
 {#if (y > 500) | (wx > 768)}
-  <nav class="d-flex align-items-center justify-content-between" id="navbar-top" transition:slide>
+  <nav
+    class="d-flex align-items-center justify-content-between"
+    id="navbar-top"
+    transition:transition>
     <!-- Sidebars -->
     <div id="sidenav" class="sidenav" bind:this={sidebar}>
       <span class="close-x" title="Fermer" on:click={() => closeNav("menu")}>
@@ -160,7 +180,6 @@
     margin-top: 2.4px;
   }
 
-
   .btn-menu > *,
   :global([ref="dark-mode"]),
   .close-x {
@@ -177,7 +196,7 @@
     height: 120vh;
     background-color: #00000080;
     z-index: 3;
-    transition: all .5s ease-out;
+    transition: all 0.5s ease-out;
   }
 
   .close-x {

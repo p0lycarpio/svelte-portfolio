@@ -11,7 +11,7 @@
     "subtitle": "",
     "shot": "/img/github.jpg",
     "para": "GitHub rassemblant mes projets universitaires et personnels ainsi que mes contributions open-source. APIs REST, applications mobiles, scripts Python...",
-    "links": "<p class='lien'><a href='https://github.com/p0lycarpio' target='_blank' style='color:#fff;font-weight:bolder;letter-spacing:.5px'>Lien GitHub</a></p>"
+    "links": "<a href='https://github.com/p0lycarpio' target='_blank' style='color:#fff;font-weight:bolder;letter-spacing:.5px'>Lien GitHub</a>"
   },
   {
     "active": true,
@@ -25,7 +25,7 @@
     "subtitle": "Site culturel",
     "shot": "/img/tracs.png",
     "para": "Développement d'un site multilingue avec un générateur de site statique. Preuve de concept du framework <em>Gatsby</em> pour simplifier le site actuel <a href='https://transatlantic-cultures.org/fr/home' style='color:#000'>Transatlantic cultures.</a>",
-    "links": "<p class='lien'><a href='https://github.com/p0lycarpio/tracs-gatsby' target='_blank' style='color:#000'>Site et code source</a></p>"
+    "links": "<a href='https://github.com/p0lycarpio/tracs-gatsby' target='_blank' style='color:#000'>Site et code source</a>"
   },
   {
     "active": false,
@@ -39,12 +39,12 @@
     "subtitle": "Interface de gestion d'un site web",
     "shot": "/img/adrienlefloch.fr.jpg",
     "para": "Projet tuteuré de seconde année de MMI, avec un client réel. Développement d'un back-office type CMS permettant de modifier des pages, des articles et gérer une galerie de photos. Développement en PHP natif, pour le site adrienlefloch.fr",
-    "links": "<p class='lien'><a href='https://youtu.be/m2MgbMg9s2Q' target='_blank' style='color:#F25874;'>Démonstration vidéo</a></p>"
+    "links": "<a href='https://youtu.be/m2MgbMg9s2Q' target='_blank' style='color:#F25874;'>Démonstration vidéo</a>"
   },
   {
     "active": true,
-    "background": "#f1cdb4",
-    "text": "#c72f03",
+    "background": "#ffe9db",
+    "text": "#ae2700",
     "accent": "#c72f03",
     "type": "AUDIOVISUEL",
     "domain": "audiovisuel",
@@ -53,7 +53,7 @@
     "subtitle": "Prises et montage vidéo",
     "shot": "/img/mire.mp4",
     "para": "Playlist de mes réalisations audiovisuelles !<br>Projets personnels et professionnels.",
-    "links": "<p class='lien'><a href='https://www.youtube.com/playlist?list=PLE6zlkF6mSdLPrvkUNberpjqGTCBaceYz' style='color:#FF0000;' target='_blank'>Regarder</a></p>"
+    "links": "<a href='https://www.youtube.com/playlist?list=PLE6zlkF6mSdLPrvkUNberpjqGTCBaceYz' style='color:#d70000;' target='_blank'>Regarder</a>"
   },
   {
     "background": "#282827",
@@ -66,7 +66,7 @@
     "subtitle": "Charte graphique et site vitrine",
     "shot": "/img/street-spirit web.png",
     "para": "Charte graphique destinée à une marque de sportswear voulant renouveler son image. Création de bannières pour la nouvelle collection printemps « Street Spring », d’un site web vitrine (avec un CMS) et d’un logo icotype et logotype.<br> Note obtenue : 17/20",
-    "links": "<p class='lien'><a href='/doc/streetspirit.pdf' style='color:#bba8ff;'>Lien vers le dossier</a>, <a href='http://arsene.reymond.free.fr/streetspirit' style='color: #bba8ff;'>site</a></p>"
+    "links": "<a href='/doc/streetspirit.pdf' style='color:#bba8ff;'>Lien vers le dossier</a>, <a href='http://arsene.reymond.free.fr/streetspirit' style='color: #bba8ff;'>site</a>"
   },
   {
     "active": true,
@@ -93,7 +93,7 @@
     "subtitle": "Parodie publicitaire",
     "shot": "/img/bloiseats.webp",
     "para": "Création d'une vidéo publicitaire fictive pour un service de livraison alimentaire. Prises de vues, acting, montage et postproduction. Réalisé avec d'autres étudiants MMI.<br>Note obtenue : 16/20",
-    "links": "<p class='lien'><a href='https://youtu.be/Y9Cx22X59AM' target='_blank' style='color:#000;'>Lien vers la vidéo</a></p>"
+    "links": "<a href='https://youtu.be/Y9Cx22X59AM' target='_blank' style='color:#000;'>Lien vers la vidéo</a>"
   },
   {
     "background": "#ECECEC",
@@ -106,7 +106,7 @@
     "subtitle": "Création et design",
     "shot": "/img/pqb.png",
     "para": "Logotype pour une auto-entrepreneuse souhaitant lancer sa marque de bijoux.",
-    "links": "<p class='lien'><a href='/doc/Cpqb.pdf' style='color:#0042a5;'>Lien vers le logo</a></p>"
+    "links": "<a href='/doc/Cpqb.pdf' style='color:#0042a5;'>Lien vers le logo</a>"
   },
   {
     "background": "#d6b0e8",
@@ -119,7 +119,7 @@
     "subtitle": "Webdesign et développement CMS",
     "shot": "/img/maison-magie.png",
     "para": "Projet fictif d'un blog d'entreprise pour la <em>Maison de la magie</em> de Blois. Réflexion sur les stratégies de communication et de marketing en ligne. Conception d’un site web dynamique avec un CMS.<br>Note obtenue : 17/20",
-    "links": "<p class='lien'><a href='https://maison-de-la-magie.000webhostapp.com/' style='color:#220185;'>Lien vers øle site</a></p>"
+    "links": "<a href='https://maison-de-la-magie.000webhostapp.com/' style='color:#220185;'>Lien vers øle site</a>"
   },
   {
     "background": "#EED7C8",
@@ -132,7 +132,7 @@
     "subtitle": "Dossier documentaire",
     "shot": "/img/mc.png",
     "para": "Constitution d’un dossier de vingt pages sur une graphiste emblématique du XX<sup>e</sup> siècle.<br>Note obtenue : 18/20",
-    "links": "<p class='lien'><a href='/doc/Muriel-Cooper.pdf' style='color:#a70082;'>Lien vers le dossier</a></p>"
+    "links": "<a href='/doc/Muriel-Cooper.pdf' style='color:#a70082;'>Lien vers le dossier</a>"
   },
   {
     "background": "#FFC107",
@@ -145,7 +145,7 @@
     "subtitle": "Charte graphique et site vitrine",
     "shot": "/img/lincroyable.png",
     "para": "Projet tuteuré d'une semaine. Élaboration d'une marque comportant un site web (en HTML et CSS) et une identité visuelle.<br>Note obtenue : 14.9/20",
-    "links": "<p class='lien'><a href='http://arsene.reymond.free.fr/lincroyable' style='color:#790000;'>Lien vers le site</a></p>"
+    "links": "<a href='http://arsene.reymond.free.fr/lincroyable' style='color:#790000;'>Lien vers le site</a>"
   },
   {
     "background": "#4C82C2",
@@ -158,6 +158,6 @@
     "subtitle": "",
     "shot": "/img/affiches.png",
     "para": "Autres projets et réalisations graphiques",
-    "links": "<p class='lien'><a href='/doc/affiches.pdf' style='color:#fff;'>Voir les affiches</a></p>"
+    "links": "<a href='/doc/affiches.pdf' style='color:#fff;'>Voir les affiches</a>"
   }
 ]

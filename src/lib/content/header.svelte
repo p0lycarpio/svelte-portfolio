@@ -5,6 +5,9 @@
   import Wavify from "components/Wavify.svelte";
   import MultiButton from "components/MultiButton.svelte";
 
+  import webp from "assets/avatar.jpg?webp&w=200&srcset"
+  import image from "assets/avatar.jpg?&w=200"
+
   let w, h;
   let wave = {
     height: 10,
@@ -23,7 +26,7 @@
         <div class="logo">
           <Logo />
         </div>
-        <img src="/img/avatar.jpg" alt="Portrait" width="100" class="avatar" />
+        <img src={image} srcset={webp} alt="Portrait" width="100" height="100" class="avatar" />
         <h1>Développement et informatique</h1>
       </div>
       <p>
@@ -37,7 +40,7 @@
       </p>
       <MultiButton />
     </div>
-    <div bind:offsetWidth={w} bind:offsetHeight={h} class="animate slideInUp" style="height: 50px;">
+    <div bind:offsetWidth={w} bind:offsetHeight={h} class="animate slideInUp delay-2s" style="height: 50px;">
       <Wavify options={wave} parentWidth={w} parentHeight={h} />
     </div>
   </section>

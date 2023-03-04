@@ -15,7 +15,7 @@
   }
 </script>
 
-<div class="d-flex flex-wrap align-items-center soft animate bounceInLeft">
+<div class="d-flex flex-wrap align-items-center soft">
   <!-- svelte-ignore missing-declaration -->
   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
   {#if svgid}
