@@ -1,21 +1,20 @@
 <script>
+  import IconSchool from "~icons/fa6-solid/graduation-cap";
+  import IconWork from "~icons/fa6-solid/briefcase";
+
   export let type;
-  export let from
+  export let from;
   export let to;
 </script>
 
 <div class="card">
   <div class="card-body">
     {#if type == "school"}
-      <i
-        class="fas fa-2x fa-graduation-cap"
-        title="Études"
-        style="height:32px;width:32px;position:absolute;right:20px;top:10px" />
+      <i class="icon" title="Études"> <IconSchool /> </i>
     {:else if type == "work"}
-      <i
-        class="fas fa-2x fa-briefcase"
-        title="Expérience professionnelle"
-        style="position:absolute;right:16px;top:10px;" />
+      <i class="icon" title="Expérience professionnelle">
+        <IconWork class="icon" style="font-size:1.6rem" />
+      </i>
     {/if}
     <strong>{from} - {to}</strong>
     <h5 class="card-title">
@@ -32,9 +31,12 @@
     background-color: var(--card-color);
   }
 
-  .card-body i {
+  .icon {
     color: var(--cardIcon);
-    font-size: 2em;
+    font-size: 1.8em;
+    position: absolute;
+    right: 20px;
+    top: 12px;
   }
 
   .card-title {

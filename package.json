@@ -9,12 +9,14 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.30",
     "@sveltejs/adapter-netlify": "^1.0.5",
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "prettier": "^2.8.3",
     "prettier-plugin-svelte": "^2.9.0",
     "sass": "^1.57.1",
     "svelte": "^3.55.1",
+    "unplugin-icons": "^0.15.3",
     "vite": "^4.0.4",
     "vite-imagetools": "^4.0.18"
   },
