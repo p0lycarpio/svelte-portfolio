@@ -1,8 +1,9 @@
 <script>
   import { onMount } from "svelte";
-
   export const prerender = true;
 
+  let form, alert;
+  let isSubmitting = false;
   let getYear = new Date().getFullYear();
   let url = "https://api.github.com/repos/p0lycarpio/portfolio/commits?&page=1&per_page=1";
   let commitDate;
@@ -22,6 +23,31 @@
   function goTop() {
     document.body.scrollIntoView();
   }
+
+  const handleSubmit = () => {
+    let formData = new FormData(form);
+    isSubmitting = true;
+    return fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        alert = {
+          class: "alert alert-success",
+          message: "Votre message a bien été envoyé",
+        };
+        isSubmitting = false;
+        form.reset();
+      })
+      .catch(() => {
+        alert = {
+          class: "alert alert-danger",
+          message: "Erreur lors de l'envoi de votre message. Réésayez ultérieurement",
+        };
+        isSubmitting = false;
+      });
+  };
 </script>
 
 <footer id="contact">
@@ -39,15 +65,20 @@
       <form
         name="contact"
         id="contact"
-        method="POST"
+        on:submit|preventDefault={handleSubmit}
+        bind:this={form}
         netlify-honeypot="bot-field"
         data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
         <input type="hidden" name="bot-field" />
-        <p class="status-form">
-          <a href="mailto:arsene.reymond@free.fr" style="color:#fff; background:transparent"
-            >arsene.reymond@free.fr</a>
-        </p>
+        {#if alert}
+          <div class={alert.class} role="alert">{alert.message}</div>
+        {:else}
+          <p class="status-form">
+            <a href="mailto:arsene.reymond@free.fr" style="color:#fff; background:transparent"
+              >arsene.reymond@free.fr</a>
+          </p>
+        {/if}
         <label for="email">E-mail</label>
         <input
           type="email"
@@ -66,8 +97,18 @@
           rows="4"
           required />
         <div class="d-flex justify-content-center">
-          <button type="submit" class="btn btn-outline-light" name="submit" id="submit"
-            >Envoyer</button>
+          {#if isSubmitting}
+            <button class="btn btn-outline-light" disabled>
+              <span
+                class="spinner-border spinner-border-sm me-2"
+                role="status"
+                aria-hidden="true" />
+              Vroum...
+            </button>
+          {:else}
+            <button type="submit" class="btn btn-outline-light" name="submit" id="submit"
+              >Envoyer</button>
+          {/if}
         </div>
       </form>
     </div>
@@ -137,7 +178,7 @@
     top: 30%;
     z-index: 1;
     width: 610px;
-    margin-bottom: 3em;
+    margin-bottom: 5em;
   }
 
   form {
@@ -147,13 +188,13 @@
   }
 
   input {
-    height: 46px;
-    padding-left: 14px;
+    height: 57px;
+    padding-left: 16px;
   }
 
   input,
   textarea {
-    font-size: 18px;
+    font-size: var(--bs-body-font-size);
     border: none;
     outline: 0;
     border-radius: 6px;
@@ -226,11 +267,9 @@
       text-align: center;
       margin-bottom: 0;
     }
-    input,
-    textarea {
-      font-size: 14px;
-    }
-    .status-form {
+
+    .status-form,
+    .alert {
       margin-top: 2em;
       text-align: center;
     }
