@@ -6,6 +6,9 @@
   import About from "content/about.svelte";
   import Logo from "assets/logo.svelte";
 
+  import IconClose from "~icons/material-symbols/close-rounded";
+  import IconMenu from "~icons/material-symbols/menu-rounded";
+
   let y, wx, transition;
   let overlay, sidebar;
   let sidebarLinks = [
@@ -80,14 +83,16 @@
     transition:transition>
     <!-- Sidebars -->
     <div id="sidenav" class="sidenav" bind:this={sidebar}>
-      <span class="close-x" title="Fermer" on:click={() => closeNav("menu")}>
-        <svg viewBox="0 0 40 40" width="100%" height="34px">
-          <path d="M 6,6 L 30,30 M 30,6 L 6,30" /></svg>
-      </span>
+      <button title="Fermer" on:click={() => closeNav("menu")}>
+        <IconClose />
+      </button>
       <ul id="sidebar-links">
         {#each sidebarLinks as { href, text }}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
           <li on:click={closeDelay}><a {href}>{text}</a></li>
         {/each}
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y-missing-attribute -->
         <li class="about-link" on:click={() => openNav("about")}><a>À propos</a></li>
       </ul>
     </div>
@@ -97,26 +102,22 @@
     <!-- End sidebars -->
     <!-- Navbar elements -->
     <div class="d-flex navbar-buttons">
-      <span title="Menu" class="btn-menu">
-        <svg
-          on:click={() => openNav("menu")}
-          viewBox="0 0 100 80"
-          style="max-width:28px;cursor:pointer">
-          <rect width="100" height="12" rx="8" />
-          <rect y="30" width="100" height="12" rx="8" />
-          <rect y="60" width="100" height="12" rx="8" />
-        </svg>
-      </span>
-      <Theme ref="dark-mode" />
+      <button title="Menu" on:click={() => openNav("menu")}>
+        <IconMenu />
+      </button>
+      <button>
+        <Theme ref="dark-mode" />
+      </button>
     </div>
     <div class="logo">
       <Logo />
     </div>
-    <div style="width:68px;" />
+    <div style="width:40px;" />
     <!-- End navbar elements -->
   </nav>
 {/if}
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
   id="overlay"
   class="menu-overlay"
@@ -170,21 +171,15 @@
     color: var(--text-color);
   }
 
-  .btn-menu {
-    /* padding: 20px; */
-    padding-left: 20px;
-    border-bottom-right-radius: 20px;
-    height: 60px;
-    width: 68px;
-    display: inherit;
-    margin-top: 2.4px;
-  }
-
-  .btn-menu > *,
-  :global([ref="dark-mode"]),
-  .close-x {
-    fill: var(--black-white);
+  button {
+    background: unset;
+    border: unset;
+    line-height: normal;
+    padding: 0;
+    margin-left: 14px;
+    font-size: 2em;
     color: var(--black-white);
+    cursor: pointer;
   }
 
   .menu-overlay {
@@ -199,32 +194,12 @@
     transition: all 0.5s ease-out;
   }
 
-  .close-x {
-    margin-left: 20px;
-    cursor: pointer;
-  }
-
-  .close-x svg,
-  :global([ref="aboutBtn"]) {
-    max-width: 34px;
-    z-index: 10;
-  }
-
-  .close-x path,
-  :global([ref="aboutBtn"]) {
-    stroke: var(--black-white);
-    fill: var(--black-white);
-    stroke-linecap: round;
-    stroke-width: 4;
-  }
-
   nav {
     width: 100%;
     line-height: 60px;
     position: relative;
-    /* padding-left: 20px; */
     height: 0;
-    top: 30px;
+    top: 26px;
     color: #666;
     z-index: 4;
   }
@@ -237,7 +212,6 @@
     nav {
       background-color: var(--hero-sect);
       color: #666;
-      // border-bottom: 1px solid #afafaf;
       width: 100%;
       box-shadow: 0 4px 4px var(--cardShadow);
     }
@@ -245,7 +219,6 @@
       height: 61px;
       color: #666;
       position: fixed;
-      // top: -65px;
       left: 0;
       right: 0;
       z-index: 4;
