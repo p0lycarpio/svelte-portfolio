@@ -1,5 +1,11 @@
 <script>
   import { onMount } from "svelte";
+
+  import IconMail from "~icons/fa6-solid/envelope"
+  import IconLinkedin from "~icons/fa6-brands/linkedin"
+  import IconUp from "~icons/fa6-solid/chevron-up"
+
+
   export const prerender = true;
 
   let form, alert;
@@ -57,9 +63,9 @@
         <h1>Me contacter</h1>
         <div class="d-block social">
           <a href="mailto:arsene.reymond@free.fr" class="social-icon me-3" title="e-mail"
-            ><i class="fas fa-envelope" /></a>
+            ><IconMail/></a>
           <a href="https://linkedin.com/in/arsene-reymond" class="social-icon ms-3" title="LinkedIn"
-            ><i class="fab fa-linkedin" /></a>
+            ><IconLinkedin/></a>
         </div>
       </div>
       <form
@@ -117,9 +123,9 @@
   <button
     id="back-to-top"
     on:click={goTop}
-    class="btn btn-outline-light btn-lg back-to-top d-none d-md-block"
+    class="btn btn-outline-light btn-md back-to-top d-none d-md-block"
     title="Retour en haut"
-    ><i class="fa-chevron-up" />
+    ><IconUp/>
   </button>
   <div class="copyright">
     <span title="Arsène Reymond">
@@ -157,11 +163,11 @@
   }
 
   .social {
-    margin-top: 28px;
+    margin-top: 12px;
   }
 
   .social-icon {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     height: 32px;
     text-decoration: none;
   }

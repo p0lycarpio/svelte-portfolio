@@ -1,7 +1,40 @@
+<script>
+  import IconFile from "~icons/ic/outline-insert-drive-file";
+  import IconDown from "~icons/ic/outline-arrow-downward";
+
+  let cv, portfolio;
+</script>
+
 <div class="multi-container">
   <div class="multi-button btn-group">
-    <a class="btn cv" href="https://drive.google.com/file/d/1Z6GXtVXBCFkmz_KlSO15WfnnPrvhV7GK/view?usp=sharing" rel="preload">CV</a>
-    <a class="btn portfolio" href="#projects">Portfolio</a>
+    <a
+      class="btn cv"
+      href="https://drive.google.com/file/d/1Z6GXtVXBCFkmz_KlSO15WfnnPrvhV7GK/view?usp=sharing"
+      rel="preload"
+      on:mouseover={() => {cv = true}}
+      on:focus={() => {cv = true}}
+      on:blur={() => {cv = true}}
+      on:mouseout={() => {cv = false}}>
+      {#if cv == true}
+        <i class="icon">
+          <IconFile />
+        </i>
+      {/if}
+      CV
+    </a>
+    <a
+      class="btn portfolio"
+      href="#projects"
+      on:mouseover={() => {portfolio = true}}
+      on:focus={() => {portfolio = true}}
+      on:blur={() => {portfolio = true}}
+      on:mouseout={() => {portfolio = false}}>
+      {#if portfolio == true}
+        <i class="icon">
+          <IconDown />
+        </i>
+      {/if}
+      Portfolio</a>
   </div>
 </div>
 
@@ -53,24 +86,14 @@
     text-decoration: none;
   }
 
-  .multi-button a:hover:before,
-  .multi-button a:focus:before {
-    font-family: "icomoon";
-    margin-right: 8px;
-  }
-
-  .multi-button a.cv:hover:before {
-    content: "\f15b";
-  }
-
-  .multi-button a.portfolio:hover:before {
-    content: "\f063";
-  }
-
   .multi-button:hover a:focus:not(:hover) {
     flex-grow: 1;
     color: black;
     background-color: white;
   }
 
+  .icon {
+    pointer-events: none;
+    vertical-align: text-bottom;
+  }
 </style>
