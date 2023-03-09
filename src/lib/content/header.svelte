@@ -30,11 +30,11 @@
         <h1>Développement et informatique</h1>
       </div>
       <p>
-        Étudiant en <a
+        Étudiant en <Tooltip text="Parcours Architecte logiciel"><a
           href="https://formations.univ-larochelle.fr/master-informatique-architecte-logiciel-niort"
           target="_blank"
           rel="noreferrer"
-          ><Tooltip text="Parcours Architecte logiciel">master informatique</Tooltip></a>
+          >master informatique</a></Tooltip>
           et DataOps en alternance à
         <a href="https://www.covea.eu/fr" target="_blank" rel="noreferrer">Covéa</a>.
       </p>

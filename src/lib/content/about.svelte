@@ -1,24 +1,14 @@
 <script>
-  let about;
-  export let ref;
+  import IconBack from "~icons/material-symbols/arrow-back-rounded";
   export let closeParent = () => {};
+  export let about, display;
 </script>
 
-<div id="about" class="about" bind:this={about}>
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <span {ref} title="Retour" on:click={closeParent}>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1000 1000"
-      height="30"
-      alt="Retour"
-      class="back"
-      ><path
-        {ref}
-        d="M947 549.2H53c-25 0-45.4-20.3-45.4-45.4v-7.6c0-25 20.3-45.4 45.4-45.4h894c25 0 45.4 20.3 45.4 45.4v7.6c0 25.1-20.3 45.4-45.4 45.4z" /><path
-        d="M383.7 901.6L15.3 533.3c-17.7-17.7-17.7-46.4 0-64.1l5.4-5.4c17.7-17.7 46.4-17.7 64.1 0l368.4 368.4c17.7 17.7 17.7 46.4 0 64.1l-5.4 5.4c-17.7 17.6-46.4 17.6-64.1-.1z" /><path
-        d="M453.2 167.9L84.9 536.3c-17.7 17.7-46.4 17.7-64.1 0l-5.4-5.4c-17.7-17.7-17.7-46.4 0-64.1L383.7 98.4c17.7-17.7 46.4-17.7 64.1 0l5.4 5.4c17.7 17.7 17.7 46.4 0 64.1z" /></svg
-    ></span>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div id="about" class="about" bind:this={about} class:show={display === true}>
+  <button class="icon" title="Retour" on:click={closeParent}>
+    <IconBack />
+  </button>
   <h3>Mentions légales</h3>
   <p>
     Ce site est l'entière propriété d'Arsène Reymond (personne physique). Ce dernier est destiné à
@@ -55,11 +45,8 @@
 </div>
 
 <style lang="scss">
-  .back {
-    margin-left: 22px;
-    cursor: pointer;
-    height: auto;
-    width: auto;
+  .icon {
+    margin-left: 16px;
   }
 
   p svg {
@@ -70,20 +57,25 @@
 
   .about {
     height: 100%;
-    width: 0;
+    width: 352px;
+    visibility: hidden;
+    transform: translateX(-352px);
     position: fixed;
     z-index: 6;
     top: 0;
     left: 0;
     background-color: var(--bkg-color);
+    transition: .4s;
+    padding-right: 30px;
+    overflow-y: auto;
     overflow-x: hidden;
-    transition: .5s;
   }
 
   .about::-webkit-scrollbar {
-    width: 18px;
+    margin-left: 3px;
+    width: 15px;
     height: 12px;
-    padding: 2px 2px;
+    position: absolute;
   }
 
   .about::-webkit-scrollbar-thumb {
@@ -91,6 +83,9 @@
     border-radius: 55px;
     border: 6px solid var(--bkg-color);
   }
+  .about::-webkit-scrollbar-thumb:hover {
+    border: 4px solid var(--bkg-color);
+    }
 
   .about p,
   .about h3 {
