@@ -75,7 +75,7 @@ a {
   outline-offset: 2px;
 }
 
-a:focus {
+a:focus-visible {
   @include focused;
 }
 

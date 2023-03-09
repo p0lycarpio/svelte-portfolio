@@ -12,7 +12,7 @@
   let isSubmitting = false;
   let getYear = new Date().getFullYear();
   let url = "https://api.github.com/repos/p0lycarpio/portfolio/commits?&page=1&per_page=1";
-  let commitDate;
+  let commitDate, contact;
 
   onMount(async () => {
     fetch(url)
@@ -25,10 +25,6 @@
         return [];
       });
   });
-
-  function goTop() {
-    document.body.scrollIntoView();
-  }
 
   const handleSubmit = () => {
     let formData = new FormData(form);
@@ -54,17 +50,25 @@
         isSubmitting = false;
       });
   };
+
+  function goTop() {
+    document.body.scrollIntoView();
+  }
+
+  function goBottom() {
+    contact.scrollIntoView()
+  }
 </script>
 
-<footer id="contact">
+<footer id="contact" bind:this={contact}>
   <div class="container d-flex justify-content-center footer">
     <div class="contact-form">
       <div class="h-contact d-flex flex-column flex-sm-row">
         <h1>Me contacter</h1>
         <div class="d-block social">
-          <a href="mailto:***REMOVED***" class="social-icon me-3" title="e-mail"
+          <a href="mailto:***REMOVED***" class="social-icon me-3" title="e-mail" on:focus={goBottom}
             ><IconMail/></a>
-          <a href="https://linkedin.com/in/arsene-reymond" class="social-icon ms-3" title="LinkedIn"
+          <a href="https://linkedin.com/in/arsene-reymond" class="social-icon ms-3" title="LinkedIn" on:focus={goBottom}
             ><IconLinkedin/></a>
         </div>
       </div>
