@@ -36,6 +36,7 @@
         <Soft color="#61dafb" title="React" svgid="#react" />
         <Soft color="#764abc" title="Redux" svgid="#redux" />
         <Soft color="#4fc08d" title="Vue" svgid="#vuejs" />
+        <Soft color="#ff3e00" title="Svelte" svgid="#svelte" />
         <Soft color="#21759b" title="WordPress" svgid="#wordpress" />
       </div>
 
