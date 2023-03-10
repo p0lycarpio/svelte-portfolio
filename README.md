@@ -26,7 +26,7 @@ yarn dev
 
 Navigate to [localhost:5000](http://localhost:5000).
 
-*Optionnal : install the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).*
+_Optionnal : install the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)._
 
 ## Building
 
@@ -36,4 +36,4 @@ To build the an optimised version of the app with SSR, run :
 yarn build
 ```
 
-``/build`` folder will be generated.
+`/build` folder will be generated.

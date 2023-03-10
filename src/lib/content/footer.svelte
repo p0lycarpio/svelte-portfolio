@@ -1,10 +1,9 @@
 <script>
   import { onMount } from "svelte";
 
-  import IconMail from "~icons/fa6-solid/envelope"
-  import IconLinkedin from "~icons/fa6-brands/linkedin"
-  import IconUp from "~icons/fa6-solid/chevron-up"
-
+  import IconMail from "~icons/fa6-solid/envelope";
+  import IconLinkedin from "~icons/fa6-brands/linkedin";
+  import IconUp from "~icons/fa6-solid/chevron-up";
 
   export const prerender = true;
 
@@ -56,7 +55,7 @@
   }
 
   function goBottom() {
-    contact.scrollIntoView()
+    contact.scrollIntoView();
   }
 </script>
 
@@ -66,10 +65,16 @@
       <div class="h-contact d-flex flex-column flex-sm-row">
         <h1>Me contacter</h1>
         <div class="d-block social">
-          <a href="mailto:arsene.reymond@free.fr" class="social-icon me-3" title="e-mail" on:focus={goBottom}
-            ><IconMail/></a>
-          <a href="https://linkedin.com/in/arsene-reymond" class="social-icon ms-3" title="LinkedIn" on:focus={goBottom}
-            ><IconLinkedin/></a>
+          <a
+            href="mailto:arsene.reymond@free.fr"
+            class="social-icon me-3"
+            title="e-mail"
+            on:focus={goBottom}><IconMail /></a>
+          <a
+            href="https://linkedin.com/in/arsene-reymond"
+            class="social-icon ms-3"
+            title="LinkedIn"
+            on:focus={goBottom}><IconLinkedin /></a>
         </div>
       </div>
       <form
@@ -129,7 +134,7 @@
     on:click={goTop}
     class="btn btn-outline-light btn-md back-to-top d-none d-md-block"
     title="Retour en haut"
-    ><IconUp/>
+    ><IconUp />
   </button>
   <div class="copyright">
     <span title="Arsène Reymond">

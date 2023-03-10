@@ -57,7 +57,8 @@ main {
   &:focus {
     @include focused;
   }
-  &.selected, &:active {
+  &.selected,
+  &:active {
     color: var(--blue);
     font-weight: bold;
     outline: 0 !important;
@@ -68,7 +69,8 @@ main {
   display: none;
 }
 
-.card, project {
+.card,
+project {
   background-color: var(--card-color);
   transition: all 0.25s;
   box-shadow: 0 4px 4px var(--cardShadow);

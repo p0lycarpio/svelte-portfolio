@@ -1,5 +1,5 @@
 <script>
-// Svelte lite implementation of [Wavify](https://github.com/woofers/react-wavify)
+  // Svelte lite implementation of [Wavify](https://github.com/woofers/react-wavify)
   import { onMount } from "svelte";
 
   export let parentWidth, parentHeight;
@@ -7,9 +7,9 @@
   export let options = {
     height: 20,
     amplitude: 20,
-    speed: .5,
+    speed: 0.5,
     bones: 3,
-    color: "grey"
+    color: "grey",
   };
 
   let waveEl, frameId, path, step, elapsed, lastUpdate;

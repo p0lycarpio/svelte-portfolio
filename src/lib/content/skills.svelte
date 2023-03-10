@@ -18,8 +18,7 @@
         <Soft color="#009fc6" title="Golang">go()</Soft>
         <Soft color="#ea2d2e" title="Java">.java</Soft>
         <Soft color="#777BB3" title="PHP">&lt;?&thinsp;php</Soft>
-        <Soft color="var(--black-white)" title="Bases de données et systèmes SQL"
-          >SQL</Soft>
+        <Soft color="var(--black-white)" title="Bases de données et systèmes SQL">SQL</Soft>
       </div>
 
       <h5>Outils et environnements</h5>
@@ -39,8 +38,6 @@
         <Soft color="#ff3e00" title="Svelte" svgid="#svelte" />
         <Soft color="#21759b" title="WordPress" svgid="#wordpress" />
       </div>
-
-
 
       <h5>Création multimédia</h5>
       <div class="d-flex flex-wrap align-items-center soft">

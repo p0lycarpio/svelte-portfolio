@@ -11,10 +11,9 @@
   </button>
   <h3>Mentions légales</h3>
   <p>
-    Ce site est la propriété d'Arsène Reymond (personne physique). Il est destiné à
-    un usage privé et il n'entraine aucun revenu. Toute reproduction et/ou réutilisation
-    des éléments, textes, parties de code ou autres types de contenu présent sur le site sans
-    autorisation est interdite.
+    Ce site est la propriété d'Arsène Reymond (personne physique). Il est destiné à un usage privé
+    et il n'entraine aucun revenu. Toute reproduction et/ou réutilisation des éléments, textes,
+    parties de code ou autres types de contenu présent sur le site sans autorisation est interdite.
   </p>
   <h3>Données collectées</h3>
   <p>
@@ -65,7 +64,7 @@
     top: 0;
     left: 0;
     background-color: var(--bkg-color);
-    transition: .4s;
+    transition: 0.4s;
     padding-right: 26px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -85,7 +84,7 @@
   }
   .about::-webkit-scrollbar-thumb:hover {
     border: 4px solid var(--bkg-color);
-    }
+  }
 
   .about p {
     padding: 10px 0 28px 52px;

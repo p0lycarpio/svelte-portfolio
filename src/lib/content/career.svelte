@@ -15,8 +15,7 @@
         <!-- Studies -->
         <div class="order-1 order-md-0">
           <ExperienceCard type="school" from="2022" to="aujourd'hui">
-            <span slot="title"
-              >Master Informatique parcours Architecte logiciel</span>
+            <span slot="title">Master Informatique parcours Architecte logiciel</span>
             <span slot="description">Programmation, architecture des SI et gestion de projet.</span>
           </ExperienceCard>
         </div>
