@@ -26,7 +26,7 @@
     margin-bottom: 5px;
     padding: 8px;
     max-width: 13rem;
-    border-radius: .375rem;
+    border-radius: 0.375rem;
     background-color: var(--black-white);
     color: var(--white-black);
     content: attr(data-tooltip);

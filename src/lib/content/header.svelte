@@ -5,8 +5,8 @@
   import Wavify from "components/Wavify.svelte";
   import MultiButton from "components/MultiButton.svelte";
 
-  import webp from "assets/avatar.jpg?webp&w=200&srcset"
-  import image from "assets/avatar.jpg?&w=200"
+  import webp from "assets/avatar.jpg?webp&w=200&srcset";
+  import image from "assets/avatar.jpg?&w=200";
 
   let w, h;
   let wave = {
@@ -30,17 +30,22 @@
         <h1>Développement et informatique</h1>
       </div>
       <p>
-        Étudiant en <Tooltip text="Parcours Architecte logiciel"><a
-          href="https://formations.univ-larochelle.fr/master-informatique-architecte-logiciel-niort"
-          target="_blank"
-          rel="noreferrer"
-          >master informatique</a></Tooltip>
-          et DataOps en alternance à
+        Étudiant en <Tooltip text="Parcours Architecte logiciel"
+          ><a
+            href="https://formations.univ-larochelle.fr/master-informatique-architecte-logiciel-niort"
+            target="_blank"
+            rel="noreferrer">master informatique</a
+          ></Tooltip>
+        et DataOps en alternance à
         <a href="https://www.covea.eu/fr" target="_blank" rel="noreferrer">Covéa</a>.
       </p>
       <MultiButton />
     </div>
-    <div bind:offsetWidth={w} bind:offsetHeight={h} class="animate slideInUp delay-2s" style="height: 50px;">
+    <div
+      bind:offsetWidth={w}
+      bind:offsetHeight={h}
+      class="animate slideInUp delay-2s"
+      style="height: 50px;">
       <Wavify options={wave} parentWidth={w} parentHeight={h} />
     </div>
   </section>

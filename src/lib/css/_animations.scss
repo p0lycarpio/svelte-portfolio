@@ -1,17 +1,18 @@
 :root {
-    --animate-duration: 1s;
+  --animate-duration: 1s;
 }
 
 .animate {
-    animation-duration: var(--animate-duration);
-    animation-fill-mode: both;
+  animation-duration: var(--animate-duration);
+  animation-fill-mode: both;
 }
 
-.slideInUp, .fadeInUp {
-    animation-delay: .8s;
+.slideInUp,
+.fadeInUp {
+  animation-delay: 0.8s;
 }
 
-@import 'animate.css/source/back_entrances/backInDown';
-@import 'animate.css/source/fading_entrances/fadeIn';
-@import 'animate.css/source/fading_entrances/fadeInUp';
-@import 'animate.css/source/sliding_entrances/slideInUp';
+@import "animate.css/source/back_entrances/backInDown";
+@import "animate.css/source/fading_entrances/fadeIn";
+@import "animate.css/source/fading_entrances/fadeInUp";
+@import "animate.css/source/sliding_entrances/slideInUp";

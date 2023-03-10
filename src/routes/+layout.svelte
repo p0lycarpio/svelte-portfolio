@@ -1,9 +1,9 @@
 <script>
   import "@fontsource/ibm-plex-sans/latin.css";
-  import "css/bootstrap.scss"
+  import "css/bootstrap.scss";
 </script>
 
-<slot></slot>
+<slot />
 
 <style lang="scss">
   :global {

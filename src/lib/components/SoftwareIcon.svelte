@@ -6,7 +6,9 @@
   export let svgid = undefined;
 
   function setShadow() {
-    if(color && !shadow) {shadow = color}
+    if (color && !shadow) {
+      shadow = color;
+    }
     element.style.setProperty("filter", "drop-shadow(0px 4px 10px" + shadow + ")");
   }
 

@@ -11,10 +11,18 @@
       class="btn cv"
       href="https://drive.google.com/file/d/1Z6GXtVXBCFkmz_KlSO15WfnnPrvhV7GK/view?usp=sharing"
       rel="preload"
-      on:mouseover={() => {cv = true}}
-      on:focus={() => {cv = true}}
-      on:blur={() => {cv = true}}
-      on:mouseout={() => {cv = false}}>
+      on:mouseover={() => {
+        cv = true;
+      }}
+      on:focus={() => {
+        cv = true;
+      }}
+      on:blur={() => {
+        cv = true;
+      }}
+      on:mouseout={() => {
+        cv = false;
+      }}>
       {#if cv == true}
         <i class="icon">
           <IconFile />
@@ -25,10 +33,18 @@
     <a
       class="btn portfolio"
       href="#projects"
-      on:mouseover={() => {portfolio = true}}
-      on:focus={() => {portfolio = true}}
-      on:blur={() => {portfolio = true}}
-      on:mouseout={() => {portfolio = false}}>
+      on:mouseover={() => {
+        portfolio = true;
+      }}
+      on:focus={() => {
+        portfolio = true;
+      }}
+      on:blur={() => {
+        portfolio = true;
+      }}
+      on:mouseout={() => {
+        portfolio = false;
+      }}>
       {#if portfolio == true}
         <i class="icon">
           <IconDown />

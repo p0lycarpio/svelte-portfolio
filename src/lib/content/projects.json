@@ -1,7 +1,7 @@
 [
   {
     "active": true,
-    "background":"#24292f",
+    "background": "#24292f",
     "text": "#fafafa",
     "accent": "#fff",
     "type": "DEV",
@@ -15,7 +15,7 @@
   },
   {
     "active": true,
-    "background":"#e6e6fa",
+    "background": "#e6e6fa",
     "text": "#3d494d",
     "accent": "#3d494d",
     "type": "DÉVELOPPEMENT WEB",

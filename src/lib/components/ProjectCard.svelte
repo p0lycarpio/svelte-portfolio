@@ -23,7 +23,7 @@
       <h1>{project.title}</h1>
       <h2>{project.subtitle}</h2>
       <p>{@html project.para}</p>
-      <p class='lien'>{@html project.links}</p>
+      <p class="lien">{@html project.links}</p>
     </div>
   </project>
 </div>

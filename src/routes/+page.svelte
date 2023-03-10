@@ -10,9 +10,10 @@
 <svelte:head>
   <title>Arsène Reymond</title>
   <meta name="author" content="Arsène Reymond" />
-  <meta name="description"
+  <meta
+    name="description"
     content="Portfolio et CV d'Arsène Reymond : développement web, infographie, montage vidéo et mise en page." />
-  <meta name="theme-color">
+  <meta name="theme-color" />
 </svelte:head>
 
 <div class="home">
