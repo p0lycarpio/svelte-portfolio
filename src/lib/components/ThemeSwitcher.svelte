@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  export let ref;
 
   import IconContrast from "~icons/material-symbols/contrast-sharp";
 
@@ -37,19 +36,22 @@
   });
 </script>
 
-<span class="dark-mode" on:click={toggleTheme} {ref}>
+<button class="theme-switcher" on:click={toggleTheme}>
   <IconContrast />
-</span>
+</button>
 
 <style>
-  span {
+  button {
+    border: 0;
+    background-color: transparent;
     font-size: 0.8em;
     position: relative;
     top: -3px !important;
+    color: var(--black-white);
   }
 
   @media only screen and (max-width: 767px) {
-    .dark-mode {
+    .theme-switcher {
       display: none !important;
     }
   }

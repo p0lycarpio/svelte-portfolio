@@ -69,8 +69,6 @@ a {
 
 /* A11y */
 @mixin focused {
-  // background-color: var(--h-color)!important;
-  // color: var(--white-black) !important;
   outline: var(--black-white) auto 1px;
   outline-offset: 2px;
 }
