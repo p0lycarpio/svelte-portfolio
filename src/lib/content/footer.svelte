@@ -10,7 +10,7 @@
   let form, alert;
   let isSubmitting = false;
   let getYear = new Date().getFullYear();
-  let url = "https://api.github.com/repos/p0lycarpio/portfolio/commits?&page=1&per_page=1";
+  let url = "https://api.github.com/repos/p0lycarpio/svelte-portfolio/commits?&page=1&per_page=1";
   let commitDate, contact;
 
   onMount(async () => {
