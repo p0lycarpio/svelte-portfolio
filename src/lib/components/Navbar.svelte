@@ -71,7 +71,7 @@
         <IconMenu />
       </button>
       <button class="icon">
-        <Theme ref="dark-mode" />
+        <Theme/>
       </button>
     </div>
     <div class="logo">

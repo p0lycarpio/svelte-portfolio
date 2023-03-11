@@ -33,12 +33,6 @@
               >Intégration et développement web, communication digitale, graphisme et audiovisuel.</span>
           </ExperienceCard>
         </div>
-        <!-- <div class="order-5 order-md-3">
-          <ExperienceCard type="school" from="2018" to="2019">
-            <span slot="title">Baccalauréat technologique</span>
-            <span slot="description">Obtention du baccalauréat STI2D. Mention assez bien.</span>
-          </ExperienceCard>
-        </div> -->
         <!-- Work experiences -->
         <div class="order-0 order-md-0">
           <ExperienceCard type="work" from="2022" to="aujourd'hui">

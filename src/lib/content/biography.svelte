@@ -1,12 +1,14 @@
 <script>
-  const nais = new Date(2001, 2, 22);
-
+  const born = new Date(2001, 1, 22);
+  const today = new Date()
+  
   let biographie;
-  let age;
-
-  let diff = Date.now() - nais.getTime();
-  let date = new Date(diff);
-  age = Math.abs(date.getUTCFullYear() - 1970);
+  
+  let age = today.getFullYear() - born.getFullYear();
+  let month = today.getMonth() - born.getMonth();
+  if (month < 0 || (month === 0 && today.getDate() < born.getDate())) {
+      age = age - 1;
+  }
 </script>
 
 <section class="container-xl animate fadeInUp" id="bio" bind:this={biographie}>
