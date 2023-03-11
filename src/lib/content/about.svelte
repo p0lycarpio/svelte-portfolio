@@ -36,7 +36,7 @@
     </svg>&nbsp;Netlify.
   </p>
   <p>
-    <a href="https://github.com/p0lycarpio/svelte-portfolio_Arsene">
+    <a href="https://github.com/p0lycarpio/svelte-portfolio">
       <svg>
         <use href="/icons.svg#github" />
       </svg> Code source</a>
