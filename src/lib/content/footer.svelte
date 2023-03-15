@@ -13,17 +13,17 @@
   let url = "https://api.github.com/repos/p0lycarpio/svelte-portfolio/commits?&page=1&per_page=1";
   let commitDate, contact;
 
-  onMount(async () => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        commitDate = new Date(data[0].commit.author.date);
-      })
-      .catch((error) => {
-        console.log(error);
-        return [];
-      });
-  });
+  // onMount(async () => {
+  //   fetch(url)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       commitDate = new Date(data[0].commit.author.date);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       return [];
+  //     });
+  // });
 
   const handleSubmit = () => {
     let formData = new FormData(form);
@@ -66,11 +66,6 @@
         <h1>Me contacter</h1>
         <div class="d-block social">
           <a
-            href="mailto:arsene.reymond@free.fr"
-            class="social-icon me-3"
-            title="e-mail"
-            on:focus={goBottom}><IconMail /></a>
-          <a
             href="https://linkedin.com/in/arsene-reymond"
             class="social-icon ms-3"
             title="LinkedIn"
@@ -89,10 +84,7 @@
         {#if alert}
           <div class={alert.class} role="alert">{alert.message}</div>
         {:else}
-          <p class="status-form">
-            <a href="mailto:arsene.reymond@free.fr" style="color:#fff; background:transparent"
-              >arsene.reymond@free.fr</a>
-          </p>
+          <p class="status-form"></p>
         {/if}
         <label for="email">E-mail</label>
         <input
