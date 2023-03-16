@@ -35,12 +35,6 @@
       <use href="/icons.svg#netlify" />
     </svg>&nbsp;Netlify.
   </p>
-  <p>
-    <a href="https://github.com/p0lycarpio/svelte-portfolio">
-      <svg>
-        <use href="/icons.svg#github" />
-      </svg> Code source</a>
-  </p>
 </div>
 
 <style lang="scss">
