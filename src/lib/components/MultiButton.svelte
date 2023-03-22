@@ -9,7 +9,7 @@
   <div class="multi-button btn-group">
     <a
       class="btn cv"
-      href="https://drive.google.com/file/d/1Z6GXtVXBCFkmz_KlSO15WfnnPrvhV7GK/view?usp=sharing"
+      href="https://drive.google.com/file/d/1Gxeb5wL5Ixz8YyB4fMhrON5h-deWKeGP/view"
       rel="preload"
       on:mouseover={() => {
         cv = true;
