@@ -87,7 +87,7 @@
     border-right-style: none;
   }
 
-  .dark-mode .multi-button :first-child {
+  .dark-mode .multi-button :first-child:not(.icon) {
     border-right: solid 2px;
   }
 
@@ -110,6 +110,5 @@
 
   .icon {
     pointer-events: none;
-    vertical-align: text-bottom;
   }
 </style>
