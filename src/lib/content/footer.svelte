@@ -94,6 +94,7 @@
           placeholder="Votre e-mail"
           id="email"
           value=""
+          autocomplete="email"
           required />
         <label for="message">Message</label>
         <textarea
