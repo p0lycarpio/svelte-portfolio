@@ -12,26 +12,26 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@iconify/json": "^2.2.30",
-    "@sveltejs/adapter-netlify": "^1.0.5",
-    "@sveltejs/vite-plugin-svelte": "^2.0.2",
-    "eslint": "^8.35.0",
-    "eslint-config-prettier": "^8.7.0",
-    "postcss": "^8.4.21",
-    "prettier": "2.8.4",
-    "prettier-plugin-svelte": "^2.9.0",
-    "sass": "^1.57.1",
-    "svelte": "^3.55.1",
-    "unplugin-icons": "^0.15.3",
-    "vite": "^4.0.4",
-    "vite-imagetools": "^4.0.18"
+    "@iconify/json": "^2.2.79",
+    "@sveltejs/adapter-netlify": "^2.0.7",
+    "@sveltejs/vite-plugin-svelte": "^2.4.1",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "postcss": "^8.4.24",
+    "prettier": "2.8.8",
+    "prettier-plugin-svelte": "^2.10.1",
+    "sass": "^1.63.4",
+    "svelte": "^3.59.1",
+    "unplugin-icons": "^0.16.3",
+    "vite": "^4.2.2",
+    "vite-imagetools": "^4.0.19"
   },
   "dependencies": {
-    "@fontsource/ibm-plex-sans": "^4.5.13",
-    "@popperjs/core": "^2.11.6",
-    "@sveltejs/kit": "^1.15.2",
+    "@fontsource/ibm-plex-sans": "^5.0.3",
+    "@popperjs/core": "^2.11.8",
+    "@sveltejs/kit": "^1.20.4",
     "animate.css": "^4.1.1",
-    "bootstrap": "^5.2.3",
-    "svelte-preprocess": "^5.0.0"
+    "bootstrap": "~5.2.0",
+    "svelte-preprocess": "^5.0.4"
   }
 }
