@@ -3,7 +3,7 @@
   export let project;
 </script>
 
-<div class="col-lg-6 {project.domain}" transition:scale>
+<div class="col-lg-6 {project.domain}" transition:scale|global>
   <project
     style="background-color:{project.background}; color:{project.text}"
     class={project.layout}>
