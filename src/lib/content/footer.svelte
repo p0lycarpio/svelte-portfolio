@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
-  import IconMail from "~icons/fa6-solid/envelope";
+  import IconLink from '~icons/fa6-solid/link'
   import IconLinkedin from "~icons/fa6-brands/linkedin";
   import IconUp from "~icons/fa6-solid/chevron-up";
 
@@ -70,6 +70,11 @@
             class="social-icon ms-3"
             title="LinkedIn"
             on:focus={goBottom}><IconLinkedin /></a>
+          <a
+            href="/contact"
+            class="social-icon ms-3"
+            title="Littlelink"
+            data-sveltekit-reload><IconLink /></a>
         </div>
       </div>
       <form
