@@ -25,7 +25,7 @@
       }}>
       {#if cv == true}
         <i class="icon">
-          <IconFile />
+          <IconFile height="1.1em"/>
         </i>
       {/if}
       CV
@@ -110,5 +110,6 @@
 
   .icon {
     pointer-events: none;
+    vertical-align: top;
   }
 </style>

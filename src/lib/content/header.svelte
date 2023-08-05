@@ -26,7 +26,7 @@
         <div class="logo">
           <Logo />
         </div>
-        <img src={image} srcset={webp} alt="Portrait" width="100" height="100" class="avatar" />
+        <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
         <h1>Développement et informatique</h1>
       </div>
       <p>
@@ -105,7 +105,7 @@
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     user-select: none;
     &:hover {
-      transform: scale(1.4);
+      transform: scale(1.2);
       box-shadow: 0px 10px 40px 0px #778a93;
     }
   }
