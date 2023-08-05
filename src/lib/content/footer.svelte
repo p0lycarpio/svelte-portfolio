@@ -1,7 +1,6 @@
 <script>
   import { onMount } from "svelte";
 
-  import IconMail from "~icons/fa6-solid/envelope";
   import IconLinkedin from "~icons/fa6-brands/linkedin";
   import IconUp from "~icons/fa6-solid/chevron-up";
 
@@ -131,10 +130,11 @@
   </button>
   <div class="copyright">
     <span title="Arsène Reymond">
+      {getYear} Arsène Reymond
       {#if commitDate}
-        Mis à jour le {commitDate.toLocaleDateString("fr")}<br />
+       | Mis à jour le {commitDate.toLocaleDateString("fr")}
       {/if}
-      {getYear}, Tous droits réservés | Arsène Reymond</span>
+    </span>
   </div>
 </footer>
 
