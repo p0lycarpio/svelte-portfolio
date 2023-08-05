@@ -103,6 +103,7 @@ body {
 @media (prefers-color-scheme: dark) {
   body {
     @include dark-colors();
+    background-color: var(--bkg-color);
     & img {
       @include filter-dark();
     }
