@@ -59,7 +59,7 @@
   <nav
     class="d-flex align-items-center justify-content-between"
     id="navbar-top"
-    transition:transition>
+    transition:transition|global>
     <!-- Navbar elements -->
     <div class="d-flex navbar-buttons">
       <button
@@ -110,7 +110,7 @@
   </nav>
 
   {#if menuOpen}
-    <div id="overlay" class="menu-overlay" on:click={close} transition:fade={{ duration: 300 }} />
+    <div id="overlay" class="menu-overlay" on:click={close} transition:fade|global={{ duration: 300 }} />
   {/if}
 {/if}
 

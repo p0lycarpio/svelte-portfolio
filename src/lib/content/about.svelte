@@ -30,7 +30,7 @@
     Développé avec
     <svg>
       <use href="/icons.svg#svelte" />
-    </svg>&nbsp;Svelte et hébergé sur
+    </svg>&nbsp;SvelteKit et hébergé sur
     <svg>
       <use href="/icons.svg#netlify" />
     </svg>&nbsp;Netlify.
