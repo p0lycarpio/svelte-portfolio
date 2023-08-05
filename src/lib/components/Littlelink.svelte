@@ -23,7 +23,8 @@
     text-align: center;
     vertical-align: middle;
     font-size: 18px;
-    width: 324px;
+    width: 100%;
+    max-width: 324px;
     font-weight: 700;
     line-height: 20px;
     padding: 12px;

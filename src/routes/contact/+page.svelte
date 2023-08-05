@@ -6,7 +6,7 @@
 </script>
 
 <div class="container">
-  <div class="column text-center my-5">
+  <div class="column text-center my-5 pb-5">
     <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
     <h1>Arsène Reymond</h1>
     <p>
@@ -76,12 +76,13 @@
 <style lang="scss">
   h1 { 
     font-size: 48px;
-    line-height: 96px;
-    font-weight: 800;
+    font-weight: 600;
+    line-height: 1em;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 18px;
+    margin-top: 1.4rem;
     margin-bottom: 3rem;
     line-height: 1.5;
   }
@@ -99,8 +100,6 @@
 
   .avatar {
     border-radius: 50%;
-    width: 128px;
-    height: 128px;
     transition: all 0.5s;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     user-select: none;
