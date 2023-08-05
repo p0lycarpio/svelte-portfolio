@@ -11,13 +11,11 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@iconify/json": "^2.2.97",
     "@sveltejs/adapter-netlify": "^2.0.8",
     "@sveltejs/vite-plugin-svelte": "^2.4.3",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.9.0",
-    "postcss": "^8.4.24",
     "prettier": "2.8.8",
     "prettier-plugin-svelte": "^2.10.1",
     "sass": "^1.64.2",
