@@ -11,27 +11,27 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.97",
+    "@iconify/json": "^2.2.151",
     "@sveltejs/adapter-netlify": "^2.0.8",
-    "@sveltejs/vite-plugin-svelte": "^2.4.3",
-    "eslint": "^8.46.0",
-    "eslint-config-prettier": "^8.9.0",
+    "@sveltejs/vite-plugin-svelte": "^2.5.3",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^8.10.0",
     "prettier": "2.8.8",
     "prettier-plugin-svelte": "^2.10.1",
-    "sass": "^1.64.2",
-    "svelte": "^4.0.0",
-    "unplugin-icons": "^0.16.5",
-    "vite": "^4.4.8",
+    "sass": "~1.64.2",
+    "svelte": "^4.2.8",
+    "unplugin-icons": "^0.16.6",
+    "vite": "^4.5.0",
     "vite-imagetools": "^4.0.19"
   },
   "dependencies": {
-    "@fontsource/ibm-plex-sans": "^5.0.6",
+    "@fontsource/ibm-plex-sans": "^5.0.17",
     "@popperjs/core": "^2.11.8",
-    "@sveltejs/kit": "^1.22.4",
+    "@sveltejs/kit": "^1.27.6",
     "animate.css": "^4.1.1",
-    "bootstrap": "~5.2.0",
-    "sharp": "^0.32.4",
-    "svelte-preprocess": "^5.0.4"
+    "bootstrap": "~5.2.3",
+    "sharp": "0.32.6",
+    "svelte-preprocess": "^5.1.1"
   },
   "packageManager": "yarn@4.0.2"
 }
