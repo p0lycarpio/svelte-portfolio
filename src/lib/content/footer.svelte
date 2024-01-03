@@ -1,29 +1,13 @@
 <script>
-  import { onMount } from "svelte";
-
   import IconLink from "~icons/fa6-solid/link"
   import IconLinkedin from "~icons/fa6-brands/linkedin";
   import IconUp from "~icons/fa6-solid/chevron-up";
 
   export const prerender = true;
 
-  let form, alert;
+  let form, alert, contact;
   let isSubmitting = false;
   let getYear = new Date().getFullYear();
-  let url = "https://api.github.com/repos/p0lycarpio/svelte-portfolio/commits?&page=1&per_page=1";
-  let commitDate, contact;
-
-  // onMount(async () => {
-  //   fetch(url)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       commitDate = new Date(data[0].commit.author.date);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //       return [];
-  //     });
-  // });
 
   const handleSubmit = () => {
     let formData = new FormData(form);
@@ -136,10 +120,9 @@
   </button>
   <div class="copyright">
     <span title="Arsène Reymond">
-      {getYear} Arsène Reymond
-      {#if commitDate}
-       | Mis à jour le {commitDate.toLocaleDateString("fr")}
-      {/if}
+      <strong style="color:#fff">
+        {getYear} Arsène Reymond
+      </strong>
     </span>
   </div>
 </footer>
@@ -189,7 +172,7 @@
 
   .contact-form {
     position: fixed;
-    top: 30%;
+    top: 36%;
     z-index: 1;
     width: 610px;
     margin-bottom: 5em;
@@ -300,7 +283,7 @@
       height: 50vh;
     }
     .contact-form {
-      top: 52%;
+      top: 55%;
     }
   }
 </style>
