@@ -12,7 +12,7 @@
     <p>
       Passionné par l'informatique, la musique et le cinéma.<br />
       Étudiant à mes heures perdues et DataOps en alternance chez
-      <a href="https://www.covea.eu/fr" target="_blank" rel="noopener">Covéa</a>.
+      <a href="https://www.covea.com/fr" target="_blank" rel="noopener">Covéa</a>.
     </p>
 
     <Littlelink
@@ -50,6 +50,12 @@
       href="https://last.fm/user/arsene_72"
       color="#fff"
       background="#d51007">Last.fm</Littlelink>
+
+    <Littlelink
+      icon="letterboxd"
+      href="https://boxd.it/84LRn"
+      color="#fff"
+      background="#2c3440">Letterboxd</Littlelink>
 
     <Littlelink
       icon="tvtime"

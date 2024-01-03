@@ -1,7 +1,24 @@
 <script>
+  import { onMount } from "svelte";
+
   import IconBack from "~icons/material-symbols/arrow-back-rounded";
   export let closeParent = () => {};
   export let about, display;
+
+  let url = "https://api.github.com/repos/p0lycarpio/svelte-portfolio/commits?&page=1&per_page=1";
+  let commitDate;
+
+  onMount(async () => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        commitDate = new Date(data[0].commit.author.date);
+      })
+      .catch((error) => {
+        console.log(error);
+        return [];
+      });
+  });
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -33,7 +50,10 @@
     </svg>&nbsp;SvelteKit et hébergé sur
     <svg>
       <use href="/icons.svg#netlify" />
-    </svg>&nbsp;Netlify.
+    </svg>&nbsp;Netlify.<br>
+  {#if commitDate}
+    Mis à jour le {commitDate.toLocaleDateString("fr")}.
+  {/if}
   </p>
 </div>
 

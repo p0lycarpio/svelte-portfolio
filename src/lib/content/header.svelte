@@ -37,7 +37,7 @@
             rel="noreferrer">master informatique</a
           ></Tooltip>
         et DataOps en alternance à
-        <a href="https://www.covea.eu/fr" target="_blank" rel="noreferrer">Covéa</a>.
+        <a href="https://www.covea.com/fr" target="_blank" rel="noreferrer">Covéa</a>.
       </p>
       <MultiButton />
     </div>

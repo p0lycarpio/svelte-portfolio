@@ -6,8 +6,8 @@ Code source of my portfolio developed with [Sveltekit](https://kit.svelte.dev/) 
 
 ## Requirements
 
-- Node.js >= 16.17.1
-- Yarn >= 1.22.19
+- Node.js >= 18
+- Yarn >= 4
 - Netlify
 
 ## Get started
