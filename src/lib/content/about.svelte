@@ -1,4 +1,5 @@
 <script>
+  import { t, locale } from "$lib/translations";
   import { onMount } from "svelte";
 
   import IconBack from "~icons/material-symbols/arrow-back-rounded";
@@ -23,36 +24,27 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="about" class="about" bind:this={about} class:show={display === true}>
-  <button class="icon" title="Retour" on:click={closeParent}>
+  <button class="icon" title={$t("common.back")} on:click={closeParent}>
     <IconBack />
   </button>
-  <h3>Mentions légales</h3>
+  <h3>{$t("about.legals")}</h3>
+  <p>{$t("about.legals.text")}</p>
+  <h3>{$t("about.data")}</h3>
+  <p>{$t("about.data.text")}</p>
+  <h3>{$t("about.cookies")}</h3>
+  <p>{$t("about.cookies.text")}</p>
   <p>
-    Ce site est la propriété d'Arsène Reymond (personne physique). Il est destiné à un usage privé
-    et il n'entraine aucun revenu. Toute reproduction et/ou réutilisation des éléments, textes,
-    parties de code ou autres types de contenu présent sur le site sans autorisation est interdite.
-  </p>
-  <h3>Données collectées</h3>
-  <p>
-    Le site sur lequel vous vous trouvez ne collecte aucune donnée à votre insu. L'utilisation du
-    formulaire de contact envoie directement le contenu par mail à son destinataire. N'envoyez pas
-    d'informations sensibles avec.
-  </p>
-  <h3>Cookies</h3>
-  <p>
-    Ce site n'émet ou n'utilise pas de cookie. Le stockage de session peut être utilisé pour le
-    stockage des paramètres de navigation, comme le choix du thème.
-  </p>
-  <p>
-    Développé avec
+    {$t("about.developedWith")}
     <svg>
       <use href="/icons.svg#svelte" />
-    </svg>&nbsp;SvelteKit et hébergé sur
+    </svg>&nbsp;SvelteKit
+    {$t("about.hostedOn")}
     <svg>
       <use href="/icons.svg#netlify" />
     </svg>&nbsp;Netlify.<br>
   {#if commitDate}
-    Mis à jour le {commitDate.toLocaleDateString("fr")}.
+    <br>
+    {$t("about.updated") + commitDate.toLocaleDateString(locale.get())}
   {/if}
   </p>
 </div>

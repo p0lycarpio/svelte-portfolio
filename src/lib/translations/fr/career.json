@@ -1,0 +1,19 @@
+{
+    "title": "Parcours",
+    "subtitle": "Experiences professionnelles et études",
+    "today": "aujourd'hui",
+    "studies": "Études",
+    "work": "Expérience professionnelle",
+    "master": "Master Informatique parcours Architecte logiciel",
+    "master.description": "Programmation, architecture des SI et gestion de projet.",
+    "bachelor": "LP Conception, développement et tests de logiciels – option développeur cloud",
+    "bachelor.description": "Développement web, mobile, backend & cloud.",
+    "technical": "DUT Métiers du multimédia et de l'internet",
+    "technical.description": "Intégration et développement web, communication digitale, graphisme et audiovisuel.",
+    "covea": "Groupe Covéa",
+    "covea.description": "Ingénieur DataMLOps, en alternance.",
+    "cgi": "CGI Niort",
+    "cgi.description": "Développeur de webservices, en alternance.",
+    "sdis": "SDIS 41",
+    "sdis.description": "Chargé de communication, en alternance."
+}

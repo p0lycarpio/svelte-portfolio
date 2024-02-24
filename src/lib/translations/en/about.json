@@ -1,0 +1,12 @@
+{
+    "title": "About",
+    "legals": "Legal notices",
+    "legals.text": "This site is the property of Arsène Reymond (natural person). It is intended for private use and it does not generate any income. Any reproduction and/or reuse of elements, texts, parts of code or other types of content present on the site without authorization is prohibited.",
+    "data": "Data collected",
+    "data.text": "The site you are on does not collect any data without your knowledge. Using the contact form sends the content directly by email to the recipient. Do not send sensitive information with it.",
+    "cookies": "Cookies",
+    "cookies.text": "This site does not issue or use cookies. Session storage may be used to store browsing settings, such as theme choice.",
+    "developedWith": "Developed with",
+    "hostedOn": "and hosted on",
+    "updated": "Last update on "
+}

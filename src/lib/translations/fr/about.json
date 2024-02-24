@@ -1,0 +1,12 @@
+{
+    "title": "À propos",
+    "legals": "Mentions légales",
+    "legals.text": "Ce site est la propriété d'Arsène Reymond (personne physique). Il est destiné à un usage privé et il n'entraine aucun revenu. Toute reproduction et/ou réutilisation des éléments, textes, parties de code ou autres types de contenu présent sur le site sans autorisation est interdite.",
+    "data": "Données collectées",
+    "data.text": "Le site sur lequel vous vous trouvez ne collecte aucune donnée à votre insu. L'utilisation du formulaire de contact envoie directement le contenu par mail à son destinataire. N'envoyez pas d'informations sensibles avec.",
+    "cookies": "Cookies",
+    "cookies.text": "Ce site n'émet ou n'utilise pas de cookie. Le stockage de session peut être utilisé pour le stockage des paramètres de navigation, comme le choix du thème.",
+    "developedWith": "Développé avec",
+    "hostedOn": "et hébergé sur",
+    "updated": "Mis à jour le "
+}

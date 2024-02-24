@@ -1,7 +1,8 @@
 <script>
+  import { t } from '$lib/translations';
+
   import Navbar from "components/Navbar.svelte";
   import Logo from "assets/logo.svelte";
-  import Tooltip from "components/Tooltip.svelte";
   import Wavify from "components/Wavify.svelte";
   import MultiButton from "components/MultiButton.svelte";
 
@@ -27,18 +28,9 @@
           <Logo />
         </div>
         <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
-        <h1>Développement et informatique</h1>
+        <h1>{$t("common.title")}</h1>
       </div>
-      <p>
-        Étudiant en <Tooltip text="Parcours Architecte logiciel"
-          ><a
-            href="https://formations.univ-larochelle.fr/master-informatique-architecte-logiciel-niort"
-            target="_blank"
-            rel="noreferrer">master informatique</a
-          ></Tooltip>
-        et DataOps en alternance à
-        <a href="https://www.covea.com/fr" target="_blank" rel="noreferrer">Covéa</a>.
-      </p>
+      <p>{@html $t("common.subtitle")}</p>
       <MultiButton />
     </div>
     <div
@@ -88,7 +80,7 @@
       font-size: 20px;
       padding: 0 10%;
     }
-    & a {
+    & :global(a) {
       color: var(--h-color);
       font-weight: 600;
     }

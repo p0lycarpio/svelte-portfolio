@@ -692,6 +692,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sveltekit-i18n/base@npm:~1.3.0":
+  version: 1.3.7
+  resolution: "@sveltekit-i18n/base@npm:1.3.7"
+  peerDependencies:
+    svelte: ">=3.49.0"
+  checksum: 01f1386e4dfc2783668892aaebfd8b3f656223c345af35bfd364b42e9ec8c82cf90cca2a19fc547883202a31837a4f100d4c46fca2708b724aebaab7b4aab165
+  languageName: node
+  linkType: hard
+
+"@sveltekit-i18n/parser-default@npm:~1.1.0":
+  version: 1.1.1
+  resolution: "@sveltekit-i18n/parser-default@npm:1.1.1"
+  checksum: 50bbbe9fef17b0da05d466f6439c0cd2292f2220e8d96575e93d10255c53a67b5fb9719f3e4698f90213dfa0212da9b19e15f7d46a0483d472a7098dc36dad69
+  languageName: node
+  linkType: hard
+
 "@types/cookie@npm:^0.5.1":
   version: 0.5.1
   resolution: "@types/cookie@npm:0.5.1"
@@ -3189,6 +3205,7 @@ __metadata:
     sharp: "npm:0.32.6"
     svelte: "npm:^4.2.8"
     svelte-preprocess: "npm:^5.1.1"
+    sveltekit-i18n: "npm:^2.4.2"
     unplugin-icons: "npm:^0.16.6"
     vite: "npm:^4.5.2"
     vite-imagetools: "npm:^4.0.19"
@@ -3268,6 +3285,18 @@ __metadata:
     magic-string: "npm:^0.30.4"
     periscopic: "npm:^3.1.0"
   checksum: 13673a6211cc38224398f4bda8e0ba93edfb1338aa4f28f614a31ac31b152479038761cfc57f1668554f5ab70effcd8023dcf549d75e7b2a7ae703d213b7e9da
+  languageName: node
+  linkType: hard
+
+"sveltekit-i18n@npm:^2.4.2":
+  version: 2.4.2
+  resolution: "sveltekit-i18n@npm:2.4.2"
+  dependencies:
+    "@sveltekit-i18n/base": "npm:~1.3.0"
+    "@sveltekit-i18n/parser-default": "npm:~1.1.0"
+  peerDependencies:
+    svelte: ">=3.49.0"
+  checksum: b38ef5b4e765a75a6ca658d343f6ca2c922d530f4ea7fb740563d667017b61e57aad952ab482f948125cfaeffc7f905cb7709d97357ac671c53d925ce8b2b6af
   languageName: node
   linkType: hard
 

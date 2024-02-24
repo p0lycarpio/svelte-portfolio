@@ -1,4 +1,5 @@
 <script>
+  import { t } from '$lib/translations';
   import IconFile from "~icons/ic/outline-insert-drive-file";
   import IconDown from "~icons/ic/outline-arrow-downward";
 
@@ -28,7 +29,7 @@
           <IconFile height="1.1em"/>
         </i>
       {/if}
-      CV
+      {$t("common.cv")}
     </a>
     <a
       class="btn portfolio"
@@ -50,7 +51,8 @@
           <IconDown />
         </i>
       {/if}
-      Portfolio</a>
+      {$t("common.portfolio")}
+    </a>
   </div>
 </div>
 
@@ -81,6 +83,7 @@
     background-color: var(--bkg-color);
     font-size: 1rem;
     transition: flex-grow var(--duration) var(--ease);
+    font-weight: normal;
   }
 
   .multi-button :first-child {

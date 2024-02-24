@@ -1,24 +1,31 @@
 <script>
+  import { t, locale } from "$lib/translations";
   import ProjectCard from "components/ProjectCard.svelte";
-  import allprojects from "./projects.json";
-
+  
+  import projects_en from "content/projects.en.json";
+  import projects_fr from "content/projects.fr.json";
+  
+  let allprojects = []
+  let projects = [];
   let filtered = false;
   let current = "all";
-  let projects = allprojects.filter((prj) => prj.active == true);
   let domains = [];
   let visible_projects = [];
 
-  // Display only 4 elements onMount
-  let more = 4;
-  for (let i = 0; i < more; i++) {
-    visible_projects.push(projects[i]);
-  }
-
-  // Retrieve all possible domains
-  projects.forEach((element) => {
-    if (domains.indexOf(element.domain) === -1 && element.domain != undefined)
-      domains.push(element.domain);
+  locale.subscribe(() => {
+    domains = [];
+    projects = [];
+    allprojects = locale.get() === "fr" ? projects_fr : projects_en;
+    projects = allprojects.filter((prj) => prj.active == true);
+    
+    // Retrieve all possible domains
+    projects.forEach((element) => {
+      if (domains.indexOf(element.domain) === -1 && element.domain != undefined)
+        domains.push(element.domain);
+    });
+    showall();
   });
+  
 
   function showmore() {
     visible_projects = visible_projects.concat(projects.slice(more, more + 4));
@@ -43,12 +50,13 @@
   <div class="row row-padded">
     <div class="col-md-3">
       <h2 class="section-heading">
-        Portfolio<span class="section-border" />
+        {$t("common.portfolio")}
+        <span class="section-border" />
       </h2>
-      <p class="section-subtitle">Mes projets</p>
+      <p class="section-subtitle">{$t("common.portfolio.subtitle")}</p>
       <div id="filtres" class="d-none d-md-block">
         <div class="filters button-group">
-          <button class:selected={current === "all"} on:click={showall}>Tout</button><br />
+          <button class:selected={current === "all"} on:click={showall}>{$t("common.all")}</button><br />
           {#each domains as domain}
             <button class:selected={current === domain} on:click={() => filter(domain)}>
               {domain.charAt(0).toUpperCase() + domain.slice(1)}</button
@@ -61,7 +69,7 @@
     <div class="col-md-9 col-md-push-1">
       <div class="row elements mt-md-0 mt-n2">
         {#each visible_projects as project}
-          <ProjectCard {project} />
+            <ProjectCard {project} />            
         {/each}
       </div>
       {#if visible_projects.length < projects.length && !filtered}
@@ -69,7 +77,7 @@
           <div class="col-6 col-md-5">
             <div class="card d-grid text-center">
               <button type="button" on:click={showmore} class="btn text-nowrap py-2" id="see-more"
-                >Voir plus</button>
+                >{$t("common.seemore")}</button>
             </div>
           </div>
         </div>

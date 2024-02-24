@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { slide, fade } from "svelte/transition";
+  import { t, locale } from '$lib/translations';
 
   import Theme from "./ThemeSwitcher.svelte";
   import About from "content/about.svelte";
@@ -8,19 +9,24 @@
 
   import IconClose from "~icons/material-symbols/close-rounded";
   import IconMenu from "~icons/material-symbols/menu-rounded";
+  import IconTranslate from "~icons/material-symbols/translate";
 
   let y, wx, transition;
   let sidebar;
-  let menuOpen,
-    aboutOpen = false;
-  let sidebarLinks = [
-    { href: "#", text: "Home" },
-    { href: "#bio", text: "Biographie" },
-    { href: "#projects", text: "Portfolio" },
-    { href: "#parcours", text: "Parcours" },
-    { href: "#compétences", text: "Compétences" },
-    { href: "#contact", text: "Contact" },
-  ];
+  let menuOpen = false;
+  let aboutOpen = false;
+  let sidebarLinks = []
+
+  locale.subscribe(() => {
+    sidebarLinks = [
+      { href: "#", text: "Home" },
+      { href: "#bio", text: $t("biography.title") },
+      { href: "#projects", text: $t("common.portfolio") },
+      { href: "#parcours", text: $t("career.title") },
+      { href: "#compétences", text: $t("skills.title") },
+      { href: "#contact", text: $t("contact.title") },
+    ];
+  });
 
   onMount(() => {
     setTransition();
@@ -33,6 +39,10 @@
   function close() {
     menuOpen = false;
     aboutOpen = false;
+  }
+
+  function switchLocale() {
+    locale.set(locale.get() === "fr" ? "en" : "fr");
   }
 </script>
 
@@ -73,6 +83,9 @@
       <button class="icon">
         <Theme/>
       </button>
+      <button class="icon menu" on:click={switchLocale} title={$t("common.opLocale")}>
+        <IconTranslate style="font-size:.8em"/>
+      </button>
     </div>
     <div class="logo">
       <Logo />
@@ -82,7 +95,7 @@
 
     <!-- Sidebars -->
     <div id="sidenav" class="sidenav" class:show={menuOpen === true} bind:this={sidebar}>
-      <button title="Fermer" class="icon" on:click={close}>
+      <button title={$t("common.close")} class="icon" on:click={close}>
         <IconClose />
       </button>
       <ul id="sidebar-links">
@@ -98,7 +111,7 @@
             on:keypress={(e) => {
               e.key == "Enter" ? (aboutOpen = true) : null;
             }}
-            tabindex="0">À propos</a>
+            tabindex="0">{$t("about.title")}</a>
         </li>
       </ul>
     </div>

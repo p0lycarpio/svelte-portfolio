@@ -1,4 +1,5 @@
 <script>
+  import { t } from '$lib/translations';
   import Littlelink from "../../lib/components/Littlelink.svelte";
 
   import webp from "assets/avatar.jpg?webp&w=200&srcset";
@@ -9,11 +10,7 @@
   <div class="column text-center my-5 pb-5">
     <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
     <h1>Arsène Reymond</h1>
-    <p>
-      Passionné par l'informatique, la musique et le cinéma.<br />
-      Étudiant à mes heures perdues et DataOps en alternance chez
-      <a href="https://www.covea.com/fr" target="_blank" rel="noopener">Covéa</a>.
-    </p>
+    <p>{@html $t("contact.description")}</p>
 
     <Littlelink
       icon="linkedin"
@@ -74,7 +71,7 @@
       icon="message"
       href="/#contact"
       color="#fff"
-      background="#2457f5">Envoyer un message</Littlelink>
+      background="#2457f5">{$t("contact.sendMessage")}</Littlelink>
     <br>
   </div>
 </div>

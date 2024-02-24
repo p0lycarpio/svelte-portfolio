@@ -1,4 +1,5 @@
 <script>
+  import { t } from "$lib/translations";
   import IconLink from "~icons/fa6-solid/link"
   import IconLinkedin from "~icons/fa6-brands/linkedin";
   import IconUp from "~icons/fa6-solid/chevron-up";
@@ -20,7 +21,7 @@
       .then(() => {
         alert = {
           class: "alert alert-success",
-          message: "Votre message a bien été envoyé",
+          message: $t("contact.messageSent"),
         };
         isSubmitting = false;
         form.reset();
@@ -28,7 +29,7 @@
       .catch(() => {
         alert = {
           class: "alert alert-danger",
-          message: "Erreur lors de l'envoi de votre message. Réésayez ultérieurement",
+          message: $t("contact.messageError"),
         };
         isSubmitting = false;
       });
@@ -47,7 +48,7 @@
   <div class="container d-flex justify-content-center footer">
     <div class="contact-form">
       <div class="h-contact d-flex flex-column flex-sm-row">
-        <h1>Me contacter</h1>
+        <h1>{$t("contact.contactMe")}</h1>
         <div class="d-block social">
           <a
             href="https://linkedin.com/in/arsene-reymond"
@@ -75,20 +76,20 @@
         {:else}
           <p class="status-form"></p>
         {/if}
-        <label for="email">E-mail</label>
+        <label for="email">{$t("contact.yourEmail")}</label>
         <input
           type="email"
           maxlength="64"
           name="email"
-          placeholder="Votre e-mail"
+          placeholder={$t("contact.yourEmail")}
           id="email"
           value=""
           autocomplete="email"
           required />
-        <label for="message">Message</label>
+        <label for="message">{$t("contact.yourMessage")}</label>
         <textarea
           name="message"
-          placeholder="Saisissez votre message"
+          placeholder={$t("contact.yourMessage")}
           id="message"
           cols="55"
           rows="4"
@@ -104,7 +105,7 @@
             </button>
           {:else}
             <button type="submit" class="btn btn-outline-light" name="submit" id="submit"
-              >Envoyer</button>
+              >{$t("contact.send")}</button>
           {/if}
         </div>
       </form>
@@ -115,7 +116,7 @@
     id="back-to-top"
     on:click={goTop}
     class="btn btn-outline-light btn-md back-to-top d-none d-md-block"
-    title="Retour en haut"
+    title={$t("contact.backToTop")}
     ><IconUp />
   </button>
   <div class="copyright">
