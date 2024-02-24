@@ -65,7 +65,8 @@ project .lien {
 }
 
 project:hover,
-.card:hover {
+.card:hover,
+.biglink:hover {
   box-shadow: 0 4px 10px var(--cardHover);
   transform: translate(0, -3px);
 }

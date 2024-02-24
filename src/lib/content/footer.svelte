@@ -51,11 +51,6 @@
         <h1>{$t("contact.contactMe")}</h1>
         <div class="d-block social">
           <a
-            href="https://linkedin.com/in/arsene-reymond"
-            class="social-icon ms-3"
-            title="LinkedIn"
-            on:focus={goBottom}><IconLinkedin /></a>
-          <a
             href="/contact"
             class="social-icon ms-3"
             title="Littlelink"

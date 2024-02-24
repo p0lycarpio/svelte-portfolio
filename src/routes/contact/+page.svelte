@@ -20,8 +20,9 @@
 
     <Littlelink
       icon="discord"
-      href="https://discordapp.com/users/562663442159239173"
+      href="polycarpio"
       color="#fff"
+      copy="true"
       background="#5865f2">Discord</Littlelink>
     
     <Littlelink

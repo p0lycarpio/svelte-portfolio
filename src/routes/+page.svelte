@@ -5,6 +5,7 @@
   import Parcours from "content/career.svelte";
   import Skills from "content/skills.svelte";
   import Footer from "content/footer.svelte";
+  import Social from "content/social.svelte";
 </script>
 
 <svelte:head>
@@ -23,6 +24,7 @@
     <Projects />
     <Parcours />
     <Skills />
+    <Social />
   </main>
 </div>
 <Footer />
