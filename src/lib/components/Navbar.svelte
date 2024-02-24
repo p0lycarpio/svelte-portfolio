@@ -83,7 +83,7 @@
       <button class="icon">
         <Theme/>
       </button>
-      <button class="icon menu" on:click={switchLocale} title={$t("common.opLocale")}>
+      <button class="icon locale" on:click={switchLocale} title={$t("common.opLocale")}>
         <IconTranslate style="font-size:.8em"/>
       </button>
     </div>
@@ -97,6 +97,9 @@
     <div id="sidenav" class="sidenav" class:show={menuOpen === true} bind:this={sidebar}>
       <button title={$t("common.close")} class="icon" on:click={close}>
         <IconClose />
+      </button>
+        <button class="icon locale" on:click={switchLocale} title={$t("common.opLocale")}>
+        <IconTranslate style="font-size:.8em"/>
       </button>
       <ul id="sidebar-links">
         {#each sidebarLinks as { href, text }}
@@ -172,6 +175,10 @@
     }
   }
 
+  .sidenav .locale {
+    display: none;
+  }
+
   .about-link {
     position: absolute;
     bottom: 0;
@@ -240,6 +247,14 @@
     .menu {
       position: relative;
       top: -3px;
+    }
+
+    .locale {
+      display: none !important;
+    }
+
+    .sidenav .locale {
+      display: inline-block !important;
     }
   }
 </style>
