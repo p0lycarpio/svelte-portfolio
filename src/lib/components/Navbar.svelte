@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { slide, fade } from "svelte/transition";
+  import { t, locale } from "$lib/translations";
 
   import Theme from "./ThemeSwitcher.svelte";
   import About from "content/about.svelte";
@@ -8,19 +9,23 @@
 
   import IconClose from "~icons/material-symbols/close-rounded";
   import IconMenu from "~icons/material-symbols/menu-rounded";
+  import IconTranslate from "~icons/material-symbols/translate";
 
   let y, wx, transition;
   let sidebar;
-  let menuOpen,
-    aboutOpen = false;
-  let sidebarLinks = [
-    { href: "#", text: "Home" },
-    { href: "#bio", text: "Biographie" },
-    { href: "#projects", text: "Portfolio" },
-    { href: "#parcours", text: "Parcours" },
-    { href: "#compétences", text: "Compétences" },
-    { href: "#contact", text: "Contact" },
-  ];
+  let menuOpen = false;
+  let aboutOpen = false;
+  let sidebarLinks = [];
+
+  locale.subscribe(() => {
+    sidebarLinks = [
+      { href: "#", text: "Home" },
+      { href: "#bio", text: $t("biography.title") },
+      { href: "#parcours", text: $t("career.title") },
+      { href: "#compétences", text: $t("skills.title") },
+      { href: "#contact", text: $t("contact.title") },
+    ];
+  });
 
   onMount(() => {
     setTransition();
@@ -33,6 +38,10 @@
   function close() {
     menuOpen = false;
     aboutOpen = false;
+  }
+
+  function switchLocale() {
+    locale.set(locale.get() === "fr" ? "en" : "fr");
   }
 </script>
 
@@ -71,7 +80,10 @@
         <IconMenu />
       </button>
       <button class="icon">
-        <Theme/>
+        <Theme />
+      </button>
+      <button class="icon locale" on:click={switchLocale} title={$t("common.opLocale")}>
+        <IconTranslate style="font-size:.8em" />
       </button>
     </div>
     <div class="logo">
@@ -82,8 +94,11 @@
 
     <!-- Sidebars -->
     <div id="sidenav" class="sidenav" class:show={menuOpen === true} bind:this={sidebar}>
-      <button title="Fermer" class="icon" on:click={close}>
+      <button title={$t("common.close")} class="icon" on:click={close}>
         <IconClose />
+      </button>
+      <button class="icon locale" on:click={switchLocale} title={$t("common.opLocale")}>
+        <IconTranslate style="font-size:.8em" />
       </button>
       <ul id="sidebar-links">
         {#each sidebarLinks as { href, text }}
@@ -98,7 +113,7 @@
             on:keypress={(e) => {
               e.key == "Enter" ? (aboutOpen = true) : null;
             }}
-            tabindex="0">À propos</a>
+            tabindex="0">{$t("about.title")}</a>
         </li>
       </ul>
     </div>
@@ -110,7 +125,11 @@
   </nav>
 
   {#if menuOpen}
-    <div id="overlay" class="menu-overlay" on:click={close} transition:fade|global={{ duration: 300 }} />
+    <div
+      id="overlay"
+      class="menu-overlay"
+      on:click={close}
+      transition:fade|global={{ duration: 300 }} />
   {/if}
 {/if}
 
@@ -157,6 +176,10 @@
       color: white;
       background-color: #40424a;
     }
+  }
+
+  .sidenav .locale {
+    display: none;
   }
 
   .about-link {
@@ -227,6 +250,14 @@
     .menu {
       position: relative;
       top: -3px;
+    }
+
+    .locale {
+      display: none !important;
+    }
+
+    .sidenav .locale {
+      display: inline-block !important;
     }
   }
 </style>

@@ -1,0 +1,16 @@
+{
+  "title": "DevOps et ingénieur cloud",
+  "subtitle": "Étudiant en <a href='https://formations.univ-larochelle.fr/master-informatique-architecte-logiciel-niort'target='_blank'rel='noreferrer'>master informatique</a> et DataOps en alternance à <a href='https://www.covea.com/fr' target='_blank' rel='noreferrer'>Covéa</a>.",
+  "cv": "CV",
+  "portfolio": "Portfolio",
+  "portfolio.subtitle": "Mes projets",
+  "social.title": "Me suivre",
+  "social.subtitle": "Réseaux sociaux et recommendations",
+  "social.copied": "<strong>{{text}}</strong> copié",
+  "close": "Fermer",
+  "back": "Retour",
+  "locale": "Français",
+  "opLocale": "English",
+  "all": "Tout",
+  "seemore": "Voir plus"
+}

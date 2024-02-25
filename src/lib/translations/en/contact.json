@@ -1,0 +1,12 @@
+{
+  "title": "Contact",
+  "contactMe": "Contact me",
+  "description": "Passionate about IT, music and cinema.<br />Student in my spare time and DataOps on a work-study basis at <a href='https://www.covea.com/fr' target= '_blank' rel='noopener'>Covéa</a>.",
+  "yourEmail": "Your email",
+  "yourMessage": "Enter your message",
+  "send": "Send",
+  "sendMessage": "Send a message",
+  "backToTop": "Back to top",
+  "messageSent": "Your message has been sent",
+  "messageError": "An error occurred, please try again"
+}

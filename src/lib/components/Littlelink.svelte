@@ -1,21 +1,42 @@
 <script>
+  import { t } from "$lib/translations";
+
   export let icon, href, background, color;
+  export let big = false;
+  export let twolines = false;
+  export let copy = false;
+  let message = null;
+
+  const copyToClipboard = (e) => {
+    if (copy) {
+      e.preventDefault();
+      navigator.clipboard.writeText(href);
+      message = $t("common.social.copied", { text: href });
+    }
+  };
 </script>
 
 <a
-  {href}
+  href={copy ? "" : href}
   class={background == "#000" ? "button border" : "button"}
+  class:biglink={big}
+  class:twolines
   style="background-color: {background}; color: {color}"
   rel="noopener"
-  data-sveltekit-replacestate>
+  data-sveltekit-replacestate
+  on:click={copyToClipboard}>
   <svg class="icon" fill={color}>
     <use href="/social.svg#{icon}" />
   </svg>
-  <slot />
+  {#if message}
+    {@html message}
+  {:else}
+    <slot />
+  {/if}
 </a>
 <br />
 
-<style>
+<style lang="scss">
   .button {
     display: inline-block;
     text-decoration: none;
@@ -48,6 +69,26 @@
     filter: brightness(90%);
   }
 
+  .biglink {
+    width: 100%;
+    max-width: 100%;
+    font-family: unset !important;
+    font-weight: 400;
+    font-size: 16pt;
+    text-align: left;
+    padding-left: 2rem;
+    height: 58px;
+    box-shadow: 0 4px 4px var(--cardShadow);
+    transition: all 0.25s;
+    border-width: 2px !important;
+
+    & .icon {
+      width: 38px;
+      height: 38px;
+      margin-right: 4px;
+    }
+  }
+
   .icon {
     padding: 0px 8px 3.5px 0px;
     vertical-align: middle;
@@ -56,6 +97,14 @@
   }
 
   .border {
-    outline: 1px solid #fff;
+    border-width: 1px;
+    border-color: var(--black-white) !important;
+  }
+
+  @media only screen and (min-width: 992px), (min-width: 576px) {
+    .twolines {
+      height: 132px;
+      line-height: 7rem;
+    }
   }
 </style>

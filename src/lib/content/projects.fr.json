@@ -1,0 +1,58 @@
+[
+  {
+    "active": true,
+    "background": "#24292f",
+    "text": "#fafafa",
+    "accent": "#fff",
+    "type": "DEV",
+    "domain": "développement",
+    "layout": "project_right",
+    "title": "Projets GitHub",
+    "subtitle": "",
+    "shot": "/img/github.jpg",
+    "para": "GitHub rassemblant mes projets universitaires et personnels ainsi que mes contributions open-source. APIs REST, applications mobiles, scripts Python...",
+    "links": "<a href='https://github.com/p0lycarpio' target='_blank' style='color:#fff;font-weight:bolder;letter-spacing:.5px'>Lien GitHub</a>"
+  },
+  {
+    "active": true,
+    "background": "#e6e6fa",
+    "text": "#3d494d",
+    "accent": "#3d494d",
+    "type": "DÉVELOPPEMENT WEB",
+    "domain": "développement",
+    "layout": "project_left",
+    "title": "Transatlantic Cultures",
+    "subtitle": "Site culturel",
+    "shot": "/img/tracs.png",
+    "para": "Développement d'un site multilingue avec un générateur de site statique. Preuve de concept du framework <em>Gatsby</em> pour simplifier le site actuel <a href='https://transatlantic-cultures.org/fr/home' style='color:#000'>Transatlantic cultures.</a>",
+    "links": "<a href='https://github.com/p0lycarpio/tracs-gatsby' target='_blank' style='color:#000'>Site et code source</a>"
+  },
+  {
+    "active": true,
+    "background": "#ffe9db",
+    "text": "#ae2700",
+    "accent": "#c72f03",
+    "type": "AUDIOVISUEL",
+    "domain": "audiovisuel",
+    "layout": "project_left",
+    "title": "Mes vidéos",
+    "subtitle": "Prises et montage vidéo",
+    "shot": "/img/mire.mp4",
+    "para": "Playlist de mes réalisations audiovisuelles !<br>Projets personnels et professionnels.",
+    "links": "<a href='https://www.youtube.com/playlist?list=PLE6zlkF6mSdLPrvkUNberpjqGTCBaceYz' style='color:#d70000;' target='_blank'>Regarder</a>"
+  },
+  {
+    "active": true,
+    "background": "#ABE6AA",
+    "text": "#34495E",
+    "accent": "#34495E",
+    "type": "DÉVELOPPEMENT WEB",
+    "domain": "développement",
+    "layout": "project_right",
+    "title": "Applications VueJS",
+    "subtitle": "Série d'outils web",
+    "shot": "/img/vuejs.png",
+    "para": "Développement d'une série d'applications avec le framework Javascript <a href='https://fr.vuejs.org/' style='color:#000;' target='_blank'>Vue.js</a>. Outils pratiques tels que : calculatrice, liste de tâches, générateur de mot de passes.",
+    "links": ""
+  }
+]

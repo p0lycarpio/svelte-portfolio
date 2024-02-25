@@ -1,0 +1,12 @@
+{
+  "title": "Contact",
+  "contactMe": "Me contacter",
+  "description": "Passionné par l'informatique, la musique et le cinéma.<br />Étudiant à mes heures perdues et DataOps en alternance chez <a href='https://www.covea.com/fr' target='_blank' rel='noopener'>Covéa</a>.",
+  "yourEmail": "Votre email",
+  "yourMessage": "Saissisez votre message",
+  "send": "Envoyer",
+  "sendMessage": "Envoyer un message",
+  "backToTop": "Retour en haut",
+  "messageSent": "Votre message a bien été envoyé",
+  "messageError": "Une erreur est survenue, veuillez réessayer"
+}

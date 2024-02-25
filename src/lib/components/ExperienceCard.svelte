@@ -1,4 +1,5 @@
 <script>
+  import { t } from "$lib/translations";
   import IconSchool from "~icons/fa6-solid/graduation-cap";
   import IconWork from "~icons/fa6-solid/briefcase";
 
@@ -10,9 +11,9 @@
 <div class="card">
   <div class="card-body">
     {#if type == "school"}
-      <i class="icon" title="Études"> <IconSchool /> </i>
+      <i class="icon" title={$t("career.studies")}> <IconSchool /> </i>
     {:else if type == "work"}
-      <i class="icon" title="Expérience professionnelle">
+      <i class="icon" title={$t("career.work")}>
         <IconWork class="icon" style="font-size:1.6rem" />
       </i>
     {/if}
