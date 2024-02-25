@@ -52,5 +52,6 @@
   strong {
     font-size: small;
     font-weight: normal;
+    color: var(--text-color);
   }
 </style>
