@@ -75,17 +75,6 @@
     line-height: 1.5;
   }
 
-  a {
-    color: #2457f5;
-    &:hover {
-      color: #083bda;
-    }
-    &:focus {
-      outline: #7ab8ff solid 2px;
-      border-radius: 2px;
-    }
-  }
-
   .avatar {
     border-radius: 50%;
     transition: all 0.5s;

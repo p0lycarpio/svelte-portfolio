@@ -107,4 +107,17 @@
       line-height: 7rem;
     }
   }
+
+  @media only screen and (max-width: 576px) {
+    .biglink {
+      font-size: 14pt;
+      font-weight: normal;
+      line-height: 2.2rem;
+
+      & .icon {
+        width: 32px;
+        height: 32px;
+      }
+    }
+}
 </style>
