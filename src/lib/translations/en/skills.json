@@ -1,9 +1,9 @@
 {
-        "title": "Skills",
-        "subtitle": "Software and languages used",
-    "languages": "Development & programming",
-    "tools": "Tools and environments",
-    "frameworks": "Web frameworks & libraries",
-    "multimedia": "Multimedia creation",
-    "db": "SQL and NoSQL databases"
+  "title": "Skills",
+  "subtitle": "Software and languages used",
+  "languages": "Development & programming",
+  "tools": "Tools and environments",
+  "frameworks": "Web frameworks & libraries",
+  "multimedia": "Multimedia creation",
+  "db": "SQL and NoSQL databases"
 }

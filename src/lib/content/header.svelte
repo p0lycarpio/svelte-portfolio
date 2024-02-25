@@ -1,5 +1,5 @@
 <script>
-  import { t } from '$lib/translations';
+  import { t } from "$lib/translations";
 
   import Navbar from "components/Navbar.svelte";
   import Logo from "assets/logo.svelte";
@@ -94,7 +94,9 @@
     border-radius: 50%;
     margin-bottom: 0px;
     transition: all 0.5s;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow:
+      0 2px 5px 0 rgba(0, 0, 0, 0.16),
+      0 2px 10px 0 rgba(0, 0, 0, 0.12);
     user-select: none;
     &:hover {
       transform: scale(1.2);

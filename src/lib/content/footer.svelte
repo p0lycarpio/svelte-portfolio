@@ -1,7 +1,6 @@
 <script>
   import { t } from "$lib/translations";
-  import IconLink from "~icons/fa6-solid/link"
-  import IconLinkedin from "~icons/fa6-brands/linkedin";
+  import IconLink from "~icons/fa6-solid/link";
   import IconUp from "~icons/fa6-solid/chevron-up";
 
   export const prerender = true;
@@ -50,11 +49,8 @@
       <div class="h-contact d-flex flex-column flex-sm-row">
         <h1>{$t("contact.contactMe")}</h1>
         <div class="d-block social">
-          <a
-            href="/contact"
-            class="social-icon ms-3"
-            title="Littlelink"
-            data-sveltekit-reload><IconLink /></a>
+          <a href="/contact" class="social-icon ms-3" title="Littlelink" data-sveltekit-reload
+            ><IconLink /></a>
         </div>
       </div>
       <form

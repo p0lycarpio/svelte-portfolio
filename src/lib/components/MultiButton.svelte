@@ -1,5 +1,5 @@
 <script>
-  import { t } from '$lib/translations';
+  import { t } from "$lib/translations";
   import IconFile from "~icons/ic/outline-insert-drive-file";
   import IconGithub from "~icons/simple-icons/github";
 
@@ -26,7 +26,7 @@
       }}>
       {#if cv == true}
         <i class="icon">
-          <IconFile height="1.1em"/>
+          <IconFile height="1.1em" />
         </i>
       {/if}
       {$t("common.cv")}

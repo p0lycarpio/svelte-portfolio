@@ -41,11 +41,11 @@
     {$t("about.hostedOn")}
     <svg>
       <use href="/icons.svg#netlify" />
-    </svg>&nbsp;Netlify.<br>
-  {#if commitDate}
-    <br>
-    {$t("about.updated") + commitDate.toLocaleDateString(locale.get())}
-  {/if}
+    </svg>&nbsp;Netlify.<br />
+    {#if commitDate}
+      <br />
+      {$t("about.updated") + commitDate.toLocaleDateString(locale.get())}
+    {/if}
   </p>
 </div>
 

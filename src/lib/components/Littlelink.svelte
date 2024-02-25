@@ -1,26 +1,26 @@
 <script>
   import { t } from "$lib/translations";
 
-  export let icon, href, background, color
+  export let icon, href, background, color;
   export let big = false;
   export let twolines = false;
   export let copy = false;
   let message = null;
-  
+
   const copyToClipboard = (e) => {
     if (copy) {
       e.preventDefault();
       navigator.clipboard.writeText(href);
       message = $t("common.social.copied", { text: href });
     }
-  }
+  };
 </script>
 
 <a
-  href={copy?"":href}
+  href={copy ? "" : href}
   class={background == "#000" ? "button border" : "button"}
   class:biglink={big}
-  class:twolines={twolines}
+  class:twolines
   style="background-color: {background}; color: {color}"
   rel="noopener"
   data-sveltekit-replacestate
@@ -72,7 +72,7 @@
   .biglink {
     width: 100%;
     max-width: 100%;
-    font-family: unset!important;
+    font-family: unset !important;
     font-weight: 400;
     font-size: 16pt;
     text-align: left;
@@ -80,7 +80,7 @@
     height: 58px;
     box-shadow: 0 4px 4px var(--cardShadow);
     transition: all 0.25s;
-    border-width: 2px!important;
+    border-width: 2px !important;
 
     & .icon {
       width: 38px;
@@ -106,5 +106,5 @@
       height: 132px;
       line-height: 7rem;
     }
-}
+  }
 </style>

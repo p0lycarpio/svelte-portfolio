@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { slide, fade } from "svelte/transition";
-  import { t, locale } from '$lib/translations';
+  import { t, locale } from "$lib/translations";
 
   import Theme from "./ThemeSwitcher.svelte";
   import About from "content/about.svelte";
@@ -15,7 +15,7 @@
   let sidebar;
   let menuOpen = false;
   let aboutOpen = false;
-  let sidebarLinks = []
+  let sidebarLinks = [];
 
   locale.subscribe(() => {
     sidebarLinks = [
@@ -80,10 +80,10 @@
         <IconMenu />
       </button>
       <button class="icon">
-        <Theme/>
+        <Theme />
       </button>
       <button class="icon locale" on:click={switchLocale} title={$t("common.opLocale")}>
-        <IconTranslate style="font-size:.8em"/>
+        <IconTranslate style="font-size:.8em" />
       </button>
     </div>
     <div class="logo">
@@ -97,8 +97,8 @@
       <button title={$t("common.close")} class="icon" on:click={close}>
         <IconClose />
       </button>
-        <button class="icon locale" on:click={switchLocale} title={$t("common.opLocale")}>
-        <IconTranslate style="font-size:.8em"/>
+      <button class="icon locale" on:click={switchLocale} title={$t("common.opLocale")}>
+        <IconTranslate style="font-size:.8em" />
       </button>
       <ul id="sidebar-links">
         {#each sidebarLinks as { href, text }}
@@ -125,7 +125,11 @@
   </nav>
 
   {#if menuOpen}
-    <div id="overlay" class="menu-overlay" on:click={close} transition:fade|global={{ duration: 300 }} />
+    <div
+      id="overlay"
+      class="menu-overlay"
+      on:click={close}
+      transition:fade|global={{ duration: 300 }} />
   {/if}
 {/if}
 

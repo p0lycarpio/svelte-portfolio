@@ -1,15 +1,15 @@
 <script>
-  import { t } from '$lib/translations';
+  import { t } from "$lib/translations";
 
   const born = new Date(2001, 1, 22);
-  const today = new Date()
-  
+  const today = new Date();
+
   let biographie;
-  
+
   let age = today.getFullYear() - born.getFullYear();
   let month = today.getMonth() - born.getMonth();
   if (month < 0 || (month === 0 && today.getDate() < born.getDate())) {
-      age = age - 1;
+    age = age - 1;
   }
 </script>
 
@@ -23,13 +23,12 @@
     </div>
     <div class="col-md-9 col-md-push-1 mt-md-4">
       <div class="row md-n5">
-        <div class="col-md-6 ">
-          <p>{@html $t("biography.intro", {age})}</p>
-          <p>{@html $t("biography.para1")}
+        <div class="col-md-6">
+          <p>{@html $t("biography.intro", { age })}</p>
+          <p>{@html $t("biography.para1")}</p>
         </div>
-        <div class="col-md-6 ">
-          <p>{@html $t("biography.para2")}
-          </p>
+        <div class="col-md-6">
+          <p>{@html $t("biography.para2")}</p>
         </div>
       </div>
     </div>

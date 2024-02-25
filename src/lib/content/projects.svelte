@@ -1,11 +1,11 @@
 <script>
   import { t, locale } from "$lib/translations";
   import ProjectCard from "components/ProjectCard.svelte";
-  
+
   import projects_en from "content/projects.en.json";
   import projects_fr from "content/projects.fr.json";
-  
-  let allprojects = []
+
+  let allprojects = [];
   let projects = [];
   let filtered = false;
   let current = "all";
@@ -17,7 +17,7 @@
     projects = [];
     allprojects = locale.get() === "fr" ? projects_fr : projects_en;
     projects = allprojects.filter((prj) => prj.active == true);
-    
+
     // Retrieve all possible domains
     projects.forEach((element) => {
       if (domains.indexOf(element.domain) === -1 && element.domain != undefined)
@@ -25,7 +25,6 @@
     });
     showall();
   });
-  
 
   function showmore() {
     visible_projects = visible_projects.concat(projects.slice(more, more + 4));
@@ -56,7 +55,8 @@
       <p class="section-subtitle">{$t("common.portfolio.subtitle")}</p>
       <div id="filtres" class="d-none d-md-block">
         <div class="filters button-group">
-          <button class:selected={current === "all"} on:click={showall}>{$t("common.all")}</button><br />
+          <button class:selected={current === "all"} on:click={showall}>{$t("common.all")}</button
+          ><br />
           {#each domains as domain}
             <button class:selected={current === domain} on:click={() => filter(domain)}>
               {domain.charAt(0).toUpperCase() + domain.slice(1)}</button
@@ -69,7 +69,7 @@
     <div class="col-md-9 col-md-push-1">
       <div class="row elements mt-md-0 mt-n2">
         {#each visible_projects as project}
-            <ProjectCard {project} />            
+          <ProjectCard {project} />
         {/each}
       </div>
       {#if visible_projects.length < projects.length && !filtered}

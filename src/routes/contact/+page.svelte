@@ -1,5 +1,5 @@
 <script>
-  import { t } from '$lib/translations';
+  import { t } from "$lib/translations";
   import Littlelink from "../../lib/components/Littlelink.svelte";
 
   import webp from "assets/avatar.jpg?webp&w=200&srcset";
@@ -18,18 +18,11 @@
       color="#fff"
       background="#2867b2">LinkedIn</Littlelink>
 
-    <Littlelink
-      icon="discord"
-      href="polycarpio"
-      color="#fff"
-      copy="true"
-      background="#5865f2">Discord</Littlelink>
-    
-    <Littlelink
-      icon="github"
-      href="https://github.com/p0lycarpio"
-      color="#fff"
-      background="#000">GitHub</Littlelink>
+    <Littlelink icon="discord" href="polycarpio" color="#fff" copy="true" background="#5865f2"
+      >Discord</Littlelink>
+
+    <Littlelink icon="github" href="https://github.com/p0lycarpio" color="#fff" background="#000"
+      >GitHub</Littlelink>
 
     <Littlelink
       icon="twitter"
@@ -49,11 +42,8 @@
       color="#fff"
       background="#d51007">Last.fm</Littlelink>
 
-    <Littlelink
-      icon="letterboxd"
-      href="https://boxd.it/84LRn"
-      color="#fff"
-      background="#2c3440">Letterboxd</Littlelink>
+    <Littlelink icon="letterboxd" href="https://boxd.it/84LRn" color="#fff" background="#2c3440"
+      >Letterboxd</Littlelink>
 
     <Littlelink
       icon="tvtime"
@@ -61,24 +51,18 @@
       color="#333"
       background="#ffd400">TV Time</Littlelink>
 
-    <Littlelink
-      icon="paypal"
-      href="https://paypal.me/arsenermd"
-      color="#fff"
-      background="#00457c">PayPal</Littlelink>
-    <br>
+    <Littlelink icon="paypal" href="https://paypal.me/arsenermd" color="#fff" background="#00457c"
+      >PayPal</Littlelink>
+    <br />
 
-    <Littlelink
-      icon="message"
-      href="/#contact"
-      color="#fff"
-      background="#2457f5">{$t("contact.sendMessage")}</Littlelink>
-    <br>
+    <Littlelink icon="message" href="/#contact" color="#fff" background="#2457f5"
+      >{$t("contact.sendMessage")}</Littlelink>
+    <br />
   </div>
 </div>
 
 <style lang="scss">
-  h1 { 
+  h1 {
     font-size: 48px;
     font-weight: 600;
     line-height: 1em;
@@ -105,7 +89,9 @@
   .avatar {
     border-radius: 50%;
     transition: all 0.5s;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow:
+      0 2px 5px 0 rgba(0, 0, 0, 0.16),
+      0 2px 10px 0 rgba(0, 0, 0, 0.12);
     user-select: none;
     &:hover {
       transform: scale(1.2);

@@ -1,5 +1,5 @@
 <script>
-  import { t } from '$lib/translations';
+  import { t } from "$lib/translations";
   import IconSchool from "~icons/fa6-solid/graduation-cap";
   import IconWork from "~icons/fa6-solid/briefcase";
 
