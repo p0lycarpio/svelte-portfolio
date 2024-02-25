@@ -21,7 +21,6 @@
     sidebarLinks = [
       { href: "#", text: "Home" },
       { href: "#bio", text: $t("biography.title") },
-      { href: "#projects", text: $t("common.portfolio") },
       { href: "#parcours", text: $t("career.title") },
       { href: "#compétences", text: $t("skills.title") },
       { href: "#contact", text: $t("contact.title") },

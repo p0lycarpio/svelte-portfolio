@@ -1,9 +1,9 @@
 <script>
   import { t } from '$lib/translations';
   import IconFile from "~icons/ic/outline-insert-drive-file";
-  import IconDown from "~icons/ic/outline-arrow-downward";
+  import IconGithub from "~icons/simple-icons/github";
 
-  let cv, portfolio;
+  let cv, link;
 </script>
 
 <div class="multi-container">
@@ -32,26 +32,28 @@
       {$t("common.cv")}
     </a>
     <a
-      class="btn portfolio"
-      href="#projects"
+      class="btn"
+      href="https://github.com/p0lycarpio"
+      rel="preload"
+      target="_blank"
       on:mouseover={() => {
-        portfolio = true;
+        link = true;
       }}
       on:focus={() => {
-        portfolio = true;
+        link = true;
       }}
       on:blur={() => {
-        portfolio = true;
+        link = true;
       }}
       on:mouseout={() => {
-        portfolio = false;
+        link = false;
       }}>
-      {#if portfolio == true}
-        <i class="icon">
-          <IconDown />
+      {#if link == true}
+        <i class="icon" style="margin-right: 4px;">
+          <IconGithub />
         </i>
       {/if}
-      {$t("common.portfolio")}
+      GitHub
     </a>
   </div>
 </div>
@@ -114,5 +116,7 @@
   .icon {
     pointer-events: none;
     vertical-align: top;
+    position: relative;
+    top: -1.6px;
   }
 </style>

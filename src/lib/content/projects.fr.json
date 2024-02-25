@@ -28,20 +28,6 @@
     "links": "<a href='https://github.com/p0lycarpio/tracs-gatsby' target='_blank' style='color:#000'>Site et code source</a>"
   },
   {
-    "active": false,
-    "background": "#A7C9EF",
-    "text": "#263646",
-    "accent": "#263646",
-    "type": "DÉVELOPPEMENT WEB PHP",
-    "domain": "développement",
-    "layout": "project_right",
-    "title": "Back-office Portfolio",
-    "subtitle": "Interface de gestion d'un site web",
-    "shot": "/img/adrienlefloch.fr.jpg",
-    "para": "Projet tuteuré de seconde année de MMI, avec un client réel. Développement d'un back-office type CMS permettant de modifier des pages, des articles et gérer une galerie de photos. Développement en PHP natif, pour le site adrienlefloch.fr",
-    "links": "<a href='https://youtu.be/m2MgbMg9s2Q' target='_blank' style='color:#F25874;'>Démonstration vidéo</a>"
-  },
-  {
     "active": true,
     "background": "#ffe9db",
     "text": "#ae2700",
@@ -56,19 +42,6 @@
     "links": "<a href='https://www.youtube.com/playlist?list=PLE6zlkF6mSdLPrvkUNberpjqGTCBaceYz' style='color:#d70000;' target='_blank'>Regarder</a>"
   },
   {
-    "background": "#282827",
-    "text": "#FFF",
-    "accent": "#FFF",
-    "type": "GRAPHISME &amp; WEB",
-    "domain": "développement",
-    "layout": "project_right",
-    "title": "Street Spirit",
-    "subtitle": "Charte graphique et site vitrine",
-    "shot": "/img/street-spirit web.png",
-    "para": "Charte graphique destinée à une marque de sportswear voulant renouveler son image. Création de bannières pour la nouvelle collection printemps « Street Spring », d’un site web vitrine (avec un CMS) et d’un logo icotype et logotype.<br> Note obtenue : 17/20",
-    "links": "<a href='/doc/streetspirit.pdf' style='color:#bba8ff;'>Lien vers le dossier</a>, <a href='http://arsene.reymond.free.fr/streetspirit' style='color: #bba8ff;'>site</a>"
-  },
-  {
     "active": true,
     "background": "#ABE6AA",
     "text": "#34495E",
@@ -81,83 +54,5 @@
     "shot": "/img/vuejs.png",
     "para": "Développement d'une série d'applications avec le framework Javascript <a href='https://fr.vuejs.org/' style='color:#000;' target='_blank'>Vue.js</a>. Outils pratiques tels que : calculatrice, liste de tâches, générateur de mot de passes.",
     "links": ""
-  },
-  {
-    "background": "#E9E4CD",
-    "text": "#5b4603",
-    "accent": "#5b4603",
-    "type": "AUDIOVISUEL",
-    "domain": "audiovisuel",
-    "layout": "project_left",
-    "title": "Publicité « Blois Eats »",
-    "subtitle": "Parodie publicitaire",
-    "shot": "/img/bloiseats.webp",
-    "para": "Création d'une vidéo publicitaire fictive pour un service de livraison alimentaire. Prises de vues, acting, montage et postproduction. Réalisé avec d'autres étudiants MMI.<br>Note obtenue : 16/20",
-    "links": "<a href='https://youtu.be/Y9Cx22X59AM' target='_blank' style='color:#000;'>Lien vers la vidéo</a>"
-  },
-  {
-    "background": "#ECECEC",
-    "text": "#000000",
-    "accent": "#000000",
-    "type": "LOGOTYPE",
-    "domain": "graphisme",
-    "layout": "project_left cpqb",
-    "title": "C pire que beau",
-    "subtitle": "Création et design",
-    "shot": "/img/pqb.png",
-    "para": "Logotype pour une auto-entrepreneuse souhaitant lancer sa marque de bijoux.",
-    "links": "<a href='/doc/Cpqb.pdf' style='color:#0042a5;'>Lien vers le logo</a>"
-  },
-  {
-    "background": "#d6b0e8",
-    "text": "#35064a",
-    "accent": "#35064a",
-    "type": "DÉVELOPPEMENT WEB",
-    "domain": "développement",
-    "layout": "project_right",
-    "title": "Maison de la magie",
-    "subtitle": "Webdesign et développement CMS",
-    "shot": "/img/maison-magie.png",
-    "para": "Projet fictif d'un blog d'entreprise pour la <em>Maison de la magie</em> de Blois. Réflexion sur les stratégies de communication et de marketing en ligne. Conception d’un site web dynamique avec un CMS.<br>Note obtenue : 17/20",
-    "links": "<a href='https://maison-de-la-magie.000webhostapp.com/' style='color:#220185;'>Lien vers øle site</a>"
-  },
-  {
-    "background": "#EED7C8",
-    "text": "#3E0000",
-    "accent": "#3E0000",
-    "type": "REDACTION &amp; MISE EN PAGE",
-    "domain": "graphisme",
-    "layout": "project_left",
-    "title": "Muriel Cooper",
-    "subtitle": "Dossier documentaire",
-    "shot": "/img/mc.png",
-    "para": "Constitution d’un dossier de vingt pages sur une graphiste emblématique du XX<sup>e</sup> siècle.<br>Note obtenue : 18/20",
-    "links": "<a href='/doc/Muriel-Cooper.pdf' style='color:#a70082;'>Lien vers le dossier</a>"
-  },
-  {
-    "background": "#FFC107",
-    "text": "#3C0000",
-    "accent": "#3C0000",
-    "type": "DÉVELOPPEMENT WEB",
-    "domain": "développement",
-    "layout": "project_right",
-    "title": "L'incroyable",
-    "subtitle": "Charte graphique et site vitrine",
-    "shot": "/img/lincroyable.png",
-    "para": "Projet tuteuré d'une semaine. Élaboration d'une marque comportant un site web (en HTML et CSS) et une identité visuelle.<br>Note obtenue : 14.9/20",
-    "links": "<a href='http://arsene.reymond.free.fr/lincroyable' style='color:#790000;'>Lien vers le site</a>"
-  },
-  {
-    "background": "#4C82C2",
-    "text": "#0b1622",
-    "accent": "#0b1622",
-    "type": "GRAPHISME & RETOUCHE PHOTO",
-    "domain": "graphisme",
-    "layout": "project_left",
-    "title": "Affiches",
-    "subtitle": "",
-    "shot": "/img/affiches.png",
-    "para": "Autres projets et réalisations graphiques",
-    "links": "<a href='/doc/affiches.pdf' style='color:#fff;'>Voir les affiches</a>"
   }
 ]

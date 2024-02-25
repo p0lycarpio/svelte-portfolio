@@ -1,11 +1,10 @@
 <script>
   import Header from "content/header.svelte";
   import Bio from "content/biography.svelte";
-  import Projects from "content/projects.svelte";
   import Parcours from "content/career.svelte";
   import Skills from "content/skills.svelte";
-  import Footer from "content/footer.svelte";
   import Social from "content/social.svelte";
+  import Footer from "content/footer.svelte";
 </script>
 
 <svelte:head>
@@ -21,7 +20,6 @@
   <Header />
   <main>
     <Bio />
-    <Projects />
     <Parcours />
     <Skills />
     <Social />
