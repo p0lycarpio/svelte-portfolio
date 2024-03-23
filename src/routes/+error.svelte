@@ -14,14 +14,16 @@
 
 <div bind:offsetWidth={w} bind:offsetHeight={h}>
   <div class="container">
-    <div class="column text-center wow bounceIn">
+    <div class="column text-center animate bounceIn">
       <h1 class="mx-auto">{$page.status}</h1>
       <h2>{$page.error.message}</h2>
       <p>Il semble qu'une erreur se soit produite...</p>
       <a href="/">Retour sur le site</a>
     </div>
   </div>
-  <Wavify options={wave} parentWidth={w} parentHeight={200} />
+  <div class="animate fadeIn">
+    <Wavify options={wave} parentWidth={w} parentHeight={200} />
+  </div>
 </div>
 
 {#if $page.error}
