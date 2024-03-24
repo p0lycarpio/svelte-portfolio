@@ -1,4 +1,5 @@
 <script>
+  import { t } from "$lib/translations";
   import Header from "content/header.svelte";
   import Bio from "content/biography.svelte";
   import Parcours from "content/career.svelte";
@@ -8,12 +9,8 @@
 </script>
 
 <svelte:head>
-  <title>Arsène Reymond</title>
   <meta name="author" content="Arsène Reymond" />
-  <meta
-    name="description"
-    content="Portfolio et CV d'Arsène Reymond : développement web, infographie, montage vidéo et mise en page." />
-  <meta name="theme-color" />
+  <meta name="description" content={$t("common.title")} />
 </svelte:head>
 
 <div class="home">

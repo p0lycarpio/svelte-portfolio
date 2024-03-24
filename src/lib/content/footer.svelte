@@ -9,38 +9,29 @@
   let isSubmitting = false;
   let getYear = new Date().getFullYear();
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     let formData = new FormData(form);
     isSubmitting = true;
-    return fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => {
-        alert = {
-          class: "alert alert-success",
-          message: $t("contact.messageSent"),
-        };
-        isSubmitting = false;
-        form.reset();
-      })
-      .catch(() => {
-        alert = {
-          class: "alert alert-danger",
-          message: $t("contact.messageError"),
-        };
-        isSubmitting = false;
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
       });
+      alert = {
+        class: "alert alert-success",
+        message: $t("contact.messageSent"),
+      };
+      isSubmitting = false;
+      form.reset();
+    } catch {
+      alert = {
+        class: "alert alert-danger",
+        message: $t("contact.messageError"),
+      };
+      isSubmitting = false;
+    }
   };
-
-  function goTop() {
-    document.body.scrollIntoView();
-  }
-
-  function goBottom() {
-    contact.scrollIntoView();
-  }
 </script>
 
 <footer id="contact" bind:this={contact}>
@@ -103,13 +94,14 @@
     </div>
   </div>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <button
+  <!-- svelte-ignore a11y-invalid-attribute -->
+  <a
     id="back-to-top"
-    on:click={goTop}
+    href="#"
     class="btn btn-outline-light btn-md back-to-top d-none d-md-block"
     title={$t("contact.backToTop")}
     ><IconUp />
-  </button>
+</a>
   <div class="copyright">
     <span title="Arsène Reymond">
       <strong style="color:#fff">

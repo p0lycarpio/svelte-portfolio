@@ -31,8 +31,7 @@
   <p>{$t("about.legals.text")}</p>
   <h3>{$t("about.data")}</h3>
   <p>{$t("about.data.text")}</p>
-  <h3>{$t("about.cookies")}</h3>
-  <p>{$t("about.cookies.text")}</p>
+  <h3>{$t("about.title")}</h3>
   <p>
     {$t("about.developedWith")}
     <svg>

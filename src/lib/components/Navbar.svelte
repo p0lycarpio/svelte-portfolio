@@ -3,7 +3,6 @@
   import { slide, fade } from "svelte/transition";
   import { t, locale } from "$lib/translations";
 
-  import Theme from "./ThemeSwitcher.svelte";
   import About from "content/about.svelte";
   import Logo from "assets/logo.svelte";
 
@@ -78,9 +77,6 @@
           menuOpen = true;
         }}>
         <IconMenu />
-      </button>
-      <button class="icon">
-        <Theme />
       </button>
       <button class="icon locale" on:click={switchLocale} title={$t("common.opLocale")}>
         <IconTranslate style="font-size:.8em" />
@@ -223,6 +219,10 @@
 
   .logo {
     display: none;
+  }
+
+  .locale {
+    margin-top: -3px;
   }
 
   @media only screen and (max-width: 767px) {
