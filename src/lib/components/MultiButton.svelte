@@ -10,7 +10,7 @@
   <div class="multi-button btn-group">
     <a
       class="btn cv"
-      href="https://drive.google.com/file/d/1Gxeb5wL5Ixz8YyB4fMhrON5h-deWKeGP/view"
+      href={$t("common.cv.link")}
       rel="preload"
       on:mouseover={() => {
         cv = true;
