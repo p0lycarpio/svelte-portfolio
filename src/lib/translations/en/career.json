@@ -1,6 +1,6 @@
 {
   "title": "Career",
-  "subtitle": "Professional experience and studies",
+  "subtitle": "Professional experiences and studies",
   "today": "today",
   "studies": "Studies",
   "work": "Professional experience",
@@ -15,5 +15,5 @@
   "cgi": "CGI Niort",
   "cgi.description": "Web services developer, work-study.",
   "sdis": "SDIS 41",
-  "sdis.description": "Communications officer, work-study."
+  "sdis.description": "Communications manager, work-study."
 }
