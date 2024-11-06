@@ -1,9 +1,12 @@
 <script>
-  export let element;
-  export let title;
-  export let color = undefined;
-  export let shadow = undefined;
-  export let svgid = undefined;
+  let {
+    element = $bindable(),
+    title,
+    color = undefined,
+    shadow = $bindable(undefined),
+    svgid = undefined,
+    children
+  } = $props();
 
   function setShadow() {
     if (color && !shadow) {
@@ -18,10 +21,10 @@
 </script>
 
 <div class="d-flex flex-wrap align-items-center soft">
-  <!-- svelte-ignore missing-declaration -->
-  <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+  <!-- svelte-ignore missing_declaration -->
+  <!-- svelte-ignore a11y_mouse_events_have_key_events -->
   {#if svgid}
-    <svg on:mouseover={setShadow} on:mouseout={removeShadow} bind:this={element}>
+    <svg onmouseover={setShadow} onmouseout={removeShadow} bind:this={element}>
       <title>{title}</title>
       <use href="/icons.svg{svgid}" />
     </svg>
@@ -29,10 +32,10 @@
     <span
       style="color:{color}"
       {title}
-      on:mouseover={setShadow}
-      on:mouseout={removeShadow}
+      onmouseover={setShadow}
+      onmouseout={removeShadow}
       bind:this={element}>
-      <slot />
+      {@render children?.()}
     </span>
   {/if}
 </div>

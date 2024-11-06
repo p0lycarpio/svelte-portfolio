@@ -1,18 +1,25 @@
 <script>
   // Svelte lite implementation of [Wavify](https://github.com/woofers/react-wavify)
-  import { onMount } from "svelte";
 
-  export let parentWidth, parentHeight;
-  // Use prop values or default options of the wave
-  export let options = {
+  
+  /**
+   * @typedef {Object} Props
+   * @property {any} parentWidth
+   * @property {any} parentHeight
+   * @property {any} [options] - Use prop values or default options of the wave
+   */
+
+  /** @type {Props} */
+  let { parentWidth, parentHeight, options = {
     height: 20,
     amplitude: 20,
     speed: 0.5,
     bones: 3,
     color: "grey",
-  };
+  } } = $props();
 
-  let waveEl, frameId, path, step, elapsed, lastUpdate;
+  let waveEl = $state()
+  let frameId, path = $state(), step, elapsed, lastUpdate;
   step = elapsed = lastUpdate = 0;
 
   function calculateWavePoints() {
@@ -73,7 +80,7 @@
     lastUpdate = new Date();
   }
 
-  onMount(() => {
+  $effect.pre(() => {
     resume();
   });
 </script>

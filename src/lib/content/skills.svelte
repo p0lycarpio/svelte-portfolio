@@ -8,7 +8,7 @@
     <div class="col-md-3">
       <h2 class="section-heading">
         {$t("skills.title")}
-        <span class="section-border" />
+        <span class="section-border"></span>
       </h2>
       <p class="section-subtitle">{$t("skills.subtitle")}</p>
     </div>

@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import { slide, fade } from "svelte/transition";
   import { t, locale } from "$lib/translations";
 
@@ -10,11 +9,12 @@
   import IconMenu from "~icons/material-symbols/menu-rounded";
   import IconTranslate from "~icons/material-symbols/translate";
 
-  let y, wx, transition;
-  let sidebar;
-  let menuOpen = false;
-  let aboutOpen = false;
-  let sidebarLinks = [];
+  let y = $state(), wx = $state();
+
+  let sidebar = $state();
+  let menuOpen = $state(false);
+  let aboutOpen = $state(false);
+  let sidebarLinks = $state([]);
 
   locale.subscribe(() => {
     sidebarLinks = [
@@ -25,14 +25,6 @@
       { href: "#contact", text: $t("contact.title") },
     ];
   });
-
-  onMount(() => {
-    setTransition();
-  });
-
-  function setTransition() {
-    transition = wx > 768 ? fade : slide;
-  }
 
   function close() {
     menuOpen = false;
@@ -47,66 +39,65 @@
 <svelte:window
   bind:scrollY={y}
   bind:innerWidth={wx}
-  on:keydown={(e) => {
+  onkeydown={(e) => {
     if (e.key == "Escape" && menuOpen | aboutOpen) {
       close();
     }
   }}
-  on:resize={() => {
+  onresize={() => {
     if (wx < 768) {
       close();
     }
-    setTransition();
   }} />
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-<!-- svelte-ignore a11y-missing-attribute -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+<!-- svelte-ignore a11y_missing_attribute -->
 
 {#if (y > 500) | (wx > 768)}
   <nav
     class="d-flex align-items-center justify-content-between"
     id="navbar-top"
-    transition:transition|global>
+    transition:slide|global>
     <!-- Navbar elements -->
     <div class="d-flex navbar-buttons">
       <button
         title="Menu"
         class="icon menu"
-        on:click={() => {
+        onclick={() => {
           menuOpen = true;
         }}>
         <IconMenu />
       </button>
-      <button class="icon locale" on:click={switchLocale} title={$t("common.opLocale")}>
+      <button class="icon locale" onclick={switchLocale} title={$t("common.opLocale")}>
         <IconTranslate style="font-size:.8em" />
       </button>
     </div>
     <div class="logo">
       <Logo />
     </div>
-    <div style="width:40px;" />
+    <div style="width:40px;"></div>
     <!-- End navbar elements -->
 
     <!-- Sidebars -->
     <div id="sidenav" class="sidenav" class:show={menuOpen === true} bind:this={sidebar}>
-      <button title={$t("common.close")} class="icon" on:click={close}>
+      <button title={$t("common.close")} class="icon" onclick={close}>
         <IconClose />
       </button>
-      <button class="icon locale" on:click={switchLocale} title={$t("common.opLocale")}>
+      <button class="icon locale" onclick={switchLocale} title={$t("common.opLocale")}>
         <IconTranslate style="font-size:.8em" />
       </button>
       <ul id="sidebar-links">
         {#each sidebarLinks as { href, text }}
-          <li on:click={close}><a {href}>{text}</a></li>
+          <li onclick={close}><a {href}>{text}</a></li>
         {/each}
         <li
           class="about-link"
-          on:click={() => {
+          onclick={() => {
             aboutOpen = true;
           }}>
           <a
-            on:keypress={(e) => {
+            onkeypress={(e) => {
               e.key == "Enter" ? (aboutOpen = true) : null;
             }}
             tabindex="0">{$t("about.title")}</a>
@@ -124,8 +115,8 @@
     <div
       id="overlay"
       class="menu-overlay"
-      on:click={close}
-      transition:fade|global={{ duration: 300 }} />
+      onclick={close}
+      transition:fade|global={{ duration: 300 }}></div>
   {/if}
 {/if}
 

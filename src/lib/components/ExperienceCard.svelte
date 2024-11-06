@@ -3,9 +3,13 @@
   import IconSchool from "~icons/fa6-solid/graduation-cap";
   import IconWork from "~icons/fa6-solid/briefcase";
 
-  export let type;
-  export let from;
-  export let to;
+  let {
+    type,
+    from,
+    to,
+    title,
+    description
+  } = $props();
 </script>
 
 <div class="card">
@@ -19,10 +23,10 @@
     {/if}
     <strong>{from} - {to}</strong>
     <h5 class="card-title">
-      <slot name="title">Titre</slot>
+      {#if title}{@render title()}{:else}Titre{/if}
     </h5>
     <p class="card-text">
-      <slot name="description">Description</slot>
+      {#if description}{@render description()}{:else}Description{/if}
     </p>
   </div>
 </div>
