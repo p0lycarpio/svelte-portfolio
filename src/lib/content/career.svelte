@@ -18,62 +18,62 @@
         <div class="order-1 order-md-0">
           <ExperienceCard type="school" from="2022" to={$t("career.today")}>
             {#snippet title()}
-                        <span >{$t("career.master")}</span>
-                      {/snippet}
+              <span>{$t("career.master")}</span>
+            {/snippet}
             {#snippet description()}
-                        <span >{$t("career.master.description")}</span>
-                      {/snippet}
+              <span>{$t("career.master.description")}</span>
+            {/snippet}
           </ExperienceCard>
         </div>
         <div class="order-2 order-md-1">
           <ExperienceCard type="school" from="2021" to="2022">
             {#snippet title()}
-                        <span >{$t("career.bachelor")}</span>
-                      {/snippet}
+              <span>{$t("career.bachelor")}</span>
+            {/snippet}
             {#snippet description()}
-                        <span >{$t("career.bachelor.description")}</span>
-                      {/snippet}
+              <span>{$t("career.bachelor.description")}</span>
+            {/snippet}
           </ExperienceCard>
         </div>
         <div class="order-3 order-md-2">
           <ExperienceCard type="school" from="2019" to="2021">
             {#snippet title()}
-                        <span >{$t("career.technical")}</span>
-                      {/snippet}
+              <span>{$t("career.technical")}</span>
+            {/snippet}
             {#snippet description()}
-                        <span >{$t("career.technical.description")}</span>
-                      {/snippet}
+              <span>{$t("career.technical.description")}</span>
+            {/snippet}
           </ExperienceCard>
         </div>
         <!-- Work experiences -->
         <div class="order-0 order-md-0">
           <ExperienceCard type="work" from="2022" to={$t("career.today")}>
             {#snippet title()}
-                        <span >{$t("career.covea")}</span>
-                      {/snippet}
+              <span>{$t("career.covea")}</span>
+            {/snippet}
             {#snippet description()}
-                        <span >{$t("career.covea.description")}</span>
-                      {/snippet}
+              <span>{$t("career.covea.description")}</span>
+            {/snippet}
           </ExperienceCard>
         </div>
         <div class="order-1 order-md-1">
           <ExperienceCard type="work" from="2021" to="2022">
             {#snippet title()}
-                        <span >{$t("career.cgi")}</span>
-                      {/snippet}
+              <span>{$t("career.cgi")}</span>
+            {/snippet}
             {#snippet description()}
-                        <span >{$t("career.cgi.description")}</span>
-                      {/snippet}
+              <span>{$t("career.cgi.description")}</span>
+            {/snippet}
           </ExperienceCard>
         </div>
         <div class="order-2 order-md-2">
           <ExperienceCard type="work" from="2020" to="2021">
             {#snippet title()}
-                        <span >{$t("career.sdis")}</span>
-                      {/snippet}
+              <span>{$t("career.sdis")}</span>
+            {/snippet}
             {#snippet description()}
-                        <span >{$t("career.sdis.description")}</span>
-                      {/snippet}
+              <span>{$t("career.sdis.description")}</span>
+            {/snippet}
           </ExperienceCard>
         </div>
       </div>

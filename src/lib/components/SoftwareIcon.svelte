@@ -5,7 +5,7 @@
     color = undefined,
     shadow = $bindable(undefined),
     svgid = undefined,
-    children
+    children,
   } = $props();
 
   function setShadow() {

@@ -9,7 +9,8 @@
   import webp from "assets/avatar.jpg?webp&w=200&srcset";
   import image from "assets/avatar.jpg?&w=200";
 
-  let w = $state(), h = $state();
+  let w = $state();
+  let h = $state();
   let wave = {
     height: 10,
     amplitude: 20,

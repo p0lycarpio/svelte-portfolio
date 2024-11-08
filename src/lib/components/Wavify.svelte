@@ -1,7 +1,6 @@
 <script>
   // Svelte lite implementation of [Wavify](https://github.com/woofers/react-wavify)
 
-  
   /**
    * @typedef {Object} Props
    * @property {any} parentWidth
@@ -10,16 +9,24 @@
    */
 
   /** @type {Props} */
-  let { parentWidth, parentHeight, options = {
-    height: 20,
-    amplitude: 20,
-    speed: 0.5,
-    bones: 3,
-    color: "grey",
-  } } = $props();
+  let {
+    parentWidth,
+    parentHeight,
+    options = {
+      height: 20,
+      amplitude: 20,
+      speed: 0.5,
+      bones: 3,
+      color: "grey",
+    },
+  } = $props();
 
-  let waveEl = $state()
-  let frameId, path = $state(), step, elapsed, lastUpdate;
+  let waveEl = $state();
+  let frameId,
+    path = $state(),
+    step,
+    elapsed,
+    lastUpdate;
   step = elapsed = lastUpdate = 0;
 
   function calculateWavePoints() {

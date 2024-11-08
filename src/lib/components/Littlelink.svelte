@@ -22,7 +22,7 @@
     big = false,
     twolines = false,
     copy = false,
-    children
+    children,
   } = $props();
   let message = $state(null);
 
@@ -138,5 +138,5 @@
         height: 32px;
       }
     }
-}
+  }
 </style>

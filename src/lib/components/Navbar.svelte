@@ -9,7 +9,8 @@
   import IconMenu from "~icons/material-symbols/menu-rounded";
   import IconTranslate from "~icons/material-symbols/translate";
 
-  let y = $state(), wx = $state();
+  let y = $state();
+  let wx = $state();
 
   let sidebar = $state();
   let menuOpen = $state(false);
@@ -116,7 +117,8 @@
       id="overlay"
       class="menu-overlay"
       onclick={close}
-      transition:fade|global={{ duration: 300 }}></div>
+      transition:fade|global={{ duration: 300 }}>
+    </div>
   {/if}
 {/if}
 

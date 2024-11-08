@@ -1,5 +1,5 @@
 <script>
-  import { preventDefault } from 'svelte/legacy';
+  import { preventDefault } from "svelte/legacy";
 
   import { t } from "$lib/translations";
   import IconLink from "~icons/fa6-solid/link";
@@ -7,7 +7,9 @@
 
   export const prerender = true;
 
-  let form = $state(), alert = $state(), contact = $state();
+  let form = $state();
+  let alert = $state();
+  let contact = $state();
   let isSubmitting = $state(false);
   let getYear = new Date().getFullYear();
 
@@ -81,10 +83,8 @@
         <div class="d-flex justify-content-center">
           {#if isSubmitting}
             <button class="btn btn-outline-light" disabled>
-              <span
-                class="spinner-border spinner-border-sm me-2"
-                role="status"
-                aria-hidden="true"></span>
+              <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"
+              ></span>
               Vroum...
             </button>
           {:else}
@@ -103,7 +103,7 @@
     class="btn btn-outline-light btn-md back-to-top d-none d-md-block"
     title={$t("contact.backToTop")}
     ><IconUp />
-</a>
+  </a>
   <div class="copyright">
     <span title="Arsène Reymond">
       <strong style="color:#fff">

@@ -3,7 +3,8 @@
   import IconFile from "~icons/ic/outline-insert-drive-file";
   import IconGithub from "~icons/simple-icons/github";
 
-  let cv = $state(), link = $state();
+  let cv = $state();
+  let link = $state();
 </script>
 
 <div class="multi-container">

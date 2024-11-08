@@ -3,13 +3,7 @@
   import IconSchool from "~icons/fa6-solid/graduation-cap";
   import IconWork from "~icons/fa6-solid/briefcase";
 
-  let {
-    type,
-    from,
-    to,
-    title,
-    description
-  } = $props();
+  let { type, from, to, title, description } = $props();
 </script>
 
 <div class="card">
