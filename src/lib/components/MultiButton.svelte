@@ -93,8 +93,10 @@
     border-right-style: none;
   }
 
-  .dark-mode .multi-button :first-child:not(:global(.icon)) {
-    border-right: solid 2px;
+  @media (prefers-color-scheme: dark) {
+    .multi-button :first-child:not(:global(.icon)) {
+      border-right: 1px solid;
+    }
   }
 
   .multi-button a:hover,

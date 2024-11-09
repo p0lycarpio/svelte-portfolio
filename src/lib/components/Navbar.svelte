@@ -11,6 +11,7 @@
 
   let y = $state();
   let wx = $state();
+  let animate = $derived(wx > 768 ? fade: slide)
 
   let sidebar = $state();
   let menuOpen = $state(false);
@@ -59,7 +60,7 @@
   <nav
     class="d-flex align-items-center justify-content-between"
     id="navbar-top"
-    transition:slide|global>
+    transition:animate>
     <!-- Navbar elements -->
     <div class="d-flex navbar-buttons">
       <button
@@ -90,14 +91,17 @@
       </button>
       <ul id="sidebar-links">
         {#each sidebarLinks as { href, text }}
+          <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
           <li onclick={close}><a {href}>{text}</a></li>
         {/each}
+        <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
         <li
           class="about-link"
           onclick={() => {
             aboutOpen = true;
           }}>
           <a
+            role="button"
             onkeypress={(e) => {
               e.key == "Enter" ? (aboutOpen = true) : null;
             }}
@@ -114,6 +118,7 @@
 
   {#if menuOpen}
     <div
+      role="presentation"
       id="overlay"
       class="menu-overlay"
       onclick={close}

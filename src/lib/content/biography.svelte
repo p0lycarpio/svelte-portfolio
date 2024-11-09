@@ -9,7 +9,7 @@
   let age = $state(today.getFullYear() - born.getFullYear());
   let month = today.getMonth() - born.getMonth();
   if (month < 0 || (month === 0 && today.getDate() < born.getDate())) {
-    age = age - 1;
+    age -= 1;
   }
 </script>
 

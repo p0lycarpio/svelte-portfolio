@@ -21,14 +21,14 @@
 </script>
 
 <div class="d-flex flex-wrap align-items-center soft">
-  <!-- svelte-ignore missing_declaration -->
   <!-- svelte-ignore a11y_mouse_events_have_key_events -->
   {#if svgid}
-    <svg onmouseover={setShadow} onmouseout={removeShadow} bind:this={element}>
+    <svg role="img" onmouseover={setShadow} onmouseout={removeShadow} bind:this={element}>
       <title>{title}</title>
       <use href="/icons.svg{svgid}" />
     </svg>
   {:else}
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
     <span
       style="color:{color}"
       {title}
