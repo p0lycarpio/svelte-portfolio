@@ -1,17 +1,26 @@
 <script>
+  import { onMount } from "svelte";
   import { t } from "$lib/translations";
-  import Littlelink from "../../lib/components/Littlelink.svelte";
+  import Littlelink from "$lib/components/Littlelink.svelte";
 
   import webp from "assets/avatar.jpg?webp&w=200&srcset";
   import image from "assets/avatar.jpg?&w=200";
+
+  let hydrated = $state(false);
+
+  onMount(() => {
+    hydrated = true;
+  });
 </script>
 
 <div class="container">
   <div class="column text-center my-5 pb-5">
     <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
     <h1>Arsène Reymond</h1>
-    <p>{@html $t("contact.description")}</p>
-
+    {#key hydrated}
+      <p>{@html $t("contact.description")}</p>
+    {/key}
+    
     <Littlelink
       icon="linkedin"
       href="https://linkedin.com/in/arsene-reymond"
