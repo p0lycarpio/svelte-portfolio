@@ -13,5 +13,7 @@
   "locale": "Français",
   "opLocale": "English",
   "all": "Tout",
-  "seemore": "Voir plus"
+  "seemore": "Voir plus",
+  "error.occurred": "Il semble qu'une erreur se soit produite...",
+  "error.back": "Retour sur le site"
 }
