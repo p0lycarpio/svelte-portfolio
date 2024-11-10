@@ -3,17 +3,16 @@
   import { onMount } from "svelte";
 
   import IconBack from "~icons/material-symbols/arrow-back-rounded";
-  export let closeParent = () => {};
-  export let about, display;
+  let { closeParent = () => {}, about = $bindable(), display } = $props();
 
-  let url = "https://api.github.com/repos/p0lycarpio/svelte-portfolio/commits?&page=1&per_page=1";
-  let commitDate;
+  let url = "https://api.github.com/repos/p0lycarpio/svelte-portfolio/branches/main";
+  let commitDate = $state();
 
   onMount(async () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        commitDate = new Date(data[0].commit.author.date);
+        commitDate = new Date(data.commit.commit.author.date);
       })
       .catch((error) => {
         console.log(error);
@@ -22,9 +21,9 @@
   });
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 <div id="about" class="about" bind:this={about} class:show={display === true}>
-  <button class="icon" title={$t("common.back")} on:click={closeParent}>
+  <button class="icon" title={$t("common.back")} onclick={closeParent}>
     <IconBack />
   </button>
   <h3>{$t("about.legals")}</h3>

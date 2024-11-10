@@ -2,7 +2,8 @@
   import { page } from "$app/stores";
   import Wavify from "components/Wavify.svelte";
 
-  let w, h;
+  let w = $state();
+  let h = $state();
   let wave = {
     height: 20,
     amplitude: 40,

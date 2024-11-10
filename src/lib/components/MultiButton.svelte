@@ -3,7 +3,8 @@
   import IconFile from "~icons/ic/outline-insert-drive-file";
   import IconGithub from "~icons/simple-icons/github";
 
-  let cv, link;
+  let cv = $state();
+  let link = $state();
 </script>
 
 <div class="multi-container">
@@ -12,16 +13,16 @@
       class="btn cv"
       href={$t("common.cv.link")}
       rel="preload"
-      on:mouseover={() => {
+      onmouseover={() => {
         cv = true;
       }}
-      on:focus={() => {
+      onfocus={() => {
         cv = true;
       }}
-      on:blur={() => {
+      onblur={() => {
         cv = true;
       }}
-      on:mouseout={() => {
+      onmouseout={() => {
         cv = false;
       }}>
       {#if cv == true}
@@ -36,16 +37,16 @@
       href="https://github.com/p0lycarpio"
       rel="preload"
       target="_blank"
-      on:mouseover={() => {
+      onmouseover={() => {
         link = true;
       }}
-      on:focus={() => {
+      onfocus={() => {
         link = true;
       }}
-      on:blur={() => {
+      onblur={() => {
         link = true;
       }}
-      on:mouseout={() => {
+      onmouseout={() => {
         link = false;
       }}>
       {#if link == true}
@@ -92,8 +93,10 @@
     border-right-style: none;
   }
 
-  .dark-mode .multi-button :first-child:not(.icon) {
-    border-right: solid 2px;
+  @media (prefers-color-scheme: dark) {
+    .multi-button :first-child:not(:global(.icon)) {
+      border-right: 1px solid;
+    }
   }
 
   .multi-button a:hover,
@@ -107,7 +110,7 @@
     text-decoration: none;
   }
 
-  .multi-button:hover a:focus:not(:hover) {
+  .multi-button:hover a:focus:not(:global(:hover)) {
     flex-grow: 1;
     color: black;
     background-color: white;

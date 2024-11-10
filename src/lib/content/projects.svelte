@@ -6,11 +6,11 @@
   import projects_fr from "content/projects.fr.json";
 
   let allprojects = [];
-  let projects = [];
-  let filtered = false;
-  let current = "all";
-  let domains = [];
-  let visible_projects = [];
+  let projects = $state([]);
+  let filtered = $state(false);
+  let current = $state("all");
+  let domains = $state([]);
+  let visible_projects = $state([]);
 
   locale.subscribe(() => {
     domains = [];
@@ -50,15 +50,15 @@
     <div class="col-md-3">
       <h2 class="section-heading">
         {$t("common.portfolio")}
-        <span class="section-border" />
+        <span class="section-border"></span>
       </h2>
       <p class="section-subtitle">{$t("common.portfolio.subtitle")}</p>
       <div id="filtres" class="d-none d-md-block">
         <div class="filters button-group">
-          <button class:selected={current === "all"} on:click={showall}>{$t("common.all")}</button
+          <button class:selected={current === "all"} onclick={showall}>{$t("common.all")}</button
           ><br />
           {#each domains as domain}
-            <button class:selected={current === domain} on:click={() => filter(domain)}>
+            <button class:selected={current === domain} onclick={() => filter(domain)}>
               {domain.charAt(0).toUpperCase() + domain.slice(1)}</button
             ><br />
           {/each}
@@ -76,7 +76,7 @@
         <div class="row justify-content-center" id="see-more-block">
           <div class="col-6 col-md-5">
             <div class="card d-grid text-center">
-              <button type="button" on:click={showmore} class="btn text-nowrap py-2" id="see-more"
+              <button type="button" onclick={showmore} class="btn text-nowrap py-2" id="see-more"
                 >{$t("common.seemore")}</button>
             </div>
           </div>

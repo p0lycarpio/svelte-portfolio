@@ -1,11 +1,30 @@
 <script>
   import { t } from "$lib/translations";
 
-  export let icon, href, background, color;
-  export let big = false;
-  export let twolines = false;
-  export let copy = false;
-  let message = null;
+  /**
+   * @typedef {Object} Props
+   * @property {any} icon
+   * @property {any} href
+   * @property {any} background
+   * @property {any} color
+   * @property {boolean} [big]
+   * @property {boolean} [twolines]
+   * @property {boolean} [copy]
+   * @property {import('svelte').Snippet} [children]
+   */
+
+  /** @type {Props} */
+  let {
+    icon,
+    href,
+    background,
+    color,
+    big = false,
+    twolines = false,
+    copy = false,
+    children,
+  } = $props();
+  let message = $state(null);
 
   const copyToClipboard = (e) => {
     if (copy) {
@@ -24,14 +43,14 @@
   style="background-color: {background}; color: {color}"
   rel="noopener"
   data-sveltekit-replacestate
-  on:click={copyToClipboard}>
+  onclick={copyToClipboard}>
   <svg class="icon" fill={color}>
     <use href="/social.svg#{icon}" />
   </svg>
   {#if message}
     {@html message}
   {:else}
-    <slot />
+    {@render children?.()}
   {/if}
 </a>
 <br />
@@ -119,5 +138,5 @@
         height: 32px;
       }
     }
-}
+  }
 </style>

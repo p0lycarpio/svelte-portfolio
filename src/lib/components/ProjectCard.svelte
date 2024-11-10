@@ -1,6 +1,6 @@
 <script>
   import { scale } from "svelte/transition";
-  export let project;
+  let { project } = $props();
 </script>
 
 <div class="col-lg-6 {project.domain}" transition:scale|global>

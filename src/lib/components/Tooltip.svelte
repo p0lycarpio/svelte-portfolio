@@ -1,9 +1,16 @@
 <script>
-  export let text = false; // prevent blank tooltips
+  /**
+   * @typedef {Object} Props
+   * @property {boolean} [text]
+   * @property {import('svelte').Snippet} [children]
+   */
+
+  /** @type {Props} */
+  let { text = false, children } = $props();
 </script>
 
 <span data-tooltip={text}>
-  <slot />
+  {@render children?.()}
 </span>
 
 <style lang="scss">

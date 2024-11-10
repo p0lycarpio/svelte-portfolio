@@ -4,12 +4,12 @@
   const born = new Date(2001, 1, 22);
   const today = new Date();
 
-  let biographie;
+  let biographie = $state();
 
-  let age = today.getFullYear() - born.getFullYear();
+  let age = $state(today.getFullYear() - born.getFullYear());
   let month = today.getMonth() - born.getMonth();
   if (month < 0 || (month === 0 && today.getDate() < born.getDate())) {
-    age = age - 1;
+    age -= 1;
   }
 </script>
 
@@ -17,7 +17,7 @@
   <div class="row row-padded">
     <div class="col-md-3">
       <h2 class="section-heading">
-        {$t("biography.title")}<span class="section-border" />
+        {$t("biography.title")}<span class="section-border"></span>
       </h2>
       <p class="section-subtitle">{$t("biography.subtitle")}</p>
     </div>

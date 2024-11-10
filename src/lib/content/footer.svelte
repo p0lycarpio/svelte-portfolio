@@ -1,12 +1,16 @@
 <script>
+  import { preventDefault } from "svelte/legacy";
+
   import { t } from "$lib/translations";
   import IconLink from "~icons/fa6-solid/link";
   import IconUp from "~icons/fa6-solid/chevron-up";
 
   export const prerender = true;
 
-  let form, alert, contact;
-  let isSubmitting = false;
+  let form = $state();
+  let alert = $state();
+  let contact = $state();
+  let isSubmitting = $state(false);
   let getYear = new Date().getFullYear();
 
   const handleSubmit = async () => {
@@ -47,7 +51,7 @@
       <form
         name="contact"
         id="contact"
-        on:submit|preventDefault={handleSubmit}
+        onsubmit={preventDefault(handleSubmit)}
         bind:this={form}
         netlify-honeypot="bot-field"
         data-netlify="true">
@@ -75,14 +79,12 @@
           id="message"
           cols="55"
           rows="4"
-          required />
+          required></textarea>
         <div class="d-flex justify-content-center">
           {#if isSubmitting}
             <button class="btn btn-outline-light" disabled>
-              <span
-                class="spinner-border spinner-border-sm me-2"
-                role="status"
-                aria-hidden="true" />
+              <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"
+              ></span>
               Vroum...
             </button>
           {:else}
@@ -93,15 +95,15 @@
       </form>
     </div>
   </div>
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <!-- svelte-ignore a11y-invalid-attribute -->
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_invalid_attribute -->
   <a
     id="back-to-top"
     href="#"
     class="btn btn-outline-light btn-md back-to-top d-none d-md-block"
     title={$t("contact.backToTop")}
     ><IconUp />
-</a>
+  </a>
   <div class="copyright">
     <span title="Arsène Reymond">
       <strong style="color:#fff">
