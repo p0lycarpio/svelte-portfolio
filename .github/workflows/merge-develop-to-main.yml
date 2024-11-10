@@ -1,0 +1,42 @@
+name: Rebase Develop to Main
+
+on:
+  push:
+    tags:
+      - 'refs/tags/v*'
+
+jobs:
+  rebase-develop-into-main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Fetch all branches
+        run: git fetch --all
+
+      - name: Check if develop is ahead of main
+        id: check_ahead
+        run: |
+          git fetch origin +refs/heads/develop:refs/remotes/origin/develop
+          git fetch origin +refs/heads/main:refs/remotes/origin/main
+          if git rev-list origin/main..origin/develop | grep -q .; then
+            echo "::set-output name=develop_ahead::true"
+          else
+            echo "::set-output name=develop_ahead::false"
+          fi
+
+      - name: Rebase develop onto main
+        if: steps.check_ahead.outputs.develop_ahead == 'true'
+        run: |
+          git checkout main
+          git rebase origin/develop
+          git push --force-with-lease origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
