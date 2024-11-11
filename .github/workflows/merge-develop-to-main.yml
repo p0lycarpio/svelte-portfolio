@@ -1,4 +1,4 @@
-name: Rebase Develop to Main
+name: Merge Develop to Main
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - v*
 
 jobs:
-  rebase-develop-into-main:
+  merge-develop-into-main:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,11 +32,11 @@ jobs:
             echo "::set-output name=develop_ahead::false"
           fi
 
-      - name: Rebase develop onto main
+      - name: Merge develop onto main with conflict resolution
         if: steps.check_ahead.outputs.develop_ahead == 'true'
         run: |
           git checkout main
-          git rebase origin/develop
-          git push --force-with-lease origin main
+          git merge origin/develop --no-ff -X theirs
+          git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
