@@ -1,6 +1,14 @@
 <script>
+  import { onMount } from "svelte";
+  import { on } from "svelte/events";
   import { scale } from "svelte/transition";
+
   let { project } = $props();
+  let hydrated = $state(false);
+
+  onMount(() => {
+    hydrated = true;
+  });
 </script>
 
 <div class="col-lg-6 {project.domain}" transition:scale|global>
@@ -16,14 +24,16 @@
         <img src={project.shot} alt={project.subtitle} loading="lazy" />
       {/if}
     </div>
-    <div class="project_info">
-      <h3 style="color:{project.accent};">
-        {@html project.type}
-      </h3>
-      <h1>{project.title}</h1>
-      <h2>{project.subtitle}</h2>
-      <p>{@html project.para}</p>
-      <p class="lien">{@html project.links}</p>
-    </div>
+    {#key hydrated}
+      <div class="project_info">
+        <h3 style="color:{project.accent};">
+          {@html project.type}
+        </h3>
+        <h1>{project.title}</h1>
+        <h2>{project.subtitle}</h2>
+        <p>{@html project.para}</p>
+        <p class="lien">{@html project.links}</p>
+      </div>
+    {/key}
   </project>
 </div>

@@ -1,4 +1,5 @@
 <script>
+  import { t } from "$lib/translations";
   import { page } from "$app/stores";
   import Wavify from "components/Wavify.svelte";
 
@@ -18,8 +19,8 @@
     <div class="column text-center animate bounceIn">
       <h1 class="mx-auto">{$page.status}</h1>
       <h2>{$page.error.message}</h2>
-      <p>Il semble qu'une erreur se soit produite...</p>
-      <a href="/">Retour sur le site</a>
+      <p>{$t("common.error.occurred")}</p>
+      <a href="/">{$t("common.error.back")}</a>
     </div>
   </div>
   <div class="animate fadeIn">

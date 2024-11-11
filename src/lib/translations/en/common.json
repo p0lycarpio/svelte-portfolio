@@ -14,5 +14,7 @@
   "locale": "English",
   "opLocale": "Français",
   "all": "All",
-  "seemore": "See more"
+  "seemore": "See more",
+  "error.occurred": "It seems that an error has occurred...",
+  "error.back": "Back to the site"
 }

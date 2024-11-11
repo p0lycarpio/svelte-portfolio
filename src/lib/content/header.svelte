@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   import { t } from "$lib/translations";
 
   import Navbar from "components/Navbar.svelte";
@@ -18,6 +19,11 @@
     bones: 4,
     color: "var(--bkg-color)",
   };
+  let hydrated = $state(false);
+
+  onMount(() => {
+    hydrated = true;
+  });
 </script>
 
 <header>
@@ -31,7 +37,9 @@
         <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
         <h1>{$t("common.title")}</h1>
       </div>
-      <p>{@html $t("common.subtitle")}</p>
+      {#key hydrated}
+        <p>{@html $t("common.subtitle")}</p>
+      {/key}
       <MultiButton />
     </div>
     <div
