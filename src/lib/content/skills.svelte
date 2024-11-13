@@ -13,7 +13,7 @@
       <p class="section-subtitle">{$t("skills.subtitle")}</p>
     </div>
     <div class="col-md-9 col-md-push-1 mt-md-4">
-      <h5>{$t("skills.languages")}</h5>
+      <h3>{$t("skills.languages")}</h3>
       <div class="d-flex flex-wrap align-items-center mb-4 soft">
         <Soft color="#F7E018" title="JavaScript">js</Soft>
         <Soft color="#4584b6" title="Python">.py</Soft>
@@ -23,7 +23,7 @@
         <Soft color="var(--black-white)" title={$t("skills.db")}>DB</Soft>
       </div>
 
-      <h5>{$t("skills.tools")}</h5>
+      <h3>{$t("skills.tools")}</h3>
       <div class="d-flex flex-wrap align-items-center soft">
         <Soft color="#0078D4" title="Microsoft Azure" svgid="#azure" />
         <Soft color="#2560E0" title="Pipelines DevOps" svgid="#azurepipelines" />
@@ -34,16 +34,15 @@
         <Soft color="#70db4f" title="Node.js" svgid="#nodejs" />
       </div>
 
-      <h5>{$t("skills.frameworks")}</h5>
+      <h3>{$t("skills.frameworks")}</h3>
       <div class="d-flex flex-wrap align-items-center soft">
         <Soft color="#61dafb" title="React" svgid="#react" />
-        <Soft color="#764abc" title="Redux" svgid="#redux" />
         <Soft color="#4fc08d" title="Vue" svgid="#vuejs" />
         <Soft color="#ff3e00" title="Svelte" svgid="#svelte" />
         <Soft color="#e10098" title="GraphQL" svgid="#graphql" />
       </div>
 
-      <h5>{$t("skills.multimedia")}</h5>
+      <h3>{$t("skills.multimedia")}</h3>
       <div class="d-flex flex-wrap align-items-center soft">
         <Soft color="#31A8FF" title="Adobe Photoshop" svgid="#ps" />
         <Soft color="#FF9A00" title="Adobe Illustrator" svgid="#ai" />
@@ -56,7 +55,8 @@
 </section>
 
 <style>
-  h5 {
+  h3 {
+    font-size: 1.25rem;
     margin-bottom: 1.4em;
   }
 

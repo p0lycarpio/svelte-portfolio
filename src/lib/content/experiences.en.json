@@ -1,0 +1,52 @@
+[
+    {
+        "type": "school",
+        "from": "2022",
+        "to": "2024",
+        "title": "Master of Computer Science, Software Architect course",
+        "description": "Programming, IS architecture and project management.",
+        "classes": "order-1 order-md-0"
+    },
+    {
+        "type": "school",
+        "from": "2021",
+        "to": "2022",
+        "title": "LP Software design, development and testing – cloud developer option",
+        "description": "Web, mobile, backend & cloud development.",
+        "classes": "order-2 order-md-1"
+    },
+    {
+        "type": "school",
+        "from": "2019",
+        "to": "2021",
+        "title": "DUT Multimedia and Internet",
+        "description": "Web integration and development, digital communication, graphics and audiovisual.",
+        "classes": "order-3 order-md-2"
+    },
+    {
+        "type": "work",
+        "from": "2022",
+        "title": "Cloud Platform Engineer & DevOps",
+        "subtitle": "Covéa Group",
+        "description": "Design, development and automation of a DataScience platform in the cloud.",
+        "classes": "order-0 order-md-0"
+    },
+    {
+        "type": "work",
+        "from": "2023",
+        "to": "2024",
+        "title": "Backend Developer",
+        "subtitle": "CGI Inc, work-study",
+        "description": "Development of webservices in the exchange layer of an IS.",
+        "classes": "order-1 order-md-1"
+    },
+    {
+        "type": "work",
+        "from": "2022",
+        "to": "2023",
+        "title": "Communication Manager",
+        "subtitle": "SDIS 41, work-study",
+        "description": "Video editing, graphics, article writing, web redesign project.",
+        "classes": "order-2 order-md-2"
+    }
+]

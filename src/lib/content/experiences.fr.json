@@ -1,0 +1,52 @@
+[
+  {
+    "type": "school",
+    "from": "2022",
+    "to": "2024",
+    "title": "Master Informatique parcours Architecte logiciel",
+    "description": "Programmation, architecture des SI et gestion de projet.",
+    "classes": "order-1 order-md-0"
+  },
+  {
+    "type": "school",
+    "from": "2021",
+    "to": "2022",
+    "title": "LP Conception, développement et tests de logiciels – option développeur cloud",
+    "description": "Développement web, mobile, back-end et cloud.",
+    "classes": "order-2 order-md-1"
+  },
+  {
+    "type": "school",
+    "from": "2019",
+    "to": "2021",
+    "title": "DUT Métiers du multimédia et de l'internet",
+    "description": "Intégration et développement web, communication digitale, graphisme et audiovisuel.",
+    "classes": "order-3 order-md-2"
+  },
+  {
+    "type": "work",
+    "from": "2022",
+    "title": "Ingénieur plateforme cloud & DevOps",
+    "subtitle": "Groupe Covéa",
+    "description": "Conception, développement et automatisation d’une plateforme DataScience dans le cloud.",
+    "classes": "order-0 order-md-0"
+  },
+  {
+    "type": "work",
+    "from": "2023",
+    "to": "2024",
+    "title": "Développeur back-end",
+    "subtitle": "CGI Inc, alternance",
+    "description": "Développement de webservices dans la couche d’échanges d’un SI.",
+    "classes": "order-1 order-md-1"
+  },
+  {
+    "type": "work",
+    "from": "2022",
+    "to": "2023",
+    "title": "Chargé de communication",
+    "subtitle": "SDIS 41, alternance",
+    "description": "Montage vidéo, graphisme, rédaction d’articles, projet de refonte web.",
+    "classes": "order-2 order-md-2"
+  }
+]

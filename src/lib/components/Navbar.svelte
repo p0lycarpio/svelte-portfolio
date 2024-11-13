@@ -22,7 +22,7 @@
     sidebarLinks = [
       { href: "#", text: "Home" },
       { href: "#bio", text: $t("biography.title") },
-      { href: "#parcours", text: $t("career.title") },
+      { href: "#parcours", text: $t("experiences.title") },
       { href: "#compétences", text: $t("skills.title") },
       { href: "#contact", text: $t("contact.title") },
     ];
