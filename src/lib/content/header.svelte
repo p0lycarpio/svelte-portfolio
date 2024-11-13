@@ -3,7 +3,6 @@
   import { t } from "$lib/translations";
 
   import Navbar from "components/Navbar.svelte";
-  import Logo from "assets/logo.svelte";
   import Wavify from "components/Wavify.svelte";
   import MultiButton from "components/MultiButton.svelte";
 
@@ -31,11 +30,8 @@
   <section class="hero-section">
     <div class="container-fluid text-center animate backInDown">
       <div class="hero-text">
-        <div class="logo">
-          <Logo />
-        </div>
         <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
-        <h1>{$t("common.title")}</h1>
+        <h1>Arsène Reymond</h1>
       </div>
       {#key hydrated}
         <p>{@html $t("common.subtitle")}</p>
@@ -53,40 +49,12 @@
 </header>
 
 <style lang="scss">
-  .logo {
-    max-width: 600px;
-    display: block;
-    z-index: 2;
-    margin: 0 auto 30px auto;
-    fill: var(--black-white);
-    &:hover {
-      animation: colorChange 12s infinite;
-    }
-  }
-
-  @keyframes colorChange {
-    0% {
-      fill: #4978c8;
-    }
-    25% {
-      fill: #168a06;
-    }
-    50% {
-      fill: #ffee00;
-    }
-    75% {
-      fill: #ff0000;
-    }
-    100% {
-      fill: #4978c8;
-    }
-  }
 
   .hero-section {
     background: var(--hero-sect);
-    padding-top: 50px;
+    padding-top: 48px;
     & p {
-      font-size: 20px;
+      font-size: 22px;
       padding: 0 10%;
     }
     & :global(a) {
