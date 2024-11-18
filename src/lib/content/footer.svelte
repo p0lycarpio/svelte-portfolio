@@ -44,7 +44,7 @@
       <div class="h-contact d-flex flex-column flex-sm-row">
         <h1>{$t("contact.contactMe")}</h1>
         <div class="d-block social">
-          <a href="/contact" class="social-icon ms-3" title="Littlelink" data-sveltekit-reload
+          <a href="/contact" class="social-icon ms-3" title="Littlelink"
             ><IconLink /></a>
         </div>
       </div>
