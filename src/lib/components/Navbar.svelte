@@ -1,9 +1,8 @@
 <script>
-  import { slide, fade } from "svelte/transition";
+  import { scale, fade } from "svelte/transition";
   import { t, locale } from "$lib/translations";
 
   import About from "content/about.svelte";
-  import Logo from "assets/logo.svelte";
 
   import IconClose from "~icons/material-symbols/close-rounded";
   import IconMenu from "~icons/material-symbols/menu-rounded";
@@ -11,7 +10,7 @@
 
   let y = $state();
   let wx = $state();
-  let animate = $derived(wx > 768 ? fade: slide)
+  let animate = $derived(wx > 768 ? fade: scale)
 
   let sidebar = $state();
   let menuOpen = $state(false);
@@ -62,7 +61,7 @@
     id="navbar-top"
     transition:animate>
     <!-- Navbar elements -->
-    <div class="d-flex navbar-buttons">
+    <div class="d-inline-flex navbar-buttons">
       <button
         title="Menu"
         class="icon menu"
@@ -75,10 +74,6 @@
         <IconTranslate style="font-size:.8em" />
       </button>
     </div>
-    <div class="logo">
-      <Logo />
-    </div>
-    <div style="width:40px;"></div>
     <!-- End navbar elements -->
 
     <!-- Sidebars -->
@@ -206,7 +201,6 @@
   }
 
   nav {
-    width: 100%;
     line-height: 60px;
     position: relative;
     height: 0;
@@ -215,39 +209,28 @@
     z-index: 4;
   }
 
-  .logo {
-    display: none;
-  }
-
   .locale {
     margin-top: -3px;
   }
 
   @media only screen and (max-width: 767px) {
     nav {
-      background-color: var(--hero-sect);
-      box-shadow: 0 4px 4px var(--cardShadow);
       height: 61px;
       color: #666;
       position: fixed;
-      left: 0;
-      right: 0;
       z-index: 4;
       top: 0;
     }
-
-    .logo {
-      max-width: 246px;
-      display: block;
-      padding: 0;
-      width: 100%;
-      z-index: 2;
-      fill: var(--black-white);
-    }
-
+    
     .menu {
       position: relative;
       top: -3px;
+    }
+    
+    .navbar-buttons {
+      background-color: var(--hero-sect);
+      border-radius: 0  0 10px 0;
+      box-shadow: 0 0 4px 2px var(--cardShadow);
     }
 
     .locale {
@@ -256,6 +239,10 @@
 
     .sidenav .locale {
       display: inline-block !important;
+    }
+
+    button.icon {
+      margin: 11px!important;
     }
   }
 </style>
