@@ -1,7 +1,7 @@
 {
   "title": "Biography",
   "subtitle": "About me",
-  "intro": "Nice to meet you, I'm Arsène! I'm a {{age}}-year-old student, I'm passionate about computer science and new technologies. I listen to a lot of music and I also like cinema. I go swimming every week.",
-  "para1": "After my technical degree; DUT in multimedia and internet, I decided to continue my studies in IT by integrating the professional cloud developer license in Niort, in September 2021. This year carried out on a work-study basis at CGI, digital services company, was my second year of work-study (after working at SDIS 41 during my DUT). This allowed me to discover the exchange layer of an IS in the development of web services with a <abbr title ='Enterprise Service Bus'>ESB</abbr>.",
-  "para2": "Following this experience and after obtaining my bachelor, I was admitted in September 2022 to the master's degree in computer science software architect, provided by the University of La Rochelle. I'm currently a work-study student at Covéa as DataMLOps, in the DataScience team. My job is to set up data pipelines, provision and configure resources on the Microsoft Azure cloud platform."
+  "intro": "Nice to meet you, I'm Arsène! I'm a {{age}}-year-old developer passionate about IT. I enjoy music, cinema, and I swim every week.",
+  "para1": "After earning a DUT in Multimedia and Internet Professions, I continued my studies in IT with a professional degree in Cloud Development, completed through an apprenticeship at CGI, where I developed web services using an <abbr title='Enterprise Service Bus'>ESB</abbr>.",
+  "para2": "I then obtained a master's degree in computer science, specializing in software architecture, which I completed through an apprenticeship at Covéa. Now working as a Platform and DevOps Engineer, I manage a Microsoft Azure cloud platform dedicated to Data Science and AI. I design and automate services to ensure performance, reliability, and security, while optimizing development and deployment processes."
 }

@@ -20,8 +20,8 @@ const config = {
     },
     {
       locale: "en",
-      key: "career",
-      loader: async () => (await import("./en/career.json")).default,
+      key: "experiences",
+      loader: async () => (await import("./en/experiences.json")).default,
     },
     {
       locale: "en",
@@ -50,8 +50,8 @@ const config = {
     },
     {
       locale: "fr",
-      key: "career",
-      loader: async () => (await import("./fr/career.json")).default,
+      key: "experiences",
+      loader: async () => (await import("./fr/experiences.json")).default,
     },
     {
       locale: "fr",

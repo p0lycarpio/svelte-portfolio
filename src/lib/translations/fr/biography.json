@@ -1,7 +1,7 @@
 {
   "title": "Biographie",
   "subtitle": "À propos de moi",
-  "intro": "Enchanté, moi c'est Arsène ! Étudiant de {{age}} ans, je suis passionné par l'informatique et les nouvelles technologies. J'écoute beaucoup de musique et j'aime aussi le cinéma. Je pratique hebdomadairement la natation.",
-  "para1": "Après un DUT métiers du multimédia et de l'internet, j'ai décidé de poursuivre les études dans l'informatique en intégrant en septembre 2021 la licence professionnelle développeur cloud à Niort. Cette année réalisée en alternance chez CGI, entreprise de services numériques, fût ma seconde année d'alternance (après avoir travaillé au SDIS 41 pendant mon DUT). Cela m'a permis de découvrir la couche d'échanges d'un SI en y développement des webservices avec un <abbr title='Enterprise Service Bus'>ESB</abbr>.",
-  "para2": "À la suite de cette expérience et après l'obtention de mon bac+3, j'ai été admis en septembre 2022 dans le master informatique architecte logiciel, dispensé par l'université de la Rochelle. Je suis actuellement alternant chez Covéa en tant que DataMLOps, dans l'équipe DataScience. J'ai pour mission de mettre en place des pipelines de données, de provisionner et de configurer des ressources sur la plateforme cloud Microsoft Azure."
+  "intro": "Enchanté, moi c'est Arsène ! Développeur de {{age}} ans passionné d'informatique, j'aime la musique, le cinéma et je pratique la natation chaque semaine.",
+  "para1": "Après un DUT Métiers du multimédia et de l'internet, j'ai poursuivi mes études en informatique avec une licence professionnelle Développeur Cloud en alternance chez CGI, où j'ai développé des webservices avec un <abbr title='Enterprise Service Bus'>ESB</abbr>.",
+  "para2": "J'ai ensuite obtenu un master en informatique spécialisé en architecture logicielle, réalisé en alternance chez Covéa. Recruté comme ingénieur plateforme et DevOps, je travaille sur une plateforme cloud dédiée à la Data Science et à l'IA. Je conçois et automatise des services pour assurer leur performance, fiabilité et sécurité, tout en optimisant les processus de développement et de déploiement."
 }

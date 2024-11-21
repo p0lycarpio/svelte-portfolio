@@ -71,14 +71,8 @@
 </div>
 
 <style lang="scss">
-  h1 {
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 1em;
-  }
-
   p {
-    font-size: 18px;
+    font-size: 1.2rem;
     margin-top: 1.4rem;
     margin-bottom: 3rem;
     line-height: 1.5;
