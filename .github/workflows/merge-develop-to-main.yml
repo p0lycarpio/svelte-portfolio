@@ -32,11 +32,11 @@ jobs:
             echo "::set-output name=develop_ahead::false"
           fi
 
-      - name: Rebase develop onto main
+      - name: Merge develop onto main
         if: steps.check_ahead.outputs.develop_ahead == 'true'
         run: |
           git checkout main
-          git rebase origin/develop -X theirs
+          git merge origin/develop -X theirs
           git push --force-with-lease origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
