@@ -27,9 +27,14 @@
     ];
   });
 
-  function close() {
-    menuOpen = false;
-    aboutOpen = false;
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      aboutOpen = false;
+      document.body.classList.remove('overflow-hidden');
+    }
   }
 
   function switchLocale() {
@@ -42,14 +47,10 @@
   bind:innerWidth={wx}
   onkeydown={(e) => {
     if (e.key == "Escape" && menuOpen | aboutOpen) {
-      close();
+      toggleMenu();
     }
   }}
-  onresize={() => {
-    if (wx < 768) {
-      close();
-    }
-  }} />
+/>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
@@ -65,9 +66,7 @@
       <button
         title="Menu"
         class="icon menu"
-        onclick={() => {
-          menuOpen = true;
-        }}>
+        onclick={toggleMenu}>
         <IconMenu />
       </button>
       <button class="icon locale" onclick={switchLocale} title={$t("common.opLocale")}>
@@ -78,7 +77,7 @@
 
     <!-- Sidebars -->
     <div id="sidenav" class="sidenav" class:show={menuOpen === true} bind:this={sidebar}>
-      <button title={$t("common.close")} class="icon" onclick={close}>
+      <button title={$t("common.close")} class="icon" onclick={toggleMenu}>
         <IconClose />
       </button>
       <button class="icon locale" onclick={switchLocale} title={$t("common.opLocale")}>
@@ -87,7 +86,7 @@
       <ul id="sidebar-links">
         {#each sidebarLinks as { href, text }}
           <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-          <li onclick={close}><a {href}>{text}</a></li>
+          <li onclick={toggleMenu}><a {href}>{text}</a></li>
         {/each}
         <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
         <li
@@ -116,7 +115,7 @@
       role="presentation"
       id="overlay"
       class="menu-overlay"
-      onclick={close}
+      onclick={toggleMenu}
       transition:fade|global={{ duration: 300 }}>
     </div>
   {/if}

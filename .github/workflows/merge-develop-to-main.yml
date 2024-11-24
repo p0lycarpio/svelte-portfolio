@@ -1,4 +1,4 @@
-name: Rebase Develop to Main
+name: Merge Develop to Main
 
 on:
   push:
@@ -18,8 +18,6 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Fetch all branches
-        run: git fetch --all
 
       - name: Check if develop is ahead of main
         id: check_ahead
@@ -32,11 +30,11 @@ jobs:
             echo "::set-output name=develop_ahead::false"
           fi
 
-      - name: Rebase develop onto main
+      - name: Merge develop onto main
         if: steps.check_ahead.outputs.develop_ahead == 'true'
         run: |
           git checkout main
-          git rebase origin/develop -X theirs
+          git merge origin/develop -X theirs --allow-unrelated-histories
           git push --force-with-lease origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
