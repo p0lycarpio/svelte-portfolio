@@ -4,24 +4,19 @@
 
 Code source of my portfolio developed with [Sveltekit](https://kit.svelte.dev/) and deployed on [Netlify](https://www.netlify.com/) cloud service.
 
-## Requirements
-
-- Node.js >= 18
-- Yarn >= 4
-- Netlify
 
 ## Get started
 
 Install dependencies...
 
 ```bash
-yarn
+pnpm
 ```
 
 ...then start Vite.js dev server with :
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 Navigate to [localhost:5000](http://localhost:5000).
@@ -33,7 +28,7 @@ _Optionnal : install the official extension [Svelte for VS Code](https://marketp
 To build the an optimised version of the app with SSR, run :
 
 ```bash
-yarn build
+pnpm build
 ```
 
 `/build` folder will be generated.
