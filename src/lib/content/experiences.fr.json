@@ -28,13 +28,13 @@
     "from": "2022",
     "title": "Ingénieur plateforme cloud & DevOps",
     "subtitle": "Groupe Covéa",
-    "description": "Conception, développement et automatisation d’une plateforme DataScience dans le cloud.",
+    "description": "Conception, développement et automatisation d’une plateforme d'IA dans le cloud.",
     "classes": "order-0 order-md-0"
   },
   {
     "type": "work",
-    "from": "2023",
-    "to": "2024",
+    "from": "2021",
+    "to": "2022",
     "title": "Développeur back-end",
     "subtitle": "CGI Inc, alternance",
     "description": "Développement de webservices dans la couche d’échanges d’un SI.",
@@ -42,8 +42,8 @@
   },
   {
     "type": "work",
-    "from": "2022",
-    "to": "2023",
+    "from": "2020",
+    "to": "2021",
     "title": "Chargé de communication",
     "subtitle": "SDIS 41, alternance",
     "description": "Montage vidéo, graphisme, rédaction d’articles, projet de refonte web.",
