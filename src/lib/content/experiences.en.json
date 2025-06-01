@@ -5,7 +5,7 @@
     "to": "2024",
     "title": "Master of Computer Science, Software Architect course",
     "description": "Programming, IS architecture and project management.",
-    "classes": "order-1 order-md-0"
+    "order": "order-2 md:order-1"
   },
   {
     "type": "school",
@@ -13,7 +13,7 @@
     "to": "2022",
     "title": "LP Software design, development and testing – cloud developer option",
     "description": "Web, mobile, backend & cloud development.",
-    "classes": "order-2 order-md-1"
+    "order": "order-4 md:order-3"
   },
   {
     "type": "school",
@@ -21,7 +21,7 @@
     "to": "2021",
     "title": "DUT Multimedia and Internet",
     "description": "Web integration and development, digital communication, graphics and audiovisual.",
-    "classes": "order-3 order-md-2"
+    "order": "order-6 md:order-5"
   },
   {
     "type": "work",
@@ -29,7 +29,7 @@
     "title": "Cloud Platform Engineer & DevOps",
     "subtitle": "Covéa Group",
     "description": "Design, development and automation of a AI platform in the cloud.",
-    "classes": "order-0 order-md-0"
+    "order": "order-1 md:order-2"
   },
   {
     "type": "work",
@@ -38,7 +38,7 @@
     "title": "Backend Developer",
     "subtitle": "CGI Inc, work-study",
     "description": "Development of webservices in the exchange layer of an IS.",
-    "classes": "order-1 order-md-1"
+    "order": "order-3 md:order-4"
   },
   {
     "type": "work",
@@ -47,6 +47,6 @@
     "title": "Communication Manager",
     "subtitle": "SDIS 41, work-study",
     "description": "Video editing, graphics, article writing, web redesign project.",
-    "classes": "order-2 order-md-2"
+    "order": "order-5 md:order-6"
   }
 ]

@@ -5,7 +5,7 @@
     "to": "2024",
     "title": "Master Informatique parcours Architecte logiciel",
     "description": "Programmation, architecture des SI et gestion de projet.",
-    "classes": "order-1 order-md-0"
+    "order": "order-2 md:order-1"
   },
   {
     "type": "school",
@@ -13,7 +13,7 @@
     "to": "2022",
     "title": "LP Conception, développement et tests de logiciels – option développeur cloud",
     "description": "Développement web, mobile, back-end et cloud.",
-    "classes": "order-2 order-md-1"
+    "order": "order-4 md:order-3"
   },
   {
     "type": "school",
@@ -21,7 +21,7 @@
     "to": "2021",
     "title": "DUT Métiers du multimédia et de l'internet",
     "description": "Intégration et développement web, communication digitale, graphisme et audiovisuel.",
-    "classes": "order-3 order-md-2"
+    "order": "order-6 md:order-5"
   },
   {
     "type": "work",
@@ -29,7 +29,7 @@
     "title": "Ingénieur plateforme cloud & DevOps",
     "subtitle": "Groupe Covéa",
     "description": "Conception, développement et automatisation d’une plateforme d'IA dans le cloud.",
-    "classes": "order-0 order-md-0"
+    "order": "order-1 md:order-2"
   },
   {
     "type": "work",
@@ -38,7 +38,7 @@
     "title": "Développeur back-end",
     "subtitle": "CGI Inc, alternance",
     "description": "Développement de webservices dans la couche d’échanges d’un SI.",
-    "classes": "order-1 order-md-1"
+    "order": "order-3 md:order-4"
   },
   {
     "type": "work",
@@ -47,6 +47,6 @@
     "title": "Chargé de communication",
     "subtitle": "SDIS 41, alternance",
     "description": "Montage vidéo, graphisme, rédaction d’articles, projet de refonte web.",
-    "classes": "order-2 order-md-2"
+    "order": "order-5 md:order-6"
   }
 ]
