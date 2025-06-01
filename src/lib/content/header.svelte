@@ -63,10 +63,6 @@
     }
   }
 
-  .hero-text {
-    margin-bottom: 30px;
-  }
-
   .avatar {
     border-radius: 50%;
     margin-bottom: 0px;
