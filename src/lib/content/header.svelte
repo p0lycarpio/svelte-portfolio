@@ -28,14 +28,14 @@
 <header>
   <Navbar />
   <section class="hero-section">
-    <div class="container-fluid text-center animate backInDown">
-      <div class="hero-text">
+    <div class="animate backInDown px-3">
+      <div class="flex items-center flex-col">
         <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
-        <h1>Arsène Reymond</h1>
+        <h1 class="text-center mb-8">Arsène Reymond</h1>
+        {#key hydrated}
+        <p class="text-center mb-4">{@html $t("common.subtitle")}</p>
+        {/key}
       </div>
-      {#key hydrated}
-        <p>{@html $t("common.subtitle")}</p>
-      {/key}
       <MultiButton />
     </div>
     <div

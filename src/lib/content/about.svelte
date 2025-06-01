@@ -91,7 +91,7 @@
   }
 
   .about p {
-    padding: 10px 0 28px 52px;
+    padding: 16px 0 28px 52px;
   }
 
   .about h3 {

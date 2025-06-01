@@ -15,12 +15,12 @@
 </script>
 
 <div bind:offsetWidth={w} bind:offsetHeight={h}>
-  <div class="container">
+  <div class="container mx-auto">
     <div class="column text-center animate bounceIn">
       <h1 class="mx-auto">{$page.status}</h1>
-      <h2>{$page.error.message}</h2>
+      <h2 class="text-4xl">{$page.error.message}</h2>
       <p>{$t("common.error.occurred")}</p>
-      <a href="/">{$t("common.error.back")}</a>
+      <a class="text-blue-600" href="/">{$t("common.error.back")}</a>
     </div>
   </div>
   <div class="animate fadeIn">
@@ -56,6 +56,7 @@
 
     p {
       color: var(--text-color);
+      line-height: 3.4;
     }
 
     p,

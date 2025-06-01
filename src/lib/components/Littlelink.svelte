@@ -99,7 +99,11 @@
     height: 58px;
     box-shadow: 0 4px 4px var(--cardShadow);
     transition: all 0.25s;
-    border-width: 2px !important;
+
+    &:hover {
+      box-shadow: 0 4px 10px var(--cardHover);
+      transform: translate(0, -3px);
+    }
 
     & .icon {
       width: 38px;
@@ -116,7 +120,7 @@
   }
 
   .border {
-    border-width: 1px;
+    border-width: 2px;
     border-color: var(--black-white) !important;
   }
 

@@ -3,18 +3,18 @@
   import Soft from "components/SoftwareIcon.svelte";
 </script>
 
-<section class="container-xl animate fadeInUp" id="compétences">
-  <div class="row row-padded">
-    <div class="col-md-3">
+<section class="max-w-[1320px] mx-auto py-5xl animate fadeInUp" id="compétences">
+  <div class="px-3 grid grid-cols-1 md:grid-cols-8 gap-x-6">
+    <div class="col-span-1 md:col-span-2 row-span-full">
       <h2 class="section-heading">
         {$t("skills.title")}
         <span class="section-border"></span>
       </h2>
       <p class="section-subtitle">{$t("skills.subtitle")}</p>
     </div>
-    <div class="col-md-9 col-md-push-1 mt-md-4">
+    <div class="col-span-1 md:col-span-6 md:mt-6">
       <h3>{$t("skills.languages")}</h3>
-      <div class="d-flex flex-wrap align-items-center mb-4 soft">
+      <div class="flex flex-wrap items-center mb-4 soft">
         <Soft color="#F7E018" title="JavaScript">js</Soft>
         <Soft color="#4584b6" title="Python">.py</Soft>
         <Soft color="#009fc6" title="Golang">go()</Soft>
@@ -24,7 +24,7 @@
       </div>
 
       <h3>{$t("skills.tools")}</h3>
-      <div class="d-flex flex-wrap align-items-center soft">
+      <div class="flex flex-wrap items-center soft">
         <Soft color="#0078D4" title="Microsoft Azure" svgid="#azure" />
         <Soft color="#2560E0" title="Pipelines DevOps" svgid="#azurepipelines" />
         <Soft color="#844FBA" title="Terraform" svgid="#terraform" />
@@ -35,7 +35,7 @@
       </div>
 
       <h3>{$t("skills.frameworks")}</h3>
-      <div class="d-flex flex-wrap align-items-center soft">
+      <div class="flex flex-wrap items-center soft">
         <Soft color="#61dafb" title="React" svgid="#react" />
         <Soft color="#4fc08d" title="Vue" svgid="#vuejs" />
         <Soft color="#ff3e00" title="Svelte" svgid="#svelte" />
@@ -43,7 +43,7 @@
       </div>
 
       <h3>{$t("skills.multimedia")}</h3>
-      <div class="d-flex flex-wrap align-items-center soft">
+      <div class="flex flex-wrap items-center soft">
         <Soft color="#31A8FF" title="Adobe Photoshop" svgid="#ps" />
         <Soft color="#FF9A00" title="Adobe Illustrator" svgid="#ai" />
         <Soft color="#FF3366" title="Adobe InDesign" svgid="#id" />

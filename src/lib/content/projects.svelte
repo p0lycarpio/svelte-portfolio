@@ -53,7 +53,7 @@
         <span class="section-border"></span>
       </h2>
       <p class="section-subtitle">{$t("common.portfolio.subtitle")}</p>
-      <div id="filtres" class="d-none d-md-block">
+      <div id="filtres" class="d-none d-mblock">
         <div class="filters button-group">
           <button class:selected={current === "all"} onclick={showall}>{$t("common.all")}</button
           ><br />
@@ -73,7 +73,7 @@
         {/each}
       </div>
       {#if visible_projects.length < projects.length && !filtered}
-        <div class="row justify-content-center" id="see-more-block">
+        <div class="row justify-center" id="see-more-block">
           <div class="col-6 col-md-5">
             <div class="card d-grid text-center">
               <button type="button" onclick={showmore} class="btn text-nowrap py-2" id="see-more"

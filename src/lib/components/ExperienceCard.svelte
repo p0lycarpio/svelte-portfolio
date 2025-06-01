@@ -6,8 +6,8 @@
   let { type, from, to, title, subtitle, description } = $props();
 </script>
 
-<div class="card">
-  <div class="card-body">
+<div class="card border border-neutral-300 rounded-lg shadow-md shadow-neutral-400/40 overflow-hidden">
+  <div class="card-body p-4">
     {#if type == "school"}
       <i class="icon" title={$t("experiences.studies")} style="right:15px">
         <IconSchool />
@@ -30,6 +30,15 @@
 <style lang="scss">
   .card {
     background-color: var(--card-color);
+    display: block;
+    position: relative;
+    margin-top: 38px;
+    transition: all 0.25s;
+
+    &:hover {
+      box-shadow: 0 4px 10px var(--cardHover);
+      transform: translate(0, -3px);
+    }
   }
 
   .icon {
@@ -56,6 +65,11 @@
     line-height: 1.4;
     margin-top: 0.75em;
   }
+
+  i {
+    color: var(--cardIcon);
+    font-size: 2em;
+}
 
   strong {
     font-size: small;

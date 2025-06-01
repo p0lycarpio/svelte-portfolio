@@ -63,9 +63,7 @@ project .lien {
   margin-top: -14px;
 }
 
-project:hover,
-.card:hover,
-.biglink:hover {
+project:hover {
   box-shadow: 0 4px 10px var(--cardHover);
   transform: translate(0, -3px);
 }
