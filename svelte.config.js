@@ -1,8 +1,9 @@
 import { sveltePreprocess} from 'svelte-preprocess'
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 import adapter from '@sveltejs/adapter-netlify'
 
 export default {
-  preprocess: sveltePreprocess(),
+  preprocess: [sveltePreprocess()],
   onwarn: (warning, handler) => {
     if (warning.code.startsWith('a11y-')) {
       return;

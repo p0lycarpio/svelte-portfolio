@@ -1,6 +1,6 @@
 <script>
+  import 'uno.css';
   import "@fontsource/ibm-plex-sans/latin.css";
-  import "css/bootstrap.scss";
   /**
    * @typedef {Object} Props
    * @property {import('svelte').Snippet} [children]
