@@ -12,8 +12,8 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/ibm-plex-sans':
-        specifier: ^5.1.0
+      '@fontsource-variable/ibm-plex-sans':
+        specifier: ^5.2.5
         version: 5.2.5
       '@popperjs/core':
         specifier: ^2.11.8
@@ -306,8 +306,8 @@ packages:
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fontsource/ibm-plex-sans@5.2.5':
-    resolution: {integrity: sha512-W1kkC/fpDuoKQ5pNSQt/Bg0rpV9AATreA9ABwZf678AlwSCY2TQBT1YwAxxB65E9jcT/ysDrU1sGVNUyWCBXRw==}
+  '@fontsource-variable/ibm-plex-sans@5.2.5':
+    resolution: {integrity: sha512-SrvCxqJK3NI4JBroXsJdBZGfs6QVfY0lK2VIZIIgYPea+/LI/3zYOOTI0AVvrMrmBks87GJQfPGprftlO8yInQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1667,7 +1667,7 @@ snapshots:
       '@eslint/core': 0.12.0
       levn: 0.4.1
 
-  '@fontsource/ibm-plex-sans@5.2.5': {}
+  '@fontsource-variable/ibm-plex-sans@5.2.5': {}
 
   '@humanfs/core@0.19.1': {}
 

@@ -30,7 +30,7 @@
     "vite-imagetools": "^7.0.4"
   },
   "dependencies": {
-    "@fontsource/ibm-plex-sans": "^5.1.0",
+    "@fontsource-variable/ibm-plex-sans": "^5.2.5",
     "@popperjs/core": "^2.11.8",
     "@sveltejs/kit": "^2.8.1",
     "animate.css": "^4.1.1",

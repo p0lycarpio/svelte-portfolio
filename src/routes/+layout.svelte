@@ -1,6 +1,6 @@
 <script>
   import 'uno.css';
-  import "@fontsource/ibm-plex-sans/latin.css";
+  import '@fontsource-variable/ibm-plex-sans';
   import "../lib/css/styles.scss"
   /**
    * @typedef {Object} Props
