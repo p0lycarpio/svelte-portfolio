@@ -124,14 +124,14 @@
     border-color: var(--black-white) !important;
   }
 
-  @media only screen and (min-width: 992px), (min-width: 576px) {
+  @media only screen and (min-width: 40rem) {
     .twolines {
       height: 132px;
       line-height: 7rem;
     }
   }
 
-  @media only screen and (max-width: 576px) {
+  @media only screen and (max-width: 40rem) {
     .biglink {
       font-size: 14pt;
       font-weight: normal;

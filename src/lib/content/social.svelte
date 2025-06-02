@@ -4,8 +4,8 @@
 </script>
 
 <section class="max-w-[1320px] mx-auto py-5xl animate fadeInUp" id="social">
-  <div class="px-3 grid grid-cols-1 md:grid-cols-8 gap-x-6">
-    <div class="col-span-1 md:col-span-2 row-span-full">
+  <div class="px-3 grid grid-cols-1 sm:grid-cols-8 gap-x-6">
+    <div class="col-span-full md:col-span-2 row-span-full">
       <h2 class="section-heading">
         {$t("common.social.title")}
         <span class="section-border"></span>
@@ -13,7 +13,7 @@
       <p class="section-subtitle">{$t("common.social.subtitle")}</p>
     </div>
 
-    <div class="col-span-1 md:col-span-3 md:mt-6">
+    <div class="col-span-1 sm:col-span-4 md:col-span-3 sm:mt-6">
       <Littlelink
         icon="github"
         href="https://github.com/p0lycarpio"
@@ -30,7 +30,7 @@
         background="#5865f2">Discord</Littlelink>
     </div>
     
-    <div class="col-span-1 md:col-span-3 md:mt-6">
+    <div class="col-span-1 sm:col-span-4 md:col-span-3 sm:mt-6">
       <Littlelink
         icon="linkedin"
         href="https://linkedin.com/in/arsene-reymond"

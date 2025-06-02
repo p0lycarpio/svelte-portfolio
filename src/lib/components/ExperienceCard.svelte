@@ -53,7 +53,7 @@
     font-size: 1.25rem;
     font-weight: 500;
     margin-top: 0.75em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
   }
 
   .card-subtitle {
