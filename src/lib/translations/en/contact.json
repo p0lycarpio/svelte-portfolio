@@ -1,7 +1,7 @@
 {
   "title": "Contact",
   "contactMe": "Contact me",
-  "description": "Passionate about IT, music and cinema.<br />Cloud Platform Engineer and DevOps at <a href='https://www.covea.com/en' target= '_blank' rel='noopener'>Covéa</a>.",
+  "description": "Passionate about IT, music and cinema.<br />Cloud Platform Engineer and DevOps at <a href='https://www.covea.com/en' target= '_blank' rel='noopener' class='text-blue-600'>Covéa</a>.",
   "yourEmail": "Your email",
   "yourMessage": "Enter your message",
   "send": "Send",

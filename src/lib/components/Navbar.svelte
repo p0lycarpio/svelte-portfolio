@@ -58,11 +58,11 @@
 
 {#if (y > 500) | (wx > 768)}
   <nav
-    class="d-flex align-items-center justify-content-between"
+    class="flex items-center justify-between"
     id="navbar-top"
     transition:animate>
     <!-- Navbar elements -->
-    <div class="d-inline-flex navbar-buttons">
+    <div class="inline-flex navbar-buttons">
       <button
         title="Menu"
         class="icon menu"
@@ -127,7 +127,7 @@
     text-decoration: none;
     font-size: 25px;
     font-weight: 500;
-    font-family: "IBM Plex Sans";
+    font-family: "IBM Plex Sans Variable";
     color: var(--black-white);
     display: block;
     transition: 0.3s;

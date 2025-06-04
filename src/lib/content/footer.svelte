@@ -23,14 +23,14 @@
         body: new URLSearchParams(formData).toString(),
       });
       alert = {
-        class: "alert alert-success",
+        class: "alert animate bounceIn text-green-800 bg-green-100",
         message: $t("contact.messageSent"),
       };
       isSubmitting = false;
       form.reset();
     } catch {
       alert = {
-        class: "alert alert-danger",
+        class: "alert animate bounceIn text-red-800 bg-red-100",
         message: $t("contact.messageError"),
       };
       isSubmitting = false;
@@ -39,11 +39,11 @@
 </script>
 
 <footer id="contact" bind:this={contact}>
-  <div class="container d-flex justify-content-center footer">
+  <div class="flex justify-center footer">
     <div class="contact-form">
-      <div class="h-contact d-flex flex-column flex-sm-row">
+      <div class="h-contact flex flex-column flex-sm-row">
         <h1>{$t("contact.contactMe")}</h1>
-        <div class="d-block social">
+        <div class="block social">
           <a href="/contact" class="social-icon ms-3" title="Littlelink"
             ><IconLink /></a>
         </div>
@@ -80,15 +80,20 @@
           cols="55"
           rows="4"
           required></textarea>
-        <div class="d-flex justify-content-center">
+        <div class="flex justify-center">
           {#if isSubmitting}
-            <button class="btn btn-outline-light" disabled>
-              <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"
-              ></span>
+            <button class="btn border border-neutral-300 text-neutral-300 bg-transparent cursor-not-allowed" disabled>
+              <svg class="mr-3 size-5 animate-spin" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
               Vroum...
             </button>
           {:else}
-            <button type="submit" class="btn btn-outline-light" name="submit" id="submit"
+            <button type="submit"
+              class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-tight rounded-md transition-colors duration-200
+              border border-white text-white bg-transparent hover:bg-white hover:text-neutral-900 cursor-pointer"
+              name="submit" id="submit"
               >{$t("contact.send")}</button>
           {/if}
         </div>
@@ -100,7 +105,7 @@
   <a
     id="back-to-top"
     href="#"
-    class="btn btn-outline-light btn-md back-to-top d-none d-md-block"
+    class="btn btn-outline-light back-to-top hidden md:block cursor-pointer"
     title={$t("contact.backToTop")}
     ><IconUp />
   </a>
@@ -127,7 +132,7 @@
   }
 
   .h-contact {
-    margin-bottom: 2em;
+    margin-bottom: 4em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -140,7 +145,7 @@
   }
 
   .social {
-    margin-top: 12px;
+    margin-top: 26px;
   }
 
   .social-icon {
@@ -187,7 +192,7 @@
   }
 
   textarea {
-    padding: 8px 16px;
+    padding: 16px;
     margin-bottom: 24px;
   }
 
@@ -219,6 +224,12 @@
     right: 25px;
     z-index: 15;
     border: 0;
+  }
+
+  .alert {
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: var(--radius-md)
   }
 
   @media only screen and (max-height: 722px) {
