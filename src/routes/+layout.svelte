@@ -1,6 +1,7 @@
 <script>
-  import "@fontsource/ibm-plex-sans/latin.css";
-  import "css/bootstrap.scss";
+  import 'uno.css';
+  import '@fontsource-variable/ibm-plex-sans';
+  import "../lib/css/styles.scss"
   /**
    * @typedef {Object} Props
    * @property {import('svelte').Snippet} [children]
@@ -11,9 +12,3 @@
 </script>
 
 {@render children?.()}
-
-<style lang="scss">
-  :global {
-    @import "../lib/css/styles.scss";
-  }
-</style>

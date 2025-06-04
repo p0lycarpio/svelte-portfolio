@@ -7,10 +7,9 @@
   let link = $state();
 </script>
 
-<div class="multi-container">
-  <div class="multi-button btn-group">
+  <div class="multi-button text-center">
     <a
-      class="btn cv"
+      class="cv rounded-none rounded-l-md"
       href={$t("common.cv.link")}
       rel="preload"
       onmouseover={() => {
@@ -33,7 +32,7 @@
       {$t("common.cv")}
     </a>
     <a
-      class="btn"
+      class="rounded-none rounded-r-md"
       href="https://github.com/p0lycarpio"
       rel="preload"
       target="_blank"
@@ -57,7 +56,6 @@
       GitHub
     </a>
   </div>
-</div>
 
 <style lang="scss">
   :root {
@@ -75,9 +73,9 @@
     margin-bottom: 60px;
     max-width: 500px;
   }
-
-  .multi-button a {
-    flex-basis: 0 !important;
+  
+  .multi-button > a {
+    flex: 1 1;
     cursor: pointer;
     position: relative;
     padding: 6px 10px;
@@ -93,11 +91,6 @@
     border-right-style: none;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .multi-button :first-child:not(:global(.icon)) {
-      border-right: 1px solid;
-    }
-  }
 
   .multi-button a:hover,
   .multi-button a:focus {

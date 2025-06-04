@@ -13,9 +13,9 @@
   });
 </script>
 
-<div class="container">
-  <div class="column text-center my-5 pb-5">
-    <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
+<div class="container mx-auto">
+  <div class="text-center my-12 pb-12">
+    <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar inline" />
     <h1>Arsène Reymond</h1>
     {#key hydrated}
       <p>{@html $t("contact.description")}</p>

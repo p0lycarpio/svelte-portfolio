@@ -2,17 +2,10 @@
 //
 // Provide general styles on typography, colors and links.
 
-* {
+html {
   scroll-behavior: smooth;
 }
 
-/* Images */
-img {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-}
 
 /* Typography */
 h1,
@@ -33,7 +26,9 @@ h4,
 h5,
 h6 {
   color: var(--h-color);
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "IBM Plex Sans Variable", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 h1 {
@@ -60,8 +55,8 @@ a {
   }
 }
 
-.btn:hover {
-  text-decoration: none !important;
+svg {
+  display: inline-block;
 }
 
 /* A11y */
