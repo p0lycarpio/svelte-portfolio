@@ -9,8 +9,8 @@
 </script>
 
 <svelte:head>
-  <meta name="author" content="Arsène Reymond" />
-  <meta name="description" content={$t("common.subtitle")} />
+  <title>{$t("common.meta.title")}</title>
+  <meta name="description" content={$t("common.meta.description")} />
 </svelte:head>
 
 <div class="home">

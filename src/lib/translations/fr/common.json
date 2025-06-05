@@ -14,5 +14,7 @@
   "all": "Tout",
   "seemore": "Voir plus",
   "error.occurred": "Il semble qu'une erreur se soit produite...",
-  "error.back": "Retour sur le site"
+  "error.back": "Retour sur le site",
+  "meta.title": "Arsène Reymond - Ingénieur plateforme cloud",
+  "meta.description": "Bienvenue sur mon portfolio. Je suis ingénieur d'une plateforme cloud et DevOps passionné par les nouvelles technologies, l'automatisation et la sécurité. Découvrez mon parcours, mes projets et mes compétences."
 }
