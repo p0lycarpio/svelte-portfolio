@@ -3,7 +3,7 @@
   import Littlelink from "components/Littlelink.svelte";
 </script>
 
-<section class="max-w-[1320px] mx-auto py-5xl animate fadeInUp" id="social">
+<section class="max-w-[1320px] mx-auto py-5xl fade-in-up-alt" id="social">
   <div class="px-3 grid grid-cols-1 sm:grid-cols-8 gap-x-6">
     <div class="col-span-full md:col-span-2 row-span-full">
       <h2 class="section-heading">

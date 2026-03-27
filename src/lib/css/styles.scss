@@ -1,6 +1,3 @@
-/* purgecss start ignore */
-@import "variables";
-@import "animations";
-@import "general";
-@import "sections";
-/* purgecss end ignore */
+@use "variables";
+@use "general";
+@use "sections";

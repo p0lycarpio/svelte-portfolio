@@ -1,3 +1,5 @@
+@use "general";
+
 .home {
   background: var(--hero-sect);
   position: relative;
@@ -59,7 +61,7 @@ main {
     color: var(--blue);
   }
   &:focus {
-    @include focused;
+    @include general.focused;
   }
   &.selected,
   &:active {

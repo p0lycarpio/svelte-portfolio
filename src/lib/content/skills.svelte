@@ -3,7 +3,7 @@
   import Soft from "components/SoftwareIcon.svelte";
 </script>
 
-<section class="max-w-[1320px] mx-auto py-5xl animate fadeInUp" id="compétences">
+<section class="max-w-[1320px] mx-auto py-5xl fade-in-up-alt" id="compétences">
   <div class="px-3 grid grid-cols-1 md:grid-cols-8 gap-x-6">
     <div class="col-span-1 md:col-span-2 row-span-full">
       <h2 class="section-heading">

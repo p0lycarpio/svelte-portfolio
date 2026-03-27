@@ -23,14 +23,14 @@
         body: new URLSearchParams(formData).toString(),
       });
       alert = {
-        class: "alert animate bounceIn text-green-800 bg-green-100",
+        class: "alert animate-bounce-in text-green-800 bg-green-100",
         message: $t("contact.messageSent"),
       };
       isSubmitting = false;
       form.reset();
     } catch {
       alert = {
-        class: "alert animate bounceIn text-red-800 bg-red-100",
+        class: "alert animate-bounce-in text-red-800 bg-red-100",
         message: $t("contact.messageError"),
       };
       isSubmitting = false;

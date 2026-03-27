@@ -14,7 +14,7 @@
   
 </script>
 
-<section class="max-w-[1320px] mx-auto py-5xl animate fadeInUp" id="parcours">
+<section class="max-w-[1320px] mx-auto py-5xl fade-in-up-alt" id="parcours">
   <div class="px-3 grid grid-cols-1 md:grid-cols-8 md:grid-rows-3 gap-x-6">
     <div class="col-span-1 md:col-span-2 row-span-full -mb-6">
       <h2 class="section-heading">
