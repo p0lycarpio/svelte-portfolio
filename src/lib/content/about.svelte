@@ -1,24 +1,10 @@
 <script>
-  import { t, locale } from "$lib/translations";
-  import { onMount } from "svelte";
+  import { t } from "$lib/translations";
 
   import IconBack from "~icons/material-symbols/arrow-back-rounded";
   let { closeParent = () => {}, about = $bindable(), display } = $props();
 
-  let url = "https://api.github.com/repos/p0lycarpio/svelte-portfolio/branches/main";
-  let commitDate = $state();
-
-  onMount(async () => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        commitDate = new Date(data.commit.commit.author.date);
-      })
-      .catch((error) => {
-        console.log(error);
-        return [];
-      });
-  });
+  const buildDate = __BUILD_DATE__;
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -40,10 +26,8 @@
     <svg>
       <use href="/icons.svg#netlify" />
     </svg>&nbsp;Netlify.<br />
-    {#if commitDate}
-      <br />
-      {$t("about.updated") + commitDate.toLocaleDateString(locale.get())}
-    {/if}
+    <br />
+    {$t("about.updated") + new Date(buildDate).toLocaleDateString()}
   </p>
 </div>
 

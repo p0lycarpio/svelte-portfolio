@@ -11,7 +11,10 @@ const config = {
         Icons({
             compiler: 'svelte',
         }),
-    ]
+    ],
+    define: {
+        __BUILD_DATE__: JSON.stringify(new Date().toISOString()),
+    },
 };
 
 export default config;

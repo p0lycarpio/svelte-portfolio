@@ -28,12 +28,12 @@
 <header>
   <Navbar />
   <section class="hero-section">
-    <div class="animate backInDown px-3">
+    <div class="animate-(back-in-down ease) px-3">
       <div class="flex items-center flex-col">
         <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
         <h1 class="text-center mb-8">Arsène Reymond</h1>
         {#key hydrated}
-        <p class="text-center mb-4">{@html $t("common.subtitle")}</p>
+          <p class="text-center mb-4">{@html $t("common.subtitle")}</p>
         {/key}
       </div>
       <MultiButton />
@@ -41,7 +41,7 @@
     <div
       bind:offsetWidth={w}
       bind:offsetHeight={h}
-      class="animate slideInUp delay-2s"
+      class="animate-(slide-in-up delay-1s fill-both ease)"
       style="height: 50px;">
       <Wavify options={wave} parentWidth={w} parentHeight={h} />
     </div>
@@ -49,7 +49,6 @@
 </header>
 
 <style lang="scss">
-
   .hero-section {
     background: var(--hero-sect);
     padding-top: 48px;

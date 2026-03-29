@@ -1,3 +1,5 @@
+@use "variables";
+
 // Global styles
 //
 // Provide general styles on typography, colors and links.
@@ -5,7 +7,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 
 /* Typography */
 h1,
@@ -80,12 +81,12 @@ a:focus-visible {
 
 // Apply
 body {
-  @include light-colors();
+  @include variables.light-colors();
   & img {
     @include filter-reset();
   }
   &.dark-mode {
-    @include dark-colors();
+    @include variables.dark-colors();
     & img {
       @include filter-dark();
     }
@@ -94,13 +95,13 @@ body {
 // If the default theme is dark
 @media (prefers-color-scheme: dark) {
   body {
-    @include dark-colors();
+    @include variables.dark-colors();
     background-color: var(--bkg-color);
     & img {
       @include filter-dark();
     }
     &.light-mode {
-      @include light-colors();
+      @include variables.light-colors();
       & img {
         @include filter-reset();
       }

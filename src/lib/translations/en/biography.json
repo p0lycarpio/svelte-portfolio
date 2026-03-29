@@ -2,6 +2,6 @@
   "title": "Biography",
   "subtitle": "About me",
   "intro": "Nice to meet you, I'm Arsène! I'm a {{age}}-year-old developer passionate about IT. I enjoy music, cinema, and I swim every week.",
-  "para1": "After earning a DUT in Multimedia and Internet Professions, I continued my studies in IT with a professional degree in Cloud Development, completed through an apprenticeship at CGI, where I developed web services using an <abbr title='Enterprise Service Bus'>ESB</abbr>.",
-  "para2": "I then obtained a master's degree in computer science, specializing in software architecture, which I completed through an apprenticeship at Covéa. Now working as a Platform and DevOps Engineer, I manage a Microsoft Azure cloud platform dedicated to Data Science and AI. I design and automate services to ensure performance, reliability, and security, while optimizing development and deployment processes."
+  "para1": "After earning a associate degree in Multimedia and Internet, I continued my studies in IT with a professional degree in Cloud Development, completed through an apprenticeship at CGI, where I developed web services using an <abbr title='Enterprise Service Bus'>ESB</abbr>.",
+  "para2": "I then obtained a master's degree in computer science, specializing in software architecture, which I completed through an apprenticeship at Covéa. I was hired as a platform and DevOps engineer, and I work on a cloud platform dedicated to data science and AI. I design and automate services to ensure performance, reliability, and security, while optimizing development and deployment processes."
 }

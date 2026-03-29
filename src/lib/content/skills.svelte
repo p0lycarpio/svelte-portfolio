@@ -3,7 +3,7 @@
   import Soft from "components/SoftwareIcon.svelte";
 </script>
 
-<section class="max-w-[1320px] mx-auto py-5xl animate fadeInUp" id="compétences">
+<section class="max-w-[1320px] mx-auto py-5xl fade-in-up-alt" id="compétences">
   <div class="px-3 grid grid-cols-1 md:grid-cols-8 gap-x-6">
     <div class="col-span-1 md:col-span-2 row-span-full">
       <h2 class="section-heading">
@@ -40,15 +40,6 @@
         <Soft color="#4fc08d" title="Vue" svgid="#vuejs" />
         <Soft color="#ff3e00" title="Svelte" svgid="#svelte" />
         <Soft color="#e10098" title="GraphQL" svgid="#graphql" />
-      </div>
-
-      <h3>{$t("skills.multimedia")}</h3>
-      <div class="flex flex-wrap items-center soft">
-        <Soft color="#31A8FF" title="Adobe Photoshop" svgid="#ps" />
-        <Soft color="#FF9A00" title="Adobe Illustrator" svgid="#ai" />
-        <Soft color="#FF3366" title="Adobe InDesign" svgid="#id" />
-        <Soft color="#9999FF" title="Adobe Premiere Pro" svgid="#pr" />
-        <Soft color="#9999FF" title="Adobe After Effects" svgid="#ae" />
       </div>
     </div>
   </div>
