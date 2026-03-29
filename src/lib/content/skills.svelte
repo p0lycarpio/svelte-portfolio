@@ -41,15 +41,6 @@
         <Soft color="#ff3e00" title="Svelte" svgid="#svelte" />
         <Soft color="#e10098" title="GraphQL" svgid="#graphql" />
       </div>
-
-      <h3>{$t("skills.multimedia")}</h3>
-      <div class="flex flex-wrap items-center soft">
-        <Soft color="#31A8FF" title="Adobe Photoshop" svgid="#ps" />
-        <Soft color="#FF9A00" title="Adobe Illustrator" svgid="#ai" />
-        <Soft color="#FF3366" title="Adobe InDesign" svgid="#id" />
-        <Soft color="#9999FF" title="Adobe Premiere Pro" svgid="#pr" />
-        <Soft color="#9999FF" title="Adobe After Effects" svgid="#ae" />
-      </div>
     </div>
   </div>
 </section>
