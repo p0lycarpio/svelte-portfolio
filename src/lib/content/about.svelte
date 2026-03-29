@@ -1,6 +1,5 @@
 <script>
-  import { t, locale } from "$lib/translations";
-  import { onMount } from "svelte";
+  import { t } from "$lib/translations";
 
   import IconBack from "~icons/material-symbols/arrow-back-rounded";
   let { closeParent = () => {}, about = $bindable(), display } = $props();

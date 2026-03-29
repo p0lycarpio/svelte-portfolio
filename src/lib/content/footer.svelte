@@ -1,6 +1,4 @@
 <script>
-  import { preventDefault } from "svelte/legacy";
-
   import { t } from "$lib/translations";
   import IconLink from "~icons/fa6-solid/link";
   import IconUp from "~icons/fa6-solid/chevron-up";
@@ -13,7 +11,8 @@
   let isSubmitting = $state(false);
   let getYear = new Date().getFullYear();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     let formData = new FormData(form);
     isSubmitting = true;
     try {
@@ -51,7 +50,7 @@
       <form
         name="contact"
         id="contact"
-        onsubmit={preventDefault(handleSubmit)}
+        onsubmit={handleSubmit}
         bind:this={form}
         netlify-honeypot="bot-field"
         data-netlify="true">
