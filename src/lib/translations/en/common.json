@@ -1,5 +1,5 @@
 {
-  "subtitle": "Cloud Platform Engineer and DevOps at <a href='https://www.covea.com/en' target='_blank' rel='noreferrer'>Covéa</a>",
+  "subtitle": "AI Cloud Platform Engineer at <a href='https://www.covea.com/en' target='_blank' rel='noreferrer'>Covéa</a>",
   "cv": "Resume",
   "cv.link": "https://drive.google.com/file/d/1e-37EqQiwfe68rfpwhIO754vKxdUCvDz/view",
   "portfolio": "Portfolio",
@@ -15,5 +15,7 @@
   "all": "All",
   "seemore": "See more",
   "error.occurred": "It seems that an error has occurred...",
-  "error.back": "Back to the site"
+  "error.back": "Back to the site",
+  "meta.title": "Arsène Reymond - Cloud Platform Engineer",
+  "meta.description": "Welcome to my portfolio. I'm a cloud platform and DevOps engineer passionate about new technologies, automation, and security. Discover my background, projects, and skills."
 }

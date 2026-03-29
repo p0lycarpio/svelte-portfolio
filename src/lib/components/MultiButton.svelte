@@ -7,55 +7,55 @@
   let link = $state();
 </script>
 
-  <div class="multi-button text-center">
-    <a
-      class="cv rounded-none rounded-l-md"
-      href={$t("common.cv.link")}
-      rel="preload"
-      onmouseover={() => {
-        cv = true;
-      }}
-      onfocus={() => {
-        cv = true;
-      }}
-      onblur={() => {
-        cv = true;
-      }}
-      onmouseout={() => {
-        cv = false;
-      }}>
-      {#if cv == true}
-        <i class="icon">
-          <IconFile height="1.1em" />
-        </i>
-      {/if}
-      {$t("common.cv")}
-    </a>
-    <a
-      class="rounded-none rounded-r-md"
-      href="https://github.com/p0lycarpio"
-      rel="preload"
-      target="_blank"
-      onmouseover={() => {
-        link = true;
-      }}
-      onfocus={() => {
-        link = true;
-      }}
-      onblur={() => {
-        link = true;
-      }}
-      onmouseout={() => {
-        link = false;
-      }}>
-      {#if link == true}
-        <i class="icon" style="margin-right: 4px;">
-          <IconGithub />
-        </i>
-      {/if}
-      GitHub
-    </a>
-  </div>
+<div class="multi-button text-center">
+  <a
+    class="cv rounded-none rounded-l-md"
+    href={$t("common.cv.link")}
+    rel="preload"
+    onmouseover={() => {
+      cv = true;
+    }}
+    onfocus={() => {
+      cv = true;
+    }}
+    onblur={() => {
+      cv = true;
+    }}
+    onmouseout={() => {
+      cv = false;
+    }}>
+    {#if cv == true}
+      <i class="icon">
+        <IconFile height="1.1em" />
+      </i>
+    {/if}
+    {$t("common.cv")}
+  </a>
+  <a
+    class="rounded-none rounded-r-md"
+    href="https://github.com/p0lycarpio"
+    rel="preload"
+    target="_blank"
+    onmouseover={() => {
+      link = true;
+    }}
+    onfocus={() => {
+      link = true;
+    }}
+    onblur={() => {
+      link = true;
+    }}
+    onmouseout={() => {
+      link = false;
+    }}>
+    {#if link == true}
+      <i class="icon" style="margin-right: 4px;">
+        <IconGithub />
+      </i>
+    {/if}
+    GitHub
+  </a>
+</div>
 
 <style lang="scss">
   :root {
@@ -73,7 +73,7 @@
     margin-bottom: 60px;
     max-width: 500px;
   }
-  
+
   .multi-button > a {
     flex: 1 1;
     cursor: pointer;
@@ -90,7 +90,6 @@
   .multi-button :first-child {
     border-right-style: none;
   }
-
 
   .multi-button a:hover,
   .multi-button a:focus {

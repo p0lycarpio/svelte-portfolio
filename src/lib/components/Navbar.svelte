@@ -10,7 +10,7 @@
 
   let y = $state();
   let wx = $state();
-  let animate = $derived(wx > 768 ? fade: scale)
+  let animate = $derived(wx > 768 ? fade : scale);
 
   let sidebar = $state();
   let menuOpen = $state(false);
@@ -30,10 +30,10 @@
   function toggleMenu() {
     menuOpen = !menuOpen;
     if (menuOpen) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add("overflow-hidden");
     } else {
       aboutOpen = false;
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     }
   }
 
@@ -49,24 +49,17 @@
     if (e.key == "Escape" && menuOpen | aboutOpen) {
       toggleMenu();
     }
-  }}
-/>
+  }} />
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 <!-- svelte-ignore a11y_missing_attribute -->
 
 {#if (y > 500) | (wx > 768)}
-  <nav
-    class="flex items-center justify-between"
-    id="navbar-top"
-    transition:animate>
+  <nav class="flex items-center justify-between" id="navbar-top" transition:animate>
     <!-- Navbar elements -->
     <div class="inline-flex navbar-buttons">
-      <button
-        title="Menu"
-        class="icon menu"
-        onclick={toggleMenu}>
+      <button title="Menu" class="icon menu" onclick={toggleMenu}>
         <IconMenu />
       </button>
       <button class="icon locale" onclick={switchLocale} title={$t("common.opLocale")}>
@@ -220,15 +213,15 @@
       z-index: 4;
       top: 0;
     }
-    
+
     .menu {
       position: relative;
       top: -3px;
     }
-    
+
     .navbar-buttons {
       background-color: var(--hero-sect);
-      border-radius: 0  0 10px 0;
+      border-radius: 0 0 10px 0;
       box-shadow: 0 0 4px 2px var(--cardShadow);
     }
 
@@ -241,7 +234,7 @@
     }
 
     button.icon {
-      margin: 11px!important;
+      margin: 11px !important;
     }
   }
 </style>
