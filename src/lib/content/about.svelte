@@ -26,8 +26,8 @@
     <svg>
       <use href="/icons.svg#netlify" />
     </svg>&nbsp;Netlify.<br />
-      <br />
-      {$t("about.updated") + new Date(buildDate).toLocaleDateString()}
+    <br />
+    {$t("about.updated") + new Date(buildDate).toLocaleDateString()}
   </p>
 </div>
 

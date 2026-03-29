@@ -33,7 +33,7 @@
         <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
         <h1 class="text-center mb-8">Arsène Reymond</h1>
         {#key hydrated}
-        <p class="text-center mb-4">{@html $t("common.subtitle")}</p>
+          <p class="text-center mb-4">{@html $t("common.subtitle")}</p>
         {/key}
       </div>
       <MultiButton />
@@ -49,7 +49,6 @@
 </header>
 
 <style lang="scss">
-
   .hero-section {
     background: var(--hero-sect);
     padding-top: 48px;

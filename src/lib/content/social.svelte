@@ -29,7 +29,7 @@
         copy="true"
         background="#5865f2">Discord</Littlelink>
     </div>
-    
+
     <div class="col-span-1 sm:col-span-4 md:col-span-3 sm:mt-6">
       <Littlelink
         icon="linkedin"

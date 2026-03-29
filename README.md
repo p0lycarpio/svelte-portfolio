@@ -4,7 +4,6 @@
 
 Code source of my portfolio developed with [Sveltekit](https://kit.svelte.dev/) and deployed on [Netlify](https://www.netlify.com/) cloud service.
 
-
 ## Get started
 
 Install dependencies...

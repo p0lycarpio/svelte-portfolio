@@ -26,15 +26,15 @@
       </h2>
       <p class="section-subtitle">{$t("biography.subtitle")}</p>
     </div>
-      {#key hydrated}
-          <div class="col-span-1 md:col-span-3 md:mt-6">
-            <p>{@html $t("biography.intro", { age })}</p>
-            <p>{@html $t("biography.para1")}</p>
-          </div>
-          <div class="col-span-1 md:col-span-3 md:mt-6">
-            <p>{@html $t("biography.para2")}</p>
-          </div>
-      {/key}
+    {#key hydrated}
+      <div class="col-span-1 md:col-span-3 md:mt-6">
+        <p>{@html $t("biography.intro", { age })}</p>
+        <p>{@html $t("biography.para1")}</p>
+      </div>
+      <div class="col-span-1 md:col-span-3 md:mt-6">
+        <p>{@html $t("biography.para2")}</p>
+      </div>
+    {/key}
   </div>
 </section>
 

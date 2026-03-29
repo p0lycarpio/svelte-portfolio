@@ -6,7 +6,8 @@
   let { type, from, to, title, subtitle, description } = $props();
 </script>
 
-<div class="card border border-neutral-300 rounded-lg shadow-md shadow-neutral-400/40 overflow-hidden">
+<div
+  class="card border border-neutral-300 rounded-lg shadow-md shadow-neutral-400/40 overflow-hidden">
   <div class="card-body p-4">
     {#if type == "school"}
       <i class="icon" title={$t("experiences.studies")} style="right:15px">
@@ -69,7 +70,7 @@
   i {
     color: var(--cardIcon);
     font-size: 2em;
-}
+  }
 
   strong {
     font-size: small;

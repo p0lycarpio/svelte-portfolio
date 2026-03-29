@@ -15,7 +15,7 @@
 
 <svelte:head>
   <title>Arsène Reymond - {$t("contact.contactMe")}</title>
-  <meta name="description" content={$t("common.subtitle").replace(/<[^>]*>/g, '')} />
+  <meta name="description" content={$t("common.subtitle").replace(/<[^>]*>/g, "")} />
 </svelte:head>
 
 <div class="container mx-auto">
@@ -25,7 +25,7 @@
     {#key hydrated}
       <p>{@html $t("contact.description")}</p>
     {/key}
-    
+
     <Littlelink
       icon="linkedin"
       href="https://linkedin.com/in/arsene-reymond"
