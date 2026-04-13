@@ -20,6 +20,8 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v6
+        with:
+          cache: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -36,7 +38,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          netlify deploy \
+          pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
             --prod \
@@ -48,7 +50,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          DEPLOY_URL=$(netlify deploy \
+          DEPLOY_URL=$(pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
             --dir=build \
