@@ -53,7 +53,7 @@ jobs:
           DEPLOY_URL=$(pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
-            --context=branch-deploy \
+            --context=deploy-preview \
             --json | jq -r '.deploy_url')
           echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
 
@@ -66,7 +66,7 @@ jobs:
             const commitSha = context.payload.pull_request.head.sha.substring(0, 7);
 
             const body = `
-            ### :rocket: Deployment preview
+            ### :white_check_mark: Deploy preview ready!
 
             | Name | Link |
             |------|------|
@@ -81,7 +81,7 @@ jobs:
             });
             
             const existingComment = comments.data.find(comment => 
-              comment.user.type === 'Bot' && comment.body.includes('### :rocket: Deployment preview')
+              comment.user.type === 'Bot' && comment.body.includes('### :white_check_mark: Deploy preview ready!')
             );
             
             if (existingComment) {
