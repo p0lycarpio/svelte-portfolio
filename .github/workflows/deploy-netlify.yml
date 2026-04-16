@@ -63,12 +63,14 @@ jobs:
         with:
           script: |
             const deployUrl = process.env.DEPLOY_URL;
+            const commitSha = context.payload.pull_request.head.sha.substring(0, 7);
+
             const body = `
             ### :rocket: Deployment preview
 
             | Name | Link |
             |------|------|
-            | :hammer: Latest commit | ${context.sha.substring(0, 7)}      |
+            | :hammer: Latest commit | ${commitSha} |
             | :camera_flash: Deploy preview | [${deployUrl}](${deployUrl}) |
             `;
             
