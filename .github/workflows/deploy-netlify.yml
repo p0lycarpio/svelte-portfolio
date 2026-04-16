@@ -64,9 +64,12 @@ jobs:
           script: |
             const deployUrl = process.env.DEPLOY_URL;
             const body = `
-            # :rocket: Deployment preview
-            :hammer: Latest commit : \`${context.sha.substring(0, 7)}\`
-            :camera_flash: Deploy preview : [${deployUrl}](${deployUrl})
+            ### :rocket: Deployment preview
+
+            | Name | Link |
+            |------|------|
+            | :hammer: Latest commit | ${context.sha.substring(0, 7)}      |
+            | :camera_flash: Deploy preview | [${deployUrl}](${deployUrl}) |
             `;
             
             const comments = await github.rest.issues.listComments({
@@ -76,7 +79,7 @@ jobs:
             });
             
             const existingComment = comments.data.find(comment => 
-              comment.user.type === 'Bot' && comment.body.includes('Deployment preview')
+              comment.user.type === 'Bot' && comment.body.includes('### :rocket: Deployment preview')
             );
             
             if (existingComment) {
