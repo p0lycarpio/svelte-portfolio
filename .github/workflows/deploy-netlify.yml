@@ -41,8 +41,8 @@ jobs:
           pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
-            --prod \
-            --dir=build
+            --context=production \
+            --prod
 
       - name: Deploy to Netlify (Preview)
         if: github.event_name == 'pull_request'
@@ -53,7 +53,7 @@ jobs:
           DEPLOY_URL=$(pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
-            --dir=build \
+            --context=branch-deploy \
             --json | jq -r '.deploy_url')
           echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
 
@@ -63,9 +63,34 @@ jobs:
         with:
           script: |
             const deployUrl = process.env.DEPLOY_URL;
-            github.rest.issues.createComment({
+            const body = `
+            # :rocket: Deployment preview
+            :hammer: Latest commit : \`${context.sha.substring(0, 7)}\`
+            :camera_flash: Deploy preview : [${deployUrl}](${deployUrl})
+            `;
+            
+            const comments = await github.rest.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `🚀 Deployment Preview: [${deployUrl}](${deployUrl})`
+              repo: context.repo.repo
             });
+            
+            const existingComment = comments.data.find(comment => 
+              comment.user.type === 'Bot' && comment.body.includes('Deployment preview')
+            );
+            
+            if (existingComment) {
+              await github.rest.issues.updateComment({
+                comment_id: existingComment.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body
+              });
+            }
