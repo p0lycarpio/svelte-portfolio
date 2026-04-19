@@ -41,6 +41,7 @@ jobs:
           pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
+            --message="Deploy from commit ${{ github.sha }}" \
             --context=production \
             --prod
 
@@ -54,6 +55,8 @@ jobs:
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
             --context=deploy-preview \
+            --message=${{ github.event.pull_request.title }} \
+            --alias="deploy-preview-${{ github.event.pull_request.head.ref }}" \
             --json | jq -r '.deploy_url')
           echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
 
