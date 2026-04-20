@@ -1,0 +1,104 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          cache: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Deploy to Netlify (Production)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          pnpm netlify deploy \
+            --auth=$NETLIFY_AUTH_TOKEN \
+            --site=$NETLIFY_SITE_ID \
+            --message="Deploy from commit ${{ github.sha }}" \
+            --context=production \
+            --prod
+
+      - name: Deploy to Netlify (Preview)
+        if: github.event_name == 'pull_request'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          DEPLOY_URL=$(pnpm netlify deploy \
+            --auth=$NETLIFY_AUTH_TOKEN \
+            --site=$NETLIFY_SITE_ID \
+            --context=deploy-preview \
+            --message=${{ github.event.pull_request.title }} \
+            --alias="deploy-preview-${{ github.event.pull_request.number }}" \
+            --json | jq -r '.deploy_url')
+          echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
+
+      - name: Comment PR with deployment URL
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const deployUrl = process.env.DEPLOY_URL;
+            const commitSha = context.payload.pull_request.head.sha.substring(0, 7);
+
+            const body = `
+            ### :white_check_mark: Deploy preview ready!
+
+            | Name | Link |
+            |------|------|
+            | :hammer: Latest commit | ${commitSha} |
+            | :camera_flash: Deploy preview | [${deployUrl}](${deployUrl}) |
+            `;
+            
+            const comments = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            
+            const existingComment = comments.data.find(comment => 
+              comment.user.type === 'Bot' && comment.body.includes('### :white_check_mark: Deploy preview ready!')
+            );
+            
+            if (existingComment) {
+              await github.rest.issues.updateComment({
+                comment_id: existingComment.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body
+              });
+            }
