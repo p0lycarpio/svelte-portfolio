@@ -1,0 +1,42 @@
+name: Build resume PDF
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+  workflow_dispatch:
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6
+      
+    - uses: fontist/setup-fontist@v2
+    - run: fontist install "IBM Plex Sans"
+      
+    - name: Install Typst
+      uses: typst-community/setup-typst@v5
+
+    - name: Build PDFs
+      env:
+        TYPST_ROOT: ${{ github.workspace }}
+        TYPST_FONT_PATHS: ~/.fontist/fonts
+      run: |
+        mkdir -p static/fr static/en
+
+        typst compile "resume/cv_content_fr.typ" "static/fr/CV_Arsène_Reymond.pdf"
+        typst compile "resume/cv_content_en.typ" "static/en/CV_Arsène_Reymond.pdf"
+
+        echo "Generated files:"
+        find . -type f -name "*.pdf"
+        
+    - name: Upload PDFs
+      uses: actions/upload-artifact@v7
+      with:
+        name: resume-docs
+        path: |
+          static/**/*.pdf
