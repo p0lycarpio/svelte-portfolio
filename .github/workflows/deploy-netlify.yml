@@ -81,16 +81,18 @@ jobs:
         run: |
           PR_TITLE="${{ inputs.prTitle }}"
           PR_NUMBER="${{ inputs.prNumber }}"
-          DEPLOY_URL=$(pnpm netlify deploy \
+          DEPLOY=$(pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
             --context=deploy-preview \
             --message="${PR_TITLE}" \
             --alias="deploy-preview-${PR_NUMBER}" \
             --created-via=github-actions \
-            --json | jq -r '.deploy_url')
-          echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
-
+            --json)
+          
+          echo DEPLOY_URL=$(echo "$DEPLOY" | jq -r '.deploy_url') >> $GITHUB_ENV
+          echo "Deploy output: $DEPLOY"
+          
       - name: Comment PR with deployment URL
         if: inputs.deployTarget == 'preview' && inputs.prNumber != ''
         uses: actions/github-script@v9
