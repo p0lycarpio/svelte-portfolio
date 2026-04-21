@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v6
       
     - uses: fontist/setup-fontist@v2
-    - run: fontist install "IBM Plex Sans"
+    - run: fontist install "IBM Plex Sans" --user
       
     - name: Install Typst
       uses: typst-community/setup-typst@v5
@@ -24,10 +24,9 @@ jobs:
     - name: Build PDFs
       env:
         TYPST_ROOT: ${{ github.workspace }}
-        TYPST_FONT_PATHS: ~/.fontist/fonts/
       run: |
         mkdir -p static/fr static/en
-        printenv
+
         typst fonts
         typst compile "resume/cv_content_fr.typ" "static/fr/CV_Arsène_Reymond.pdf"
         typst compile "resume/cv_content_en.typ" "static/en/CV_Arsène_Reymond.pdf"
