@@ -1,46 +1,50 @@
 name: Build resume PDF
 
 on:
-  push:
-    branches: [ develop ]
-  pull_request:
-    branches: [ develop ]
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      commitSha:
+        description: "Commit SHA to build from"
+        required: true
+        type: string
 
-# Used for Fontist caching
 permissions:
   contents: read
-  actions: write
+  actions: read
 
 jobs:
-  build-cv:
+  build:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v6
-      
-    - uses: fontist/setup-fontist@v2
-    - run: fontist install "IBM Plex Sans"
-      
-    - name: Install Typst
-      uses: typst-community/setup-typst@v5
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.commitSha }}
 
-    - name: Build PDFs
-      env:
-        TYPST_ROOT: ${{ github.workspace }}
-      run: |
-        mkdir -p static/fr static/en
+      - uses: fontist/setup-fontist@v2
+      - run: fontist install "IBM Plex Sans"
 
-        typst compile "resume/cv_content_fr.typ" "static/fr/CV_Arsène_Reymond.pdf" --font-path ~/.fontist/fonts/
-        typst compile "resume/cv_content_en.typ" "static/en/CV_Arsène_Reymond.pdf" --font-path ~/.fontist/fonts/
+      - name: Install Typst
+        uses: typst-community/setup-typst@v5
 
-        echo "Generated files:"
-        find . -type f -name "*.pdf"
-        
-    - name: Upload PDFs
-      uses: actions/upload-artifact@v7
-      with:
-        name: resume-docs
-        path: |
-          static/**/*.pdf
+      - name: Build PDFs
+        env:
+          TYPST_ROOT: ${{ github.workspace }}
+          TYPST_FONT_PATH: ${{ github.workspace }}/.fontist/fonts
+        run: |
+          mkdir -p static/fr static/en
+          printenv
+          typst fonts
+          typst compile "resume/cv_content_fr.typ" "static/fr/CV_Arsène_Reymond.pdf"
+          typst compile "resume/cv_content_en.typ" "static/en/CV_Arsène_Reymond.pdf"
+
+          echo "Generated files:"
+          find . -type f -name "*.pdf"
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v7
+        with:
+          name: resume-docs
+          path: |
+            static/**/*.pdf

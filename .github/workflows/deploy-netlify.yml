@@ -1,20 +1,33 @@
 name: Deploy to Netlify
 
 on:
-  workflow_run:
-    workflows: ["Build resume PDF"]
-    types: [completed]
-    branches: [develop]
+  workflow_call:
+    inputs:
+      deployTarget:
+        description: "production or preview"
+        required: true
+        type: string
+      commitSha:
+        description: "Commit SHA used for checkout and deployment metadata"
+        required: true
+        type: string
+      prNumber:
+        description: "Pull request number for preview deployments"
+        required: false
+        type: string
+      prTitle:
+        description: "Pull request title for preview deployments"
+        required: false
+        type: string
+    secrets:
+      NETLIFY_AUTH_TOKEN:
+        required: true
+      NETLIFY_SITE_ID:
+        required: true
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    if: |
-      github.event.workflow_run.conclusion == 'success' &&
-      (
-        (github.event.workflow_run.event == 'push' && github.event.workflow_run.head_branch == 'develop') ||
-        github.event.workflow_run.event == 'pull_request'
-      )
     permissions:
       actions: read
       contents: read
@@ -24,14 +37,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v6
         with:
-          ref: ${{ github.event.workflow_run.head_sha }}
+          ref: ${{ inputs.commitSha }}
 
       - name: Download built resume files
         uses: actions/download-artifact@v8
         with:
           name: resume-docs
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ github.token }}
           path: .
 
       - name: Setup pnpm
@@ -49,7 +60,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Deploy to Netlify (Production)
-        if: github.event.workflow_run.event == 'push' && github.event.workflow_run.head_branch == 'develop'
+        if: inputs.deployTarget == 'production'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -57,19 +68,19 @@ jobs:
           pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
-            --message="Deploy from commit ${{ github.event.workflow_run.head_sha }}" \
+            --message="Deploy from commit ${{ inputs.commitSha }}" \
             --context=production \
             --created-via=github-actions \
             --prod
 
       - name: Deploy to Netlify (Preview)
-        if: github.event.workflow_run.event == 'pull_request'
+        if: inputs.deployTarget == 'preview'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          PR_TITLE="${{ github.event.workflow_run.pull_requests[0].title }}"
-          PR_NUMBER="${{ github.event.workflow_run.pull_requests[0].number }}"
+          PR_TITLE="${{ inputs.prTitle }}"
+          PR_NUMBER="${{ inputs.prNumber }}"
           DEPLOY_URL=$(pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
@@ -81,14 +92,13 @@ jobs:
           echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
 
       - name: Comment PR with deployment URL
-        if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.pull_requests[0].number
+        if: inputs.deployTarget == 'preview' && inputs.prNumber != ''
         uses: actions/github-script@v9
         with:
           script: |
             const deployUrl = process.env.DEPLOY_URL;
-            const pullRequest = context.payload.workflow_run.pull_requests[0];
-            const prNumber = pullRequest.number;
-            const commitSha = context.payload.workflow_run.head_sha.substring(0, 7);
+            const prNumber = Number('${{ inputs.prNumber }}');
+            const commitSha = '${{ inputs.commitSha }}'.substring(0, 7);
 
             const body = `
             ### :white_check_mark: Deploy preview ready!
@@ -98,17 +108,17 @@ jobs:
             | :hammer: Latest commit | ${commitSha} |
             | :camera_flash: Deploy preview | [${deployUrl}](${deployUrl}) |
             `;
-            
+
             const comments = await github.rest.issues.listComments({
-                          issue_number: prNumber,
+              issue_number: prNumber,
               owner: context.repo.owner,
               repo: context.repo.repo
             });
-            
-            const existingComment = comments.data.find(comment => 
+
+            const existingComment = comments.data.find(comment =>
               comment.user.type === 'Bot' && comment.body.includes('### :white_check_mark: Deploy preview ready!')
             );
-            
+
             if (existingComment) {
               await github.rest.issues.updateComment({
                 comment_id: existingComment.id,
