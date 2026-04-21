@@ -72,7 +72,6 @@ jobs:
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
             --message="Deploy from commit ${{ inputs.commitSha }}" \
-            --context=production \
             --created-via=github-actions \
             --no-build \
             --dir=./build \
@@ -89,7 +88,6 @@ jobs:
           DEPLOY=$(pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
-            --context=deploy-preview \
             --message="${PR_TITLE}" \
             --alias="deploy-preview-${PR_NUMBER}" \
             --created-via=github-actions \
