@@ -96,7 +96,7 @@ jobs:
             --json)
           
           echo DEPLOY_URL=$(echo "$DEPLOY" | jq -r '.deploy_url') >> $GITHUB_ENV
-          echo "Deploy output: $DEPLOY"
+          echo -e "Deploy output:\n$DEPLOY"
 
       - name: Comment PR with deployment URL
         if: inputs.deployTarget == 'preview' && inputs.prNumber != ''

@@ -5,24 +5,20 @@ on:
     branches: [ develop ]
   pull_request:
     branches: [ develop ]
-  workflow_dispatch:
 
 jobs:
   resume:
     uses: ./.github/workflows/build-resume.yml
     with:
-      commitSha: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+      commitSha: ${{ github.event.pull_request.head.sha || github.sha }}
     secrets: inherit
 
   website:
     needs: resume
-    if: |
-      (github.event_name == 'push' && github.ref == 'refs/heads/develop') ||
-      github.event_name == 'pull_request'
     uses: ./.github/workflows/deploy-netlify.yml
     with:
       deployTarget: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop' && 'production' || 'preview' }}
-      commitSha: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
-      prNumber: ${{ github.event_name == 'pull_request' && github.event.pull_request.number || '' }}
-      prTitle: ${{ github.event_name == 'pull_request' && github.event.pull_request.title || '' }}
+      commitSha: ${{ github.event.pull_request.head.sha || github.sha }}
+      prNumber: ${{ github.event.pull_request.number }}
+      prTitle: ${{ github.event.pull_request.title }}
     secrets: inherit
