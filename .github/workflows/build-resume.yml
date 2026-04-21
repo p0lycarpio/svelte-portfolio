@@ -10,7 +10,7 @@ on:
 # Used for Fontist caching
 permissions:
   contents: read
-  actions: [read, write]
+  actions: write
 
 jobs:
   build-cv:
