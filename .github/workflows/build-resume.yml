@@ -34,7 +34,7 @@ jobs:
       - name: Build PDFs
         env:
           TYPST_ROOT: ${{ github.workspace }}
-          TYPST_FONT_PATH: ${{ github.workspace }}/.fontist/fonts
+          TYPST_FONT_PATHS: ${{ github.workspace }}/.fontist/fonts
         run: |
           mkdir -p static/fr static/en
           printenv

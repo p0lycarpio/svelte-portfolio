@@ -43,7 +43,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: resume-docs
-          path: .
+          path: ./static
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v6
