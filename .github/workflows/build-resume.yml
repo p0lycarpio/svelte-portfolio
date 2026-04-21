@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v6
       
     - uses: fontist/setup-fontist@v2
-    - run: fontist install "IBM Plex Sans" --location user
+    - run: fontist install "IBM Plex Sans" --location system
       
     - name: Install Typst
       uses: typst-community/setup-typst@v5
