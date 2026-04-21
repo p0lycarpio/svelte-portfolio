@@ -7,9 +7,10 @@ on:
     branches: [ develop ]
   workflow_dispatch:
 
+# Used for Fontist caching
 permissions:
   contents: read
-  actions: read
+  actions: [read, write]
 
 jobs:
   build-cv:
@@ -20,7 +21,7 @@ jobs:
       uses: actions/checkout@v6
       
     - uses: fontist/setup-fontist@v2
-    - run: fontist install "IBM Plex Sans" --location system
+    - run: fontist install "IBM Plex Sans"
       
     - name: Install Typst
       uses: typst-community/setup-typst@v5
@@ -31,9 +32,8 @@ jobs:
       run: |
         mkdir -p static/fr static/en
 
-        typst fonts
-        typst compile "resume/cv_content_fr.typ" "static/fr/CV_Arsène_Reymond.pdf"
-        typst compile "resume/cv_content_en.typ" "static/en/CV_Arsène_Reymond.pdf"
+        typst compile "resume/cv_content_fr.typ" "static/fr/CV_Arsène_Reymond.pdf" --font-path ~/.fontist/fonts/
+        typst compile "resume/cv_content_en.typ" "static/en/CV_Arsène_Reymond.pdf" --font-path ~/.fontist/fonts/
 
         echo "Generated files:"
         find . -type f -name "*.pdf"
