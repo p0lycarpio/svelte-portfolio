@@ -24,7 +24,7 @@ jobs:
     - name: Build PDFs
       env:
         TYPST_ROOT: ${{ github.workspace }}
-        TYPST_FONT_PATHS: ~/.fontist/fonts
+        TYPST_FONT_PATHS: ~/.fontist/fonts/
       run: |
         mkdir -p static/fr static/en
 
