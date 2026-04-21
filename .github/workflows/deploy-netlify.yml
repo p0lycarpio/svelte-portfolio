@@ -59,6 +59,7 @@ jobs:
             --site=$NETLIFY_SITE_ID \
             --message="Deploy from commit ${{ github.event.workflow_run.head_sha }}" \
             --context=production \
+            --created-via=github-actions \
             --prod
 
       - name: Deploy to Netlify (Preview)
@@ -75,6 +76,7 @@ jobs:
             --context=deploy-preview \
             --message="${PR_TITLE}" \
             --alias="deploy-preview-${PR_NUMBER}" \
+            --created-via=github-actions \
             --json | jq -r '.deploy_url')
           echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
 
