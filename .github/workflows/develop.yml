@@ -7,19 +7,15 @@ on:
     branches: [ develop ]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  actions: read
-
 jobs:
-  build-cv:
+  resume:
     uses: ./.github/workflows/build-resume.yml
     with:
       commitSha: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
     secrets: inherit
 
-  deploy-site:
-    needs: build-cv
+  website:
+    needs: resume
     if: |
       (github.event_name == 'push' && github.ref == 'refs/heads/develop') ||
       github.event_name == 'pull_request'
