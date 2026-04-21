@@ -59,6 +59,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build project
+        run: pnpm build
+
       - name: Deploy to Netlify (Production)
         if: inputs.deployTarget == 'production'
         env:
@@ -71,6 +74,8 @@ jobs:
             --message="Deploy from commit ${{ inputs.commitSha }}" \
             --context=production \
             --created-via=github-actions \
+            --no-build \
+            --dir=./build \
             --prod
 
       - name: Deploy to Netlify (Preview)
@@ -88,11 +93,13 @@ jobs:
             --message="${PR_TITLE}" \
             --alias="deploy-preview-${PR_NUMBER}" \
             --created-via=github-actions \
+            --no-build \
+            --dir=./build \
             --json)
           
           echo DEPLOY_URL=$(echo "$DEPLOY" | jq -r '.deploy_url') >> $GITHUB_ENV
           echo "Deploy output: $DEPLOY"
-          
+
       - name: Comment PR with deployment URL
         if: inputs.deployTarget == 'preview' && inputs.prNumber != ''
         uses: actions/github-script@v9

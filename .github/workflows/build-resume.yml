@@ -36,8 +36,7 @@ jobs:
           TYPST_ROOT: ${{ github.workspace }}
         run: |
           mkdir -p static/fr static/en
-          printenv
-          typst fonts
+
           typst compile "resume/cv_content_fr.typ" "static/fr/CV_Arsène_Reymond.pdf" --font-path ~/.fontist/fonts
           typst compile "resume/cv_content_en.typ" "static/en/CV_Arsène_Reymond.pdf" --font-path ~/.fontist/fonts
 
