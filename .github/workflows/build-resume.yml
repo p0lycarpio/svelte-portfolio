@@ -25,7 +25,7 @@ jobs:
         with:
           ref: ${{ inputs.commitSha }}
 
-      - uses: p0lycarpio/setup-fontist@fix/cache-installation
+      - uses: fontist/setup-fontist@v2
         with:
           cache-dependency-path: resume/fontist.yml
       - run: fontist manifest install resume/fontist.yml
