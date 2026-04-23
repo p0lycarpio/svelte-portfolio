@@ -26,7 +26,9 @@ jobs:
           ref: ${{ inputs.commitSha }}
 
       - uses: fontist/setup-fontist@v2
-      - run: fontist install "IBM Plex Sans"
+        with:
+          cache-dependency-path: resume/fontist.yml
+      - run: fontist manifest install resume/fontist.yml
 
       - name: Install Typst
         uses: typst-community/setup-typst@v5
