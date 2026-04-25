@@ -1,22 +1,49 @@
 name: Deploy to Netlify
 
 on:
-  push:
-    branches:
-      - develop
-  pull_request:
-    branches:
-      - develop
+  workflow_call:
+    inputs:
+      deployTarget:
+        description: "production or preview"
+        required: true
+        type: string
+      commitSha:
+        description: "Commit SHA used for checkout and deployment metadata"
+        required: true
+        type: string
+      prNumber:
+        description: "Pull request number for preview deployments"
+        required: false
+        type: string
+      prTitle:
+        description: "Pull request title for preview deployments"
+        required: false
+        type: string
+    secrets:
+      NETLIFY_AUTH_TOKEN:
+        required: true
+      NETLIFY_SITE_ID:
+        required: true
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
+      actions: read
+      contents: read
       pull-requests: write
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.commitSha }}
+
+      - name: Download built resume files
+        uses: actions/download-artifact@v8
+        with:
+          name: resume-docs
+          path: ./static
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v6
@@ -32,8 +59,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build project
+        run: pnpm build
+
       - name: Deploy to Netlify (Production)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+        if: inputs.deployTarget == 'production'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -41,32 +71,41 @@ jobs:
           pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
-            --message="Deploy from commit ${{ github.sha }}" \
-            --context=production \
+            --message="Deploy from commit ${{ inputs.commitSha }}" \
+            --created-via=github-actions \
+            --no-build \
+            --dir=./build \
             --prod
 
       - name: Deploy to Netlify (Preview)
-        if: github.event_name == 'pull_request'
+        if: inputs.deployTarget == 'preview'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          DEPLOY_URL=$(pnpm netlify deploy \
+          PR_TITLE="${{ inputs.prTitle }}"
+          PR_NUMBER="${{ inputs.prNumber }}"
+          DEPLOY=$(pnpm netlify deploy \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
-            --context=deploy-preview \
-            --message=${{ github.event.pull_request.title }} \
-            --alias="deploy-preview-${{ github.event.pull_request.number }}" \
-            --json | jq -r '.deploy_url')
-          echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
+            --message="${PR_TITLE}" \
+            --alias="deploy-preview-${PR_NUMBER}" \
+            --created-via=github-actions \
+            --no-build \
+            --dir=./build \
+            --json)
+          
+          echo DEPLOY_URL=$(echo "$DEPLOY" | jq -r '.deploy_url') >> $GITHUB_ENV
+          echo -e "Deploy output:\n$DEPLOY"
 
       - name: Comment PR with deployment URL
-        if: github.event_name == 'pull_request'
+        if: inputs.deployTarget == 'preview' && inputs.prNumber != ''
         uses: actions/github-script@v9
         with:
           script: |
             const deployUrl = process.env.DEPLOY_URL;
-            const commitSha = context.payload.pull_request.head.sha.substring(0, 7);
+            const prNumber = Number('${{ inputs.prNumber }}');
+            const commitSha = '${{ inputs.commitSha }}'.substring(0, 7);
 
             const body = `
             ### :white_check_mark: Deploy preview ready!
@@ -76,17 +115,17 @@ jobs:
             | :hammer: Latest commit | ${commitSha} |
             | :camera_flash: Deploy preview | [${deployUrl}](${deployUrl}) |
             `;
-            
+
             const comments = await github.rest.issues.listComments({
-              issue_number: context.issue.number,
+              issue_number: prNumber,
               owner: context.repo.owner,
               repo: context.repo.repo
             });
-            
-            const existingComment = comments.data.find(comment => 
+
+            const existingComment = comments.data.find(comment =>
               comment.user.type === 'Bot' && comment.body.includes('### :white_check_mark: Deploy preview ready!')
             );
-            
+
             if (existingComment) {
               await github.rest.issues.updateComment({
                 comment_id: existingComment.id,
@@ -96,7 +135,7 @@ jobs:
               });
             } else {
               await github.rest.issues.createComment({
-                issue_number: context.issue.number,
+                issue_number: prNumber,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 body: body

@@ -1,0 +1,24 @@
+name: Build and deploy to Netlify
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  resume:
+    uses: ./.github/workflows/build-resume.yml
+    with:
+      commitSha: ${{ github.event.pull_request.head.sha || github.sha }}
+    secrets: inherit
+
+  website:
+    needs: resume
+    uses: ./.github/workflows/deploy-netlify.yml
+    with:
+      deployTarget: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop' && 'production' || 'preview' }}
+      commitSha: ${{ github.event.pull_request.head.sha || github.sha }}
+      prNumber: ${{ github.event.pull_request.number }}
+      prTitle: ${{ github.event.pull_request.title }}
+    secrets: inherit

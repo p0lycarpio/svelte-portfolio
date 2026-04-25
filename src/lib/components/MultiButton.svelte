@@ -11,7 +11,7 @@
   <a
     class="cv rounded-none rounded-l-md"
     href={$t("common.cv.link")}
-    rel="preload"
+    data-sveltekit-reload
     onmouseover={() => {
       cv = true;
     }}
@@ -34,7 +34,6 @@
   <a
     class="rounded-none rounded-r-md"
     href="https://github.com/p0lycarpio"
-    rel="preload"
     target="_blank"
     onmouseover={() => {
       link = true;

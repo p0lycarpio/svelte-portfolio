@@ -1,0 +1,53 @@
+name: Build resume PDF
+
+on:
+  workflow_call:
+    inputs:
+      commitSha:
+        description: "Commit SHA to build from"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.commitSha }}
+
+      - uses: fontist/setup-fontist@v2
+        with:
+          cache-dependency-path: resume/fontist.yml
+      - run: fontist manifest install resume/fontist.yml
+
+      - name: Install Typst
+        uses: typst-community/setup-typst@v5
+
+      - name: Build PDFs
+        env:
+          TYPST_ROOT: ${{ github.workspace }}
+        run: |
+          mkdir -p static/fr static/en
+
+          typst compile "resume/cv_content_fr.typ" "static/fr/CV_Arsène_Reymond.pdf" --font-path ~/.fontist/fonts
+          typst compile "resume/cv_content_en.typ" "static/en/CV_Arsène_Reymond.pdf" --font-path ~/.fontist/fonts
+
+          echo "Generated files:"
+          find . -type f -name "*.pdf"
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v7
+        with:
+          name: resume-docs
+          path: |
+            static/**/*.pdf
