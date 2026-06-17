@@ -46,3 +46,6 @@ vite.config.ts.timestamp-*
 
 # PDF files
 *.pdf
+# Paraglide
+src/lib/paraglide
+project.inlang/cache/
