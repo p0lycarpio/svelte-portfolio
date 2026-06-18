@@ -1,5 +1,6 @@
 <script>
   import { m } from "$lib/paraglide/messages.js";
+  import { localizeHref } from "$lib/paraglide/runtime.js";
   import { page } from "$app/stores";
   import Wavify from "components/Wavify.svelte";
 
@@ -20,7 +21,7 @@
       <h1 class="mx-auto">{$page.status}</h1>
       <h2 class="text-4xl">{$page.error.message}</h2>
       <p>{m.error_occurred()}</p>
-      <a class="text-blue-600" href="/">{m.error_back()}</a>
+      <a class="text-blue-600" href={localizeHref("/")}>{m.error_back()}</a>
     </div>
   </div>
   <div class="animate fadeIn">

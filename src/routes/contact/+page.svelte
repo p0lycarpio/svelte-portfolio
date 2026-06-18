@@ -1,5 +1,6 @@
 <script>
   import { m } from "$lib/paraglide/messages.js";
+  import { localizeHref } from "$lib/paraglide/runtime.js";
 
   import Littlelink from "$lib/components/Littlelink.svelte";
 
@@ -61,7 +62,7 @@
       >PayPal</Littlelink>
     <br />
 
-    <Littlelink icon="message" href="/#contact" color="#fff" background="#2457f5"
+    <Littlelink icon="message" href={localizeHref("/#contact")} color="#fff" background="#2457f5"
       >{m.send_message()}</Littlelink>
     <br />
   </div>

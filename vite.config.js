@@ -10,7 +10,20 @@ const config = {
         sveltekit(),
         imagetools(),
         Icons({ compiler: 'svelte' }),
-        paraglideVitePlugin({ project: './project.inlang', outdir: './src/lib/paraglide' })
+        paraglideVitePlugin({
+            project: './project.inlang',
+            outdir: './src/lib/paraglide',
+            strategy: ["url", "localStorage", "preferredLanguage", "baseLocale"],
+            urlPatterns: [
+                {
+                    pattern: "/:path(.*)?",
+                    localized: [
+                        ["fr", "/fr/:path(.*)?"],
+                        ["en", "/en/:path(.*)?"],
+                    ],
+                },
+            ]
+        })
     ],
     define: { __BUILD_DATE__: JSON.stringify(new Date().toISOString()) }
 };

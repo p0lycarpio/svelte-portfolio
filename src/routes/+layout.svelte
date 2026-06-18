@@ -1,8 +1,8 @@
 <script>
   import { resolve } from "$app/paths";
   import { page } from "$app/state";
-  import { locales, localizeHref } from "$lib/paraglide/runtime";
-  
+  import { locales, localizeHref, baseLocale } from "$lib/paraglide/runtime";
+
   import "uno.css";
   import "@fontsource-variable/ibm-plex-sans";
   import "../lib/css/styles.scss";
@@ -14,6 +14,16 @@
   /** @type {Props} */
   let { children } = $props();
 </script>
+
+<svelte:head>
+  {#each locales as locale (locale)}
+    <link rel="alternate" hreflang={locale} href={localizeHref(page.url.pathname, { locale })} />
+  {/each}
+  <link
+    rel="alternate"
+    hreflang="x-default"
+    href={localizeHref(page.url.pathname, { baseLocale })} />
+</svelte:head>
 
 {@render children?.()}
 

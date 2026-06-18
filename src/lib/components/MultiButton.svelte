@@ -1,5 +1,6 @@
 <script>
   import { m } from "$lib/paraglide/messages.js";
+  import { localizeHref } from "$lib/paraglide/runtime.js";
   import IconFile from "~icons/ic/outline-insert-drive-file";
   import IconGithub from "~icons/simple-icons/github";
 
@@ -10,7 +11,7 @@
 <div class="multi-button text-center">
   <a
     class="cv rounded-none rounded-l-md"
-    href={m.cv_link()}
+    href={localizeHref("CV_Arsène_Reymond.pdf")}
     data-sveltekit-reload
     onmouseover={() => {
       cv = true;
