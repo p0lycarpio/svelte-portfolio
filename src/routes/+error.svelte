@@ -1,5 +1,5 @@
 <script>
-  import { t } from "$lib/translations";
+  import { m } from "$lib/paraglide/messages.js";
   import { page } from "$app/stores";
   import Wavify from "components/Wavify.svelte";
 
@@ -19,8 +19,8 @@
     <div class="column text-center animate bounceIn">
       <h1 class="mx-auto">{$page.status}</h1>
       <h2 class="text-4xl">{$page.error.message}</h2>
-      <p>{$t("common.error.occurred")}</p>
-      <a class="text-blue-600" href="/">{$t("common.error.back")}</a>
+      <p>{m.error_occurred()}</p>
+      <a class="text-blue-600" href="/">{m.error_back()}</a>
     </div>
   </div>
   <div class="animate fadeIn">

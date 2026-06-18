@@ -1,5 +1,5 @@
 <script>
-  import { t } from "$lib/translations";
+  import { m } from "$lib/paraglide/messages.js";
 
   import IconBack from "~icons/material-symbols/arrow-back-rounded";
   let { closeParent = () => {}, about = $bindable(), display } = $props();
@@ -9,25 +9,25 @@
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <div id="about" class="about" bind:this={about} class:show={display === true}>
-  <button class="icon" title={$t("common.back")} onclick={closeParent}>
+  <button class="icon" title={m.back()} onclick={closeParent}>
     <IconBack />
   </button>
-  <h3>{$t("about.legals")}</h3>
-  <p>{$t("about.legals.text")}</p>
-  <h3>{$t("about.data")}</h3>
-  <p>{$t("about.data.text")}</p>
-  <h3>{$t("about.title")}</h3>
+  <h3>{m.legals()}</h3>
+  <p>{m.legals_text()}</p>
+  <h3>{m.collected_data()}</h3>
+  <p>{m.collected_data_text()}</p>
+  <h3>{m.about()}</h3>
   <p>
-    {$t("about.developedWith")}
+    {m.developed_with()}
     <svg>
       <use href="/icons.svg#svelte" />
     </svg>&nbsp;SvelteKit
-    {$t("about.hostedOn")}
+    {m.hosted_on()}
     <svg>
       <use href="/icons.svg#netlify" />
     </svg>&nbsp;Netlify.<br />
     <br />
-    {$t("about.updated") + new Date(buildDate).toLocaleDateString()}
+    {m.updated_on({date: new Date(buildDate).toLocaleDateString()})}
   </p>
 </div>
 

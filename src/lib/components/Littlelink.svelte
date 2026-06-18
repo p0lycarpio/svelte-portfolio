@@ -1,5 +1,5 @@
 <script>
-  import { t } from "$lib/translations";
+  import { m } from "$lib/paraglide/messages.js";
 
   /**
    * @typedef {Object} Props
@@ -30,7 +30,7 @@
     if (copy) {
       e.preventDefault();
       navigator.clipboard.writeText(href);
-      message = $t("common.social.copied", { text: href });
+      message = m.text_copied({text: href });
     }
   };
 </script>

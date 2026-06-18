@@ -1,5 +1,5 @@
 <script>
-  import { t } from "$lib/translations";
+  import { m } from "$lib/paraglide/messages.js";
   import IconLink from "~icons/fa6-solid/link";
   import IconUp from "~icons/fa6-solid/chevron-up";
 
@@ -23,14 +23,14 @@
       });
       alert = {
         class: "alert animate-bounce-in text-green-800 bg-green-100",
-        message: $t("contact.messageSent"),
+        message: m.message_sent(),
       };
       isSubmitting = false;
       form.reset();
     } catch {
       alert = {
         class: "alert animate-bounce-in text-red-800 bg-red-100",
-        message: $t("contact.messageError"),
+        message: m.message_error(),
       };
       isSubmitting = false;
     }
@@ -41,7 +41,7 @@
   <div class="flex justify-center footer">
     <div class="contact-form">
       <div class="h-contact flex flex-column flex-sm-row">
-        <h1>{$t("contact.contactMe")}</h1>
+        <h1>{m.contact_me()}</h1>
         <div class="block social">
           <a href="/contact" class="social-icon ms-3" title="Littlelink"><IconLink /></a>
         </div>
@@ -60,20 +60,20 @@
         {:else}
           <p class="status-form"></p>
         {/if}
-        <label for="email">{$t("contact.yourEmail")}</label>
+        <label for="email">{m.your_email()}</label>
         <input
           type="email"
           maxlength="64"
           name="email"
-          placeholder={$t("contact.yourEmail")}
+          placeholder={m.your_email()}
           id="email"
           value=""
           autocomplete="email"
           required />
-        <label for="message">{$t("contact.yourMessage")}</label>
+        <label for="message">{m.your_message()}</label>
         <textarea
           name="message"
-          placeholder={$t("contact.yourMessage")}
+          placeholder={m.your_message()}
           id="message"
           cols="55"
           rows="4"
@@ -97,7 +97,7 @@
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 ></path>
               </svg>
-              Vroum...
+              {m.sending_in_progress()}
             </button>
           {:else}
             <button
@@ -105,7 +105,7 @@
               class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-tight rounded-md transition-colors duration-200
               border border-white text-white bg-transparent hover:bg-white hover:text-neutral-900 cursor-pointer"
               name="submit"
-              id="submit">{$t("contact.send")}</button>
+              id="submit">{m.send()}</button>
           {/if}
         </div>
       </form>
@@ -117,7 +117,7 @@
     id="back-to-top"
     href="#"
     class="btn btn-outline-light back-to-top hidden md:block cursor-pointer"
-    title={$t("contact.backToTop")}
+    title={m.back_top()}
     ><IconUp />
   </a>
   <div class="copyright">

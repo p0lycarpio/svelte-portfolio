@@ -1,5 +1,5 @@
 <script>
-  import { t } from "$lib/translations";
+  import { m } from "$lib/paraglide/messages.js";
   import Soft from "components/SoftwareIcon.svelte";
 </script>
 
@@ -7,23 +7,23 @@
   <div class="px-3 grid grid-cols-1 md:grid-cols-8 gap-x-6">
     <div class="col-span-1 md:col-span-2 row-span-full">
       <h2 class="section-heading">
-        {$t("skills.title")}
+        {m.skills()}
         <span class="section-border"></span>
       </h2>
-      <p class="section-subtitle">{$t("skills.subtitle")}</p>
+      <p class="section-subtitle">{m.skills_subtitle()}</p>
     </div>
     <div class="col-span-1 md:col-span-6 md:mt-6">
-      <h3>{$t("skills.languages")}</h3>
+      <h3>{m.languages()}</h3>
       <div class="flex flex-wrap items-center mb-4 soft">
         <Soft color="#F7E018" title="JavaScript">js</Soft>
         <Soft color="#4584b6" title="Python">.py</Soft>
         <Soft color="#009fc6" title="Golang">go()</Soft>
         <Soft color="#ea2d2e" title="Java">.java</Soft>
         <Soft color="#4EAA25" title="Shell & Bash">#!/bin</Soft>
-        <Soft color="var(--black-white)" title={$t("skills.db")}>DB</Soft>
+        <Soft color="var(--black-white)" title={m.databases()}>DB</Soft>
       </div>
 
-      <h3>{$t("skills.tools")}</h3>
+      <h3>{m.tools()}</h3>
       <div class="flex flex-wrap items-center soft">
         <Soft color="#0078D4" title="Microsoft Azure" svgid="#azure" />
         <Soft color="#2560E0" title="Pipelines DevOps" svgid="#azurepipelines" />
@@ -34,7 +34,7 @@
         <Soft color="#70db4f" title="Node.js" svgid="#nodejs" />
       </div>
 
-      <h3>{$t("skills.frameworks")}</h3>
+      <h3>{m.frameworks()}</h3>
       <div class="flex flex-wrap items-center soft">
         <Soft color="#61dafb" title="React" svgid="#react" />
         <Soft color="#4fc08d" title="Vue" svgid="#vuejs" />
