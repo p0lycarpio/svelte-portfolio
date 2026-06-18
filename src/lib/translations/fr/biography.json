@@ -1,7 +1,0 @@
-{
-  "title": "Biographie",
-  "subtitle": "À propos de moi",
-  "intro": "Enchanté, moi c'est Arsène ! Développeur de {{age}} ans passionné d'informatique, j'aime la musique, le cinéma et je pratique la natation chaque semaine.",
-  "para1": "Après un DUT Métiers du multimédia et de l'internet, j'ai poursuivi mes études en informatique avec une licence professionnelle Développeur Cloud en alternance chez CGI, où j'ai développé des webservices avec un <abbr title='Enterprise Service Bus'>ESB</abbr>.",
-  "para2": "J'ai ensuite obtenu un master en informatique spécialisé en architecture logicielle, réalisé en alternance chez Covéa. Recruté comme ingénieur plateforme et DevOps, je travaille sur une plateforme cloud dédiée à la Data Science et à l'IA. Je conçois et automatise des services pour assurer leur performance, fiabilité et sécurité, tout en optimisant les processus de développement et de déploiement."
-}

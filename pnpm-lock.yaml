@@ -24,9 +24,6 @@ importers:
       svelte-preprocess:
         specifier: ^6.0.5
         version: 6.0.5(postcss@8.5.15)(sass@1.101.0)(svelte@5.56.3(@typescript-eslint/types@8.61.0))(typescript@5.9.3)
-      sveltekit-i18n:
-        specifier: ^2.4.2
-        version: 2.4.2(svelte@5.56.3(@typescript-eslint/types@8.61.0))
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.3.5
@@ -1901,14 +1898,6 @@ packages:
     peerDependencies:
       svelte: ^5.46.4
       vite: ^8.0.0-beta.7 || ^8.0.0
-
-  '@sveltekit-i18n/base@1.3.7':
-    resolution: {integrity: sha512-kg1kql1/ro/lIudwFiWrv949Q07gmweln87tflUZR51MNdXXzK4fiJQv5Mw50K/CdQ5BOk/dJ0WOH2vOtBI6yw==}
-    peerDependencies:
-      svelte: '>=3.49.0'
-
-  '@sveltekit-i18n/parser-default@1.1.1':
-    resolution: {integrity: sha512-/gtzLlqm/sox7EoPKD56BxGZktK/syGc79EbJAPWY5KVitQD9SM0TP8yJCqDxTVPk7Lk0WJhrBGUE2Nn0f5M1w==}
 
   '@tsconfig/node10@1.0.12':
     resolution: {integrity: sha512-UCYBaeFvM11aU2y3YPZ//O5Rhj+xKyzy7mvcIoAjASbigy8mHMryP5cK7dgjlz2hWxh1g5pLw084E0a/wlUSFQ==}
@@ -5277,11 +5266,6 @@ packages:
     resolution: {integrity: sha512-w7JvrM5IFl5cmfbY0TLik9o7mjRUJmRMhOR51tBPu708Gr/MjbGs7VnJnr/B0CaXeI4vtnOh7RKxDr0cwhMdDA==}
     engines: {node: '>=18'}
 
-  sveltekit-i18n@2.4.2:
-    resolution: {integrity: sha512-hjRWn4V4DBL8JQKJoJa3MRvn6d32Zo+rWkoSP5bsQ/XIAguPdQUZJ8LMe6Nc1rST8WEVdu9+vZI3aFdKYGR3+Q==}
-    peerDependencies:
-      svelte: '>=3.49.0'
-
   svgo@4.0.1:
     resolution: {integrity: sha512-XDpWUOPC6FEibaLzjfe0ucaV0YrOjYotGJO1WpF0Zd+n6ZGEQUsSugaoLq9QkEZtAfQIxT42UChcssDVPP3+/w==}
     engines: {node: '>=16'}
@@ -7551,12 +7535,6 @@ snapshots:
       svelte: 5.56.3(@typescript-eslint/types@8.61.0)
       vite: 8.0.16(@types/node@25.9.3)(esbuild@0.28.0)(jiti@2.7.0)(sass@1.101.0)(yaml@2.9.0)
       vitefu: 1.1.3(vite@8.0.16(@types/node@25.9.3)(esbuild@0.28.0)(jiti@2.7.0)(sass@1.101.0)(yaml@2.9.0))
-
-  '@sveltekit-i18n/base@1.3.7(svelte@5.56.3(@typescript-eslint/types@8.61.0))':
-    dependencies:
-      svelte: 5.56.3(@typescript-eslint/types@8.61.0)
-
-  '@sveltekit-i18n/parser-default@1.1.1': {}
 
   '@tsconfig/node10@1.0.12': {}
 
@@ -11411,12 +11389,6 @@ snapshots:
       zimmerframe: 1.1.4
     transitivePeerDependencies:
       - '@typescript-eslint/types'
-
-  sveltekit-i18n@2.4.2(svelte@5.56.3(@typescript-eslint/types@8.61.0)):
-    dependencies:
-      '@sveltekit-i18n/base': 1.3.7(svelte@5.56.3(@typescript-eslint/types@8.61.0))
-      '@sveltekit-i18n/parser-default': 1.1.1
-      svelte: 5.56.3(@typescript-eslint/types@8.61.0)
 
   svgo@4.0.1:
     dependencies:
