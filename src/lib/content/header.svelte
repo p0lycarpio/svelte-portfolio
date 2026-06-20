@@ -1,5 +1,6 @@
 <script>
   import { m } from "$lib/paraglide/messages.js";
+	import { ParaglideMessage } from "@inlang/paraglide-js-svelte";
 
   import Navbar from "components/Navbar.svelte";
   import Wavify from "components/Wavify.svelte";
@@ -26,7 +27,14 @@
       <div class="flex items-center flex-col">
         <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
         <h1 class="text-center mb-8">Arsène Reymond</h1>
-          <p class="text-center mb-4">{@html m.subtitle()}</p>
+        <p class="text-center mb-4">
+          <ParaglideMessage message={m.subtitle}>
+            {#snippet link({ children, options })}
+              <a href={options.to} target="_blank" rel="noopener noreferrer"
+                >{@render children?.()}</a>
+            {/snippet}
+          </ParaglideMessage>
+        </p>
       </div>
       <MultiButton />
     </div>

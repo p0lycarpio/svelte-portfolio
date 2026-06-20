@@ -37,6 +37,9 @@ importers:
       '@inlang/paraglide-js':
         specifier: ^2.18.2
         version: 2.19.0(typescript@5.9.3)
+      '@inlang/paraglide-js-svelte':
+        specifier: ^1.0.3
+        version: 1.0.3(@inlang/paraglide-js@2.19.0(typescript@5.9.3))(svelte@5.56.3(@typescript-eslint/types@8.61.0))
       '@sveltejs/adapter-netlify':
         specifier: ^6.0.4
         version: 6.0.4(@sveltejs/kit@2.65.1(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.3(@typescript-eslint/types@8.61.0))(vite@8.0.16(@types/node@25.9.3)(esbuild@0.28.0)(jiti@2.7.0)(sass@1.101.0)(yaml@2.9.0)))(svelte@5.56.3(@typescript-eslint/types@8.61.0))(typescript@5.9.3)(vite@8.0.16(@types/node@25.9.3)(esbuild@0.28.0)(jiti@2.7.0)(sass@1.101.0)(yaml@2.9.0)))
@@ -904,6 +907,12 @@ packages:
 
   '@import-maps/resolve@2.0.0':
     resolution: {integrity: sha512-RwzRTpmrrS6Q1ZhQExwuxJGK1Wqhv4stt+OF2JzS+uawewpwNyU7EJL1WpBex7aDiiGLs4FsXGkfUBdYuX7xiQ==}
+
+  '@inlang/paraglide-js-svelte@1.0.3':
+    resolution: {integrity: sha512-K65UnMaVy5z8+VqhBpX6Mt4dt7wxLFupejQ+sQTSga6Wh5bL7rnUq9ZU3Tn2OIk1Uah7scw9GHVZxSqhjJrWzA==}
+    peerDependencies:
+      '@inlang/paraglide-js': '>=2.11.0 <3'
+      svelte: ^5.0.0
 
   '@inlang/paraglide-js@2.19.0':
     resolution: {integrity: sha512-aZOn6gM+shvWy24fiDUBZXL+rBLZ+IutSnnZd6WxFyJRaqFCgN/vqnDjWUSUZqBTRDhYiM9rGvOhpPV6r+cThA==}
@@ -6452,6 +6461,11 @@ snapshots:
     optional: true
 
   '@import-maps/resolve@2.0.0': {}
+
+  '@inlang/paraglide-js-svelte@1.0.3(@inlang/paraglide-js@2.19.0(typescript@5.9.3))(svelte@5.56.3(@typescript-eslint/types@8.61.0))':
+    dependencies:
+      '@inlang/paraglide-js': 2.19.0(typescript@5.9.3)
+      svelte: 5.56.3(@typescript-eslint/types@8.61.0)
 
   '@inlang/paraglide-js@2.19.0(typescript@5.9.3)':
     dependencies:

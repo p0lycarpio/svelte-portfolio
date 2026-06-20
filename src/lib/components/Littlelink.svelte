@@ -1,5 +1,6 @@
 <script>
   import { m } from "$lib/paraglide/messages.js";
+  import { ParaglideMessage } from "@inlang/paraglide-js-svelte";
 
   /**
    * @typedef {Object} Props
@@ -24,13 +25,13 @@
     copy = false,
     children,
   } = $props();
-  let message = $state(null);
+  let copied = $state(false);
 
   const copyToClipboard = (e) => {
     if (copy) {
       e.preventDefault();
       navigator.clipboard.writeText(href);
-      message = m.text_copied({text: href });
+      copied = true;
     }
   };
 </script>
@@ -47,8 +48,12 @@
   <svg class="icon" fill={color}>
     <use href="/social.svg#{icon}" />
   </svg>
-  {#if message}
-    {@html message}
+  {#if copied}
+    <ParaglideMessage message={m.text_copied} inputs={{ text: href }}>
+      {#snippet strong({ children })}
+        <strong>{@render children?.()}</strong>
+      {/snippet}
+    </ParaglideMessage>
   {:else}
     {@render children?.()}
   {/if}

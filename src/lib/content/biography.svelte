@@ -1,5 +1,6 @@
 <script>
   import { m } from "$lib/paraglide/messages.js";
+  import { ParaglideMessage } from "@inlang/paraglide-js-svelte";
 
   const born = new Date(2001, 1, 22);
   const today = new Date();
@@ -9,7 +10,6 @@
   if (month < 0 || (month === 0 && today.getDate() < born.getDate())) {
     age -= 1;
   }
-
 </script>
 
 <section id="bio" class="max-w-[1320px] mx-auto py-5xl fade-in-up-alt">
@@ -20,13 +20,20 @@
       </h2>
       <p class="section-subtitle">{m.biography_subtitle()}</p>
     </div>
-      <div class="col-span-1 md:col-span-3 md:mt-6">
-        <p>{@html m.intro({age})}</p>
-        <p>{@html m.para1()}</p>
-      </div>
-      <div class="col-span-1 md:col-span-3 md:mt-6">
-        <p>{@html m.para2()}</p>
-      </div>
+    <div class="col-span-1 md:col-span-3 md:mt-6">
+      <p>{m.intro({ age })}</p>
+      <p>
+        <ParaglideMessage message={m.para1}>
+          {#snippet abbr({ children, options })}
+            <abbr title={options.title}>{@render children?.()}</abbr>
+          {/snippet}
+          {@render children?.()}
+        </ParaglideMessage>
+      </p>
+    </div>
+    <div class="col-span-1 md:col-span-3 md:mt-6">
+      <p>{m.para2()}</p>
+    </div>
   </div>
 </section>
 

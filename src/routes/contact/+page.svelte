@@ -1,6 +1,7 @@
 <script>
   import { m } from "$lib/paraglide/messages.js";
   import { localizeHref } from "$lib/paraglide/runtime.js";
+	import { ParaglideMessage } from "@inlang/paraglide-js-svelte";
 
   import Littlelink from "$lib/components/Littlelink.svelte";
 
@@ -17,8 +18,15 @@
   <div class="text-center my-12 pb-12">
     <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar inline" />
     <h1>Arsène Reymond</h1>
-      <p>{@html m.description()}</p>
-
+      <p>
+        <ParaglideMessage message={m.description}>
+          {#snippet br()}<br />{/snippet}
+          {#snippet link({children, options})}
+            <a href={options.to} target="_blank" rel="noopener noreferrer" class="text-blue-600">{@render children?.()}</a>
+          {/snippet}
+        </ParaglideMessage>
+      </p>
+      
     <Littlelink
       icon="linkedin"
       href="https://linkedin.com/in/arsene-reymond"
