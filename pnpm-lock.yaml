@@ -35,11 +35,11 @@ importers:
         specifier: ^2.2.486
         version: 2.2.486
       '@inlang/paraglide-js':
-        specifier: ^2.18.2
-        version: 2.19.0(typescript@5.9.3)
+        specifier: ^2.20.0
+        version: 2.20.0(typescript@5.9.3)
       '@inlang/paraglide-js-svelte':
         specifier: ^1.0.3
-        version: 1.0.3(@inlang/paraglide-js@2.19.0(typescript@5.9.3))(svelte@5.56.3(@typescript-eslint/types@8.61.0))
+        version: 1.0.3(@inlang/paraglide-js@2.20.0(typescript@5.9.3))(svelte@5.56.3(@typescript-eslint/types@8.61.0))
       '@sveltejs/adapter-netlify':
         specifier: ^6.0.4
         version: 6.0.4(@sveltejs/kit@2.65.1(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.3(@typescript-eslint/types@8.61.0))(vite@8.0.16(@types/node@25.9.3)(esbuild@0.28.0)(jiti@2.7.0)(sass@1.101.0)(yaml@2.9.0)))(svelte@5.56.3(@typescript-eslint/types@8.61.0))(typescript@5.9.3)(vite@8.0.16(@types/node@25.9.3)(esbuild@0.28.0)(jiti@2.7.0)(sass@1.101.0)(yaml@2.9.0)))
@@ -914,8 +914,8 @@ packages:
       '@inlang/paraglide-js': '>=2.11.0 <3'
       svelte: ^5.0.0
 
-  '@inlang/paraglide-js@2.19.0':
-    resolution: {integrity: sha512-aZOn6gM+shvWy24fiDUBZXL+rBLZ+IutSnnZd6WxFyJRaqFCgN/vqnDjWUSUZqBTRDhYiM9rGvOhpPV6r+cThA==}
+  '@inlang/paraglide-js@2.20.0':
+    resolution: {integrity: sha512-vI8PdPVZSnpYnpagjvm+nWSa3nMDRJKVM/2eLAtUHFrNcZZadxVdmP79r4W95+dkMLDFGEyzSSY9sFxvjdkkyQ==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.6'
@@ -6462,12 +6462,12 @@ snapshots:
 
   '@import-maps/resolve@2.0.0': {}
 
-  '@inlang/paraglide-js-svelte@1.0.3(@inlang/paraglide-js@2.19.0(typescript@5.9.3))(svelte@5.56.3(@typescript-eslint/types@8.61.0))':
+  '@inlang/paraglide-js-svelte@1.0.3(@inlang/paraglide-js@2.20.0(typescript@5.9.3))(svelte@5.56.3(@typescript-eslint/types@8.61.0))':
     dependencies:
-      '@inlang/paraglide-js': 2.19.0(typescript@5.9.3)
+      '@inlang/paraglide-js': 2.20.0(typescript@5.9.3)
       svelte: 5.56.3(@typescript-eslint/types@8.61.0)
 
-  '@inlang/paraglide-js@2.19.0(typescript@5.9.3)':
+  '@inlang/paraglide-js@2.20.0(typescript@5.9.3)':
     dependencies:
       '@inlang/recommend-sherlock': 0.2.1
       '@inlang/sdk': 2.10.2

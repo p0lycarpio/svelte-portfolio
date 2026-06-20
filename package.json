@@ -14,7 +14,7 @@
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
     "@iconify/json": "^2.2.486",
-    "@inlang/paraglide-js": "^2.18.2",
+    "@inlang/paraglide-js": "^2.20.0",
     "@inlang/paraglide-js-svelte": "^1.0.3",
     "@sveltejs/adapter-netlify": "^6.0.4",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
