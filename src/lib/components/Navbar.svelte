@@ -19,12 +19,12 @@
   let locale_switch = $state(getLocale() == locales[0] ? locales[1] : locales[0]);
 
   let sidebarLinks = [
-    { href: "#", text: m.home() },
-    { href: "#bio", text: m.biography() },
-    { href: "#experiences", text: m.experience() },
-    { href: "#skills", text: m.skills() },
-    { href: "#contact", text: m.contact() },
-  ];
+      { href: "#", text: m.home() },
+      { href: "#bio", text: m.biography() },
+      { href: "#parcours", text: m.experience() },
+      { href: "#compétences", text: m.skills() },
+      { href: "#contact", text: m.contact() },
+    ];
 
   function toggleMenu() {
     menuOpen = !menuOpen;
@@ -50,26 +50,27 @@
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 <!-- svelte-ignore a11y_missing_attribute -->
 
-{#snippet buttons(menu)}
-  <button title={menu ? "Menu" : m.close()} class="icon menu" onclick={toggleMenu}>
-    {#if menu}<IconMenu />{:else}<IconClose />{/if}
-  </button>
-  <button class="icon locale" onclick={() => setLocale(locale_switch)} title={m.locale_other()}>
-    <IconTranslate style="font-size:.8em" />
-  </button>
-{/snippet}
-
 {#if (y > 500) | (wx > 768)}
   <nav class="flex items-center justify-between" id="navbar-top" transition:animate>
     <!-- Navbar elements -->
     <div class="inline-flex navbar-buttons">
-      {@render buttons(true)}
+      <button title="Menu" class="icon menu" onclick={toggleMenu}>
+        <IconMenu />
+      </button>
+      <button class="icon locale" onclick={() => setLocale(locale_switch)} title={m.locale_other()}>
+        <IconTranslate style="font-size:.8em" />
+      </button>
     </div>
     <!-- End navbar elements -->
 
     <!-- Sidebars -->
-    <div id="sidenav" class="sidenav" class:show={menuOpen === true} bind:this={sidebar}>
-      {@render buttons(false)}
+    <div id="sidenav" class="sidenav" class:show={menuOpen === true}>
+      <button title={m.close()} class="icon" onclick={toggleMenu}>
+        <IconClose />
+      </button>
+      <button class="icon locale" onclick={() => setLocale(locale_switch)} title={m.locale_other()}>
+        <IconTranslate style="font-size:.8em" />
+      </button>
       <ul id="sidebar-links">
         {#each sidebarLinks as { href, text }}
           <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
