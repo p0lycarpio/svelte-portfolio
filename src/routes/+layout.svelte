@@ -17,12 +17,12 @@
 
 <svelte:head>
   {#each locales as locale (locale)}
-    <link rel="alternate" hreflang={locale} href={localizeHref(page.url.pathname, { locale })} />
+    <link rel="alternate" hreflang={locale} href={localizeHref(page.url.href, { locale })} />
   {/each}
   <link
     rel="alternate"
     hreflang="x-default"
-    href={localizeHref(page.url.pathname, { baseLocale })} />
+    href={localizeHref(page.url.href, { baseLocale })} />
 </svelte:head>
 
 {@render children?.()}
