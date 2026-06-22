@@ -16,6 +16,13 @@ const config = {
             strategy: ["url", "localStorage", "preferredLanguage", "baseLocale"],
             urlPatterns: [
                 {
+                    pattern: "/",
+                    localized: [
+                        ["fr", "/fr"],
+                        ["en", "/en"],
+                    ],
+                },
+                {
                     pattern: "/:path(.*)?",
                     localized: [
                         ["fr", "/fr/:path(.*)?"],
