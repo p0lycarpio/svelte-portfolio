@@ -1,5 +1,5 @@
 <script>
-  import { t } from "$lib/translations";
+  import { m } from "$lib/paraglide/messages.js";
   import Littlelink from "components/Littlelink.svelte";
 </script>
 
@@ -7,10 +7,10 @@
   <div class="px-3 grid grid-cols-1 sm:grid-cols-8 gap-x-6">
     <div class="col-span-full md:col-span-2 row-span-full">
       <h2 class="section-heading">
-        {$t("common.social.title")}
+        {m.social()}
         <span class="section-border"></span>
       </h2>
-      <p class="section-subtitle">{$t("common.social.subtitle")}</p>
+      <p class="section-subtitle">{m.social_subtitle()}</p>
     </div>
 
     <div class="col-span-1 sm:col-span-4 md:col-span-3 sm:mt-6">

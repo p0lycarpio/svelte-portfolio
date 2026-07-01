@@ -1,5 +1,5 @@
 <script>
-  import { t } from "$lib/translations";
+  import { m } from "$lib/paraglide/messages.js";
   import IconSchool from "~icons/fa6-solid/graduation-cap";
   import IconWork from "~icons/fa6-solid/briefcase";
 
@@ -10,16 +10,16 @@
   class="card border border-neutral-300 rounded-lg shadow-md shadow-neutral-400/40 overflow-hidden">
   <div class="card-body p-4">
     {#if type == "school"}
-      <i class="icon" title={$t("experiences.studies")} style="right:15px">
+      <i class="icon" title={m.studies()} style="right:15px">
         <IconSchool />
       </i>
     {:else if type == "work"}
-      <i class="icon" title={$t("experiences.work")}>
+      <i class="icon" title={m.work()}>
         <IconWork class="icon" />
       </i>
     {/if}
 
-    <strong>{from} - {to ? to : $t("experiences.today")}</strong>
+    <strong>{from} - {to ? to : m.today().toLowerCase()}</strong>
     <h3 class="card-title">{title}</h3>
     {#if subtitle}
       <h4 class="card-subtitle">{subtitle}</h4>

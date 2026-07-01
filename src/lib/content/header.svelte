@@ -1,6 +1,6 @@
 <script>
-  import { onMount } from "svelte";
-  import { t } from "$lib/translations";
+  import { m } from "$lib/paraglide/messages.js";
+	import { ParaglideMessage } from "@inlang/paraglide-js-svelte";
 
   import Navbar from "components/Navbar.svelte";
   import Wavify from "components/Wavify.svelte";
@@ -18,11 +18,6 @@
     bones: 4,
     color: "var(--bkg-color)",
   };
-  let hydrated = $state(false);
-
-  onMount(() => {
-    hydrated = true;
-  });
 </script>
 
 <header>
@@ -32,9 +27,14 @@
       <div class="flex items-center flex-col">
         <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
         <h1 class="text-center mb-8">Arsène Reymond</h1>
-        {#key hydrated}
-          <p class="text-center mb-4">{@html $t("common.subtitle")}</p>
-        {/key}
+        <p class="text-center mb-4">
+          <ParaglideMessage message={m.subtitle}>
+            {#snippet link({ children, options })}
+              <a href={options.to} target="_blank" rel="noopener noreferrer"
+                >{@render children?.()}</a>
+            {/snippet}
+          </ParaglideMessage>
+        </p>
       </div>
       <MultiButton />
     </div>

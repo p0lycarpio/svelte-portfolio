@@ -1,31 +1,32 @@
 <script>
-  import { onMount } from "svelte";
-  import { t } from "$lib/translations";
+  import { m } from "$lib/paraglide/messages.js";
+  import { localizeHref } from "$lib/paraglide/runtime.js";
+	import { ParaglideMessage } from "@inlang/paraglide-js-svelte";
+
   import Littlelink from "$lib/components/Littlelink.svelte";
 
   import webp from "assets/avatar.jpg?webp&w=200&srcset";
   import image from "assets/avatar.jpg?&w=200";
-
-  let hydrated = $state(false);
-
-  onMount(() => {
-    hydrated = true;
-  });
 </script>
 
 <svelte:head>
-  <title>Arsène Reymond - {$t("contact.contactMe")}</title>
-  <meta name="description" content={$t("common.subtitle").replace(/<[^>]*>/g, "")} />
+  <title>Arsène Reymond - {m.contact_me()}</title>
+  <meta name="description" content={m.subtitle().replace(/<[^>]*>/g, "")} />
 </svelte:head>
 
 <div class="container mx-auto">
   <div class="text-center my-12 pb-12">
     <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar inline" />
     <h1>Arsène Reymond</h1>
-    {#key hydrated}
-      <p>{@html $t("contact.description")}</p>
-    {/key}
-
+      <p>
+        <ParaglideMessage message={m.description}>
+          {#snippet br()}<br />{/snippet}
+          {#snippet link({children, options})}
+            <a href={options.to} target="_blank" rel="noopener noreferrer" class="text-blue-600">{@render children?.()}</a>
+          {/snippet}
+        </ParaglideMessage>
+      </p>
+      
     <Littlelink
       icon="linkedin"
       href="https://linkedin.com/in/arsene-reymond"
@@ -69,8 +70,8 @@
       >PayPal</Littlelink>
     <br />
 
-    <Littlelink icon="message" href="/#contact" color="#fff" background="#2457f5"
-      >{$t("contact.sendMessage")}</Littlelink>
+    <Littlelink icon="message" href={localizeHref("/#contact")} color="#fff" background="#2457f5"
+      >{m.send_message()}</Littlelink>
     <br />
   </div>
 </div>

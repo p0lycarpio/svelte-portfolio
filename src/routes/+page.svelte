@@ -1,5 +1,5 @@
 <script>
-  import { t } from "$lib/translations";
+  import { m } from "$lib/paraglide/messages.js";
   import Header from "content/header.svelte";
   import Bio from "content/biography.svelte";
   import Experiences from "content/experiences.svelte";
@@ -9,8 +9,8 @@
 </script>
 
 <svelte:head>
-  <title>{$t("common.meta.title")}</title>
-  <meta name="description" content={$t("common.meta.description")} />
+  <title>{m.meta_title()}</title>
+  <meta name="description" content={m.meta_description()} />
 </svelte:head>
 
 <div class="home">

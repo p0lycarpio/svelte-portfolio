@@ -1,16 +1,3 @@
-import { browser } from "$app/environment";
-import { loadTranslations } from "$lib/translations";
-
-/** @type {import('@sveltejs/kit').Load} */
-export const load = async () => {
-  async function detectLocale() {
-    if (browser) {
-      return navigator.language.split("-")[0];
-    }
-    return "fr";
-  }
-
-  await loadTranslations(await detectLocale());
-
-  return {};
-};
+// since there's no dynamic data here, we can prerender
+// it so that it gets served as a static asset in production
+export const prerender = true;

@@ -1,6 +1,7 @@
 <script>
   import { scale, fade } from "svelte/transition";
-  import { t, locale } from "$lib/translations";
+  import { setLocale, locales, getLocale } from "$lib/paraglide/runtime";
+  import { m } from "$lib/paraglide/messages.js";
 
   import About from "content/about.svelte";
 
@@ -12,20 +13,18 @@
   let wx = $state();
   let animate = $derived(wx > 768 ? fade : scale);
 
-  let sidebar = $state();
   let menuOpen = $state(false);
   let aboutOpen = $state(false);
-  let sidebarLinks = $state([]);
 
-  locale.subscribe(() => {
-    sidebarLinks = [
-      { href: "#", text: "Home" },
-      { href: "#bio", text: $t("biography.title") },
-      { href: "#parcours", text: $t("experiences.title") },
-      { href: "#compétences", text: $t("skills.title") },
-      { href: "#contact", text: $t("contact.title") },
+  let locale_switch = $state(getLocale() == locales[0] ? locales[1] : locales[0]);
+
+  let sidebarLinks = [
+      { href: "#", text: m.home() },
+      { href: "#bio", text: m.biography() },
+      { href: "#parcours", text: m.experience() },
+      { href: "#compétences", text: m.skills() },
+      { href: "#contact", text: m.contact() },
     ];
-  });
 
   function toggleMenu() {
     menuOpen = !menuOpen;
@@ -35,10 +34,6 @@
       aboutOpen = false;
       document.body.classList.remove("overflow-hidden");
     }
-  }
-
-  function switchLocale() {
-    locale.set(locale.get() === "fr" ? "en" : "fr");
   }
 </script>
 
@@ -62,18 +57,18 @@
       <button title="Menu" class="icon menu" onclick={toggleMenu}>
         <IconMenu />
       </button>
-      <button class="icon locale" onclick={switchLocale} title={$t("common.opLocale")}>
+      <button class="icon locale" onclick={() => setLocale(locale_switch)} title={m.locale_other()}>
         <IconTranslate style="font-size:.8em" />
       </button>
     </div>
     <!-- End navbar elements -->
 
     <!-- Sidebars -->
-    <div id="sidenav" class="sidenav" class:show={menuOpen === true} bind:this={sidebar}>
-      <button title={$t("common.close")} class="icon" onclick={toggleMenu}>
+    <div id="sidenav" class="sidenav" class:show={menuOpen === true}>
+      <button title={m.close()} class="icon" onclick={toggleMenu}>
         <IconClose />
       </button>
-      <button class="icon locale" onclick={switchLocale} title={$t("common.opLocale")}>
+      <button class="icon locale" onclick={() => setLocale(locale_switch)} title={m.locale_other()}>
         <IconTranslate style="font-size:.8em" />
       </button>
       <ul id="sidebar-links">
@@ -92,7 +87,7 @@
             onkeypress={(e) => {
               e.key == "Enter" ? (aboutOpen = true) : null;
             }}
-            tabindex="0">{$t("about.title")}</a>
+            tabindex="0">{m.about()}</a>
         </li>
       </ul>
     </div>

@@ -2,7 +2,8 @@ name: Build and deploy to Netlify
 
 on:
   push:
-    branches: [ develop ]
+    tags:
+      - "*"
   pull_request:
     branches: [ develop ]
 
@@ -17,7 +18,7 @@ jobs:
     needs: resume
     uses: ./.github/workflows/deploy-netlify.yml
     with:
-      deployTarget: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop' && 'production' || 'preview' }}
+      deployTarget: ${{ github.event_name == 'push' && 'production' || 'preview' }}
       commitSha: ${{ github.event.pull_request.head.sha || github.sha }}
       prNumber: ${{ github.event.pull_request.number }}
       prTitle: ${{ github.event.pull_request.title }}
