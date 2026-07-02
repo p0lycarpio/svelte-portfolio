@@ -13,17 +13,21 @@
    */
   /** @type {Props} */
   let { children } = $props();
-  const baseUrl = "https://polycarpio.fr"
+
+  const baseUrl = "https://polycarpio.fr";
 </script>
 
 <svelte:head>
   {#each locales as locale (locale)}
-    <link rel="alternate" hreflang={locale} href={localizeHref(baseUrl+page.url.pathname, { locale })} />
+    <link
+      rel="alternate"
+      hreflang={locale}
+      href={localizeHref(baseUrl + page.url.pathname, { locale })} />
   {/each}
   <link
     rel="alternate"
     hreflang="x-default"
-    href={localizeHref(baseUrl+page.url.pathname, { baseLocale })} />
+    href={localizeHref(baseUrl + page.url.pathname, { baseLocale })} />
 </svelte:head>
 
 {@render children?.()}

@@ -53,8 +53,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -94,7 +94,7 @@ jobs:
             --no-build \
             --dir=./build \
             --json)
-          
+
           echo DEPLOY_URL=$(echo "$DEPLOY" | jq -r '.deploy_url') >> $GITHUB_ENV
           echo -e "Deploy output:\n$DEPLOY"
 

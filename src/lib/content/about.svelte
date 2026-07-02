@@ -27,7 +27,7 @@
       <use href="/icons.svg#netlify" />
     </svg>&nbsp;Netlify.<br />
     <br />
-    {m.updated_on({date: new Date(buildDate).toLocaleDateString()})}
+    {m.updated_on({ date: new Date(buildDate).toLocaleDateString() })}
   </p>
 </div>
 

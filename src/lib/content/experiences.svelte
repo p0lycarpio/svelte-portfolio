@@ -1,5 +1,5 @@
 <script>
-  import { getLocale } from "$lib/paraglide/runtime.js"
+  import { getLocale } from "$lib/paraglide/runtime.js";
   import { m } from "$lib/paraglide/messages.js";
   import ExperienceCard from "components/ExperienceCard.svelte";
 

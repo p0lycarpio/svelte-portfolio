@@ -19,12 +19,12 @@
   let locale_switch = $state(getLocale() == locales[0] ? locales[1] : locales[0]);
 
   let sidebarLinks = [
-      { href: "#", text: m.home() },
-      { href: "#bio", text: m.biography() },
-      { href: "#parcours", text: m.experience() },
-      { href: "#compétences", text: m.skills() },
-      { href: "#contact", text: m.contact() },
-    ];
+    { href: "#", text: m.home() },
+    { href: "#bio", text: m.biography() },
+    { href: "#parcours", text: m.experience() },
+    { href: "#compétences", text: m.skills() },
+    { href: "#contact", text: m.contact() },
+  ];
 
   function toggleMenu() {
     menuOpen = !menuOpen;
