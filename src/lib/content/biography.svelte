@@ -27,7 +27,6 @@
           {#snippet abbr({ children, options })}
             <abbr title={options.title}>{@render children?.()}</abbr>
           {/snippet}
-          {@render children?.()}
         </ParaglideMessage>
       </p>
     </div>

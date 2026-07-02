@@ -47,7 +47,6 @@
   }} />
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
-<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 <!-- svelte-ignore a11y_missing_attribute -->
 
 {#if (y > 500) | (wx > 768)}
@@ -72,6 +71,7 @@
         <IconTranslate style="font-size:.8em" />
       </button>
       <ul id="sidebar-links">
+        <!-- eslint-disable-next-line svelte/require-each-key -->
         {#each sidebarLinks as { href, text }}
           <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
           <li onclick={toggleMenu}><a {href}>{text}</a></li>

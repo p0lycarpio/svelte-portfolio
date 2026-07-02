@@ -112,7 +112,6 @@
       </form>
     </div>
   </div>
-  <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_invalid_attribute -->
   <a
     id="back-to-top"

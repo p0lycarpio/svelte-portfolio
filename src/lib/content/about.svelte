@@ -4,10 +4,10 @@
   import IconBack from "~icons/material-symbols/arrow-back-rounded";
   let { closeParent = () => {}, about = $bindable(), display } = $props();
 
+  // eslint-disable-next-line no-undef
   const buildDate = __BUILD_DATE__;
 </script>
 
-<!-- svelte-ignore a11y_click_events_have_key_events -->
 <div id="about" class="about" bind:this={about} class:show={display === true}>
   <button class="icon" title={m.back()} onclick={closeParent}>
     <IconBack />
