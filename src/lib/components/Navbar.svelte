@@ -74,7 +74,7 @@
         <!-- eslint-disable-next-line svelte/require-each-key -->
         {#each sidebarLinks as { href, text }}
           <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-          <li onclick={toggleMenu}><a {href}>{text}</a></li>
+          <li onclick={toggleMenu}><a href={href}>{text}</a></li>
         {/each}
         <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
         <li

@@ -12,3 +12,5 @@ overrides:
   - files: "*.svelte"
     options:
       parser: "svelte"
+
+svelteAllowShorthand: false

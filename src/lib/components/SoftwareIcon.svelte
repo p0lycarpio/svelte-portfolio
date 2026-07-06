@@ -31,7 +31,7 @@
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <span
       style="color:{color}"
-      {title}
+      title={title}
       onmouseover={setShadow}
       onmouseout={removeShadow}
       bind:this={element}>
