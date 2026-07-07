@@ -1,41 +1,36 @@
-import globals from "globals";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+import prettier from 'eslint-config-prettier';
+import path from 'node:path';
+import js from '@eslint/js';
+import svelte from 'eslint-plugin-svelte';
+import { defineConfig, includeIgnoreFile } from 'eslint/config';
+import globals from 'globals';
+import svelteConfig from './svelte.config.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-});
+const gitignorePath = path.resolve(import.meta.dirname, '.gitignore');
 
-export default [{
-    ignores: [
-        "**/node_modules",
-        "build",
-        ".netlify",
-        ".svelte-kit",
-        "package",
-        "**/*.config.js",
-        "**/.env",
-        "**/.env.*",
-        "**/pnpm-lock.yaml",
-        "**/package-lock.json",
-        "**/yarn.lock",
-    ],
-}, ...compat.extends("eslint:recommended", "prettier"), {
-    languageOptions: {
-        globals: {
-            ...globals.browser,
-            ...globals.node,
-        },
+export default defineConfig([
+	includeIgnoreFile(gitignorePath),
+	js.configs.recommended,
+	svelte.configs.recommended,
+	prettier,
+	svelte.configs.prettier,
+	{
+		languageOptions: { globals: { ...globals.browser, ...globals.node } }
+	},
 
-        ecmaVersion: "latest",
-        sourceType: "module",
-    },
+	{
+		files: ['**/*.svelte', '**/*.svelte.js'],
+		languageOptions: { parserOptions: { svelteConfig } }
+	},
 
-    rules: {},
-}];
+	{
+		rules: {
+			"svelte/no-navigation-without-resolve": [
+				"error",
+				{
+					"ignoreLinks": true
+				}
+			]
+		}
+	}
+]);

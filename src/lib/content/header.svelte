@@ -1,6 +1,6 @@
 <script>
   import { m } from "$lib/paraglide/messages.js";
-	import { ParaglideMessage } from "@inlang/paraglide-js-svelte";
+  import { ParaglideMessage } from "@inlang/paraglide-js-svelte";
 
   import Navbar from "components/Navbar.svelte";
   import Wavify from "components/Wavify.svelte";

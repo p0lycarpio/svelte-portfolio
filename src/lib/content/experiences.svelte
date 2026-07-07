@@ -1,5 +1,5 @@
 <script>
-  import { getLocale } from "$lib/paraglide/runtime.js"
+  import { getLocale } from "$lib/paraglide/runtime.js";
   import { m } from "$lib/paraglide/messages.js";
   import ExperienceCard from "components/ExperienceCard.svelte";
 
@@ -19,7 +19,7 @@
       <p class="section-subtitle">{m.experience_subtitle()}</p>
     </div>
 
-    {#each experiences as exp}
+    {#each experiences as exp (exp.id)}
       <div class="col-span-1 md:col-span-3 {exp.order} ">
         <ExperienceCard
           type={exp.type}

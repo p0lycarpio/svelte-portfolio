@@ -44,7 +44,9 @@
       <div class="h-contact flex flex-column flex-sm-row">
         <h1>{m.contact_me()}</h1>
         <div class="block social">
-          <a href={localizeHref("contact")} class="social-icon ms-3" title="Littlelink"><IconLink /></a>
+          <a href={localizeHref("contact")} class="social-icon ms-3" title="Littlelink">
+            <IconLink />
+          </a>
         </div>
       </div>
       <form
@@ -112,7 +114,6 @@
       </form>
     </div>
   </div>
-  <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_invalid_attribute -->
   <a
     id="back-to-top"

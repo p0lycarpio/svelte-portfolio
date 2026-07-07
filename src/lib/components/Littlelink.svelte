@@ -40,7 +40,7 @@
   href={copy ? "" : href}
   class={background == "#000" ? "button border" : "button"}
   class:biglink={big}
-  class:twolines
+  class:twolines={twolines}
   style="background-color: {background}; color: {color}"
   rel="noopener"
   data-sveltekit-replacestate
