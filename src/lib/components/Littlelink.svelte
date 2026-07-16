@@ -97,7 +97,6 @@
     width: 100%;
     max-width: 100%;
     font-family: unset !important;
-    font-weight: 400;
     font-size: 16pt;
     text-align: left;
     padding-left: 2rem;
@@ -139,7 +138,6 @@
   @media only screen and (max-width: 40rem) {
     .biglink {
       font-size: 14pt;
-      font-weight: normal;
       line-height: 2.2rem;
 
       & .icon {

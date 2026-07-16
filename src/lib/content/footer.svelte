@@ -195,7 +195,7 @@
 
   input,
   textarea {
-    font-size: var(--bs-body-font-size);
+    font-size: var(--body-size);
     border: none;
     outline: 0;
     border-radius: 6px;
@@ -220,7 +220,7 @@
 
   .copyright {
     padding: 15px;
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
     background-color: #000;
     line-height: normal;

@@ -33,7 +33,7 @@
   <style>
     body {
       background-color: var(--bkg-color);
-      font-family: "IBM Plex Sans Variable", sans-serif !important;
+      font-family: var(--font-body);
       overflow: hidden;
     }
     .container {

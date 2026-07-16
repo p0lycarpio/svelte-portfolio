@@ -50,7 +50,7 @@
     <Littlelink
       icon="spotify"
       href="https://open.spotify.com/user/arsene_72"
-      color="#191414"
+      color="#fff"
       background="#1db954">Spotify</Littlelink>
 
     <Littlelink

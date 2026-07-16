@@ -5,6 +5,7 @@
 
   import "uno.css";
   import "@fontsource-variable/ibm-plex-sans";
+  import "@fontsource-variable/mulish";
   import "../lib/css/styles.scss";
 
   /**

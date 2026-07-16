@@ -61,8 +61,9 @@
     background: var(--hero-sect);
     padding-top: 48px;
     & p {
-      font-size: 22px;
+      font-size: 24px;
       padding: 0 10%;
+      font-family: var(--font-heading);
     }
     & :global(a) {
       color: var(--h-color);
