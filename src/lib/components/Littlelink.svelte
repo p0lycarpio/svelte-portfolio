@@ -70,7 +70,7 @@
     font-size: 18px;
     width: 100%;
     max-width: 324px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 20px;
     padding: 12px;
     letter-spacing: 0.1px;
@@ -78,7 +78,6 @@
     outline: none;
     border-radius: 8px;
     cursor: pointer;
-    font-family: sans-serif !important;
     margin-bottom: 1rem;
   }
 
@@ -96,7 +95,7 @@
   .biglink {
     width: 100%;
     max-width: 100%;
-    font-family: unset !important;
+    font-weight: 700;
     font-size: 16pt;
     text-align: left;
     padding-left: 2rem;

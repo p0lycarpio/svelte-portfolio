@@ -26,13 +26,17 @@
     { href: "#contact", text: m.contact() },
   ];
 
+  function closeMenu() {
+    menuOpen = aboutOpen = false;
+    document.body.classList.remove("overflow-hidden");
+  }
+
   function toggleMenu() {
     menuOpen = !menuOpen;
     if (menuOpen) {
       document.body.classList.add("overflow-hidden");
     } else {
-      aboutOpen = false;
-      document.body.classList.remove("overflow-hidden");
+      closeMenu();
     }
   }
 </script>
@@ -44,6 +48,9 @@
     if (e.key == "Escape" && menuOpen | aboutOpen) {
       toggleMenu();
     }
+  }}
+  onresize={() => {
+    wx < 768 ? closeMenu() : null;
   }} />
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -115,7 +122,7 @@
     text-decoration: none;
     font-size: 25px;
     font-weight: 500;
-    font-family: "IBM Plex Sans Variable";
+    font-family: var(--font-heading);
     color: var(--black-white);
     display: block;
     transition: 0.3s;
