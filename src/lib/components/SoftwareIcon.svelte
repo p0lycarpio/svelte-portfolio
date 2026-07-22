@@ -12,7 +12,7 @@
     if (color && !shadow) {
       shadow = color;
     }
-    element.style.setProperty("filter", "drop-shadow(0px 4px 10px" + shadow + ")");
+    element.style.setProperty("filter", "drop-shadow(0px 4px 10px " + shadow + ")");
   }
 
   function removeShadow() {

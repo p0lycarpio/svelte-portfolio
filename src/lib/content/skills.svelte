@@ -48,6 +48,7 @@
 <style>
   h3 {
     font-size: 1.375rem;
+    font-weight: 500;
     margin-bottom: 1.4em;
   }
 

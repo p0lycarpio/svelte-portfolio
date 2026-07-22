@@ -138,6 +138,8 @@
     .biglink {
       font-size: 14pt;
       line-height: 2.2rem;
+      font-weight: 800;
+      padding-left: 1.4rem;
 
       & .icon {
         width: 32px;

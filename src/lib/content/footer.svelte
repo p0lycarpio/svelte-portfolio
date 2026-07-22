@@ -243,6 +243,7 @@
     margin-bottom: 1em;
     padding: 1em;
     border-radius: var(--radius-md);
+    font-weight: 700;
   }
 
   @media only screen and (max-height: 722px) {

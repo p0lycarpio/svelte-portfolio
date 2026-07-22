@@ -64,6 +64,7 @@
       font-size: 24px;
       padding: 0 10%;
       font-family: var(--font-heading);
+      line-height: 1.4;
     }
     & :global(a) {
       color: var(--h-color);
