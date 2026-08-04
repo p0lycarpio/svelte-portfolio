@@ -3,7 +3,7 @@
   import Soft from "components/SoftwareIcon.svelte";
 </script>
 
-<section class="max-w-[1320px] mx-auto py-5xl fade-in-up-alt" id="skills">
+<section class="max-w-[1320px] mx-auto py-4xl fade-in-up-alt" id="skills">
   <div class="px-3 grid grid-cols-1 md:grid-cols-8 gap-x-6">
     <div class="col-span-1 md:col-span-2 row-span-full">
       <h2 class="section-heading">
@@ -47,8 +47,13 @@
 
 <style>
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
+    font-weight: 500;
     margin-bottom: 1.4em;
+  }
+
+  .soft {
+    font-family: var(--font-heading);
   }
 
   .soft:first-child {

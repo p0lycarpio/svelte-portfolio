@@ -12,7 +12,7 @@
     if (color && !shadow) {
       shadow = color;
     }
-    element.style.setProperty("filter", "drop-shadow(0px 4px 10px" + shadow + ")");
+    element.style.setProperty("filter", "drop-shadow(0px 4px 10px " + shadow + ")");
   }
 
   function removeShadow() {
@@ -51,7 +51,7 @@
   }
 
   span {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 600;
     margin: 0 1em 0.6em 0em;
     cursor: default;

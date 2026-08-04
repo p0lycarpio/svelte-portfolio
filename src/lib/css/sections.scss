@@ -18,7 +18,7 @@ main {
 }
 
 .section-heading {
-  font-family: "IBM Plex Sans Variable", Arial, Helvetica, sans-serif;
+  font-family: var(--font-heading);
   margin: 0;
   font-size: 24px;
   position: relative;
@@ -43,7 +43,8 @@ main {
 
 .section-subtitle {
   margin-right: 50px;
-  font-size: 14px;
+  font-size: 16px;
+  font-family: var(--font-heading);
 
   @media screen and (max-width: 48rem) {
     display: none;

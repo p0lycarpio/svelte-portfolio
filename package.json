@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@fontsource-variable/ibm-plex-sans": "^5.2.8",
+    "@fontsource-variable/mulish": "^5.2.8",
     "@sveltejs/kit": "^2.69.0",
     "sharp": "0.35.3",
     "svelte-preprocess": "^6.0.5"

@@ -6,8 +6,8 @@
   import Wavify from "components/Wavify.svelte";
   import MultiButton from "components/MultiButton.svelte";
 
-  import webp from "assets/avatar.jpg?webp&w=200&srcset";
-  import image from "assets/avatar.jpg?&w=200";
+  import image from "assets/avatar.jpg?w=200&format=webp";
+  import srcset from "assets/avatar.jpg?w=200;400&format=webp&as=srcset";
 
   let w = $state();
   let h = $state();
@@ -25,9 +25,17 @@
   <section class="hero-section">
     <div class="animate-(back-in-down ease) px-3">
       <div class="flex items-center flex-col">
-        <img src={image} srcset={webp} alt="Portrait" width="128" height="128" class="avatar" />
+        <img
+          src={image}
+          srcset={srcset}
+          sizes="200px"
+          width="128"
+          height="128"
+          class="avatar"
+          fetchpriority="high"
+          alt="Portrait" />
         <h1 class="text-center mb-8">Arsène Reymond</h1>
-        <p class="text-center mb-4">
+        <p class="text-center mb-6">
           <ParaglideMessage message={m.subtitle}>
             {#snippet link({ children, options })}
               <a href={options.to} target="_blank" rel="noopener noreferrer"
@@ -53,8 +61,10 @@
     background: var(--hero-sect);
     padding-top: 48px;
     & p {
-      font-size: 22px;
+      font-size: 24px;
       padding: 0 10%;
+      font-family: var(--font-heading);
+      line-height: 1.4;
     }
     & :global(a) {
       color: var(--h-color);
