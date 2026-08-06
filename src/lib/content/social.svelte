@@ -18,14 +18,12 @@
         icon="github"
         href="https://github.com/p0lycarpio"
         color="#fff"
-        big="true"
         twolines="true"
         background="#000">GitHub</Littlelink>
       <Littlelink
         icon="discord"
         href="polycarpio"
         color="#fff"
-        big="true"
         copy="true"
         background="#5865f2">Discord</Littlelink>
     </div>
@@ -35,20 +33,17 @@
         icon="linkedin"
         href="https://linkedin.com/in/arsene-reymond"
         color="#fff"
-        big="true"
         background="#2867b2">LinkedIn</Littlelink>
       <Littlelink
         icon="spotify"
         href="https://open.spotify.com/user/arsene_72"
         color="#fff"
-        big="true"
         background="#1db954">Spotify</Littlelink>
       <Littlelink
         icon="letterboxd"
         href="https://boxd.it/84LRn"
         color="#fff"
-        background="#2c3440"
-        big="true">Letterboxd</Littlelink>
+        background="#2c3440">Letterboxd</Littlelink>
     </div>
   </div>
 </section>

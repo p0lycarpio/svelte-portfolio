@@ -1,7 +1,5 @@
 <script>
   import { m } from "$lib/paraglide/messages.js";
-  import { localizeHref } from "$lib/paraglide/runtime.js";
-  import IconLink from "~icons/fa6-solid/link";
   import IconUp from "~icons/fa6-solid/chevron-up";
 
   export const prerender = true;
@@ -43,11 +41,6 @@
     <div class="contact-form">
       <div class="h-contact flex flex-column flex-sm-row">
         <h1>{m.contact_me()}</h1>
-        <div class="block social">
-          <a href={localizeHref("contact")} class="social-icon ms-3" title="Littlelink">
-            <IconLink />
-          </a>
-        </div>
       </div>
       <form
         name="contact"
@@ -152,26 +145,8 @@
     align-items: center;
   }
 
-  .h-contact h1,
-  .h-contact a {
+  .h-contact h1 {
     color: #fff;
-  }
-
-  .social {
-    margin-top: 26px;
-  }
-
-  .social-icon {
-    font-size: 1.8rem;
-    height: 32px;
-    text-decoration: none;
-  }
-
-  .social-icon:hover,
-  .social-icon:focus,
-  .social-icon:active {
-    color: var(--blue) !important;
-    background-color: transparent !important;
   }
 
   .contact-form {
